@@ -1,0 +1,240 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Flowise
+providerId: flowise
+created: '2026-05-24'
+modified: '2026-05-24'
+tags:
+  - Agents
+  - Agent Workflows
+  - Artificial Intelligence
+  - Large Language Models
+  - Low Code
+  - Visual Builder
+  - LangChain
+description: |
+  Machine-readable plans and pricing for Flowise Cloud, the managed hosting tier
+  of the Flowise open-source LLM workflow builder. The Flowise codebase itself
+  remains Apache 2.0 (with a separately licensed enterprise directory) and is
+  free to self-host; this file describes the commercial hosted offering.
+plans:
+  - id: flowise-free
+    name: Free
+    type: freemium
+    description: Free entry tier of Flowise Cloud. Intended for evaluation and
+      personal projects. Two chatflows, 100 predictions per month, 5 MB storage.
+    entries:
+      - label: Flows
+        description: Maximum number of chatflows or agentflows
+        name: flows
+        type: quota
+        metric: flows
+        limit: 2
+        timeFrame: month
+        geo: global
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Predictions
+        description: Monthly prediction calls included in the Free tier
+        name: predictions
+        type: quota
+        metric: predictions
+        limit: 100
+        timeFrame: month
+        geo: global
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Storage
+        description: Document store capacity
+        name: storage
+        type: quota
+        metric: storage_mb
+        limit: 5
+        timeFrame: month
+        geo: global
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: Visual Chatflow Builder
+      - name: Embed Widget
+      - name: Community Support
+      - name: 100+ Integrations
+      - name: Marketplace Templates
+  - id: flowise-starter
+    name: Starter
+    type: paid
+    description: Starter tier at USD 35 per month. Unlimited flows, 10,000
+      predictions per month, 1 GB storage.
+    entries:
+      - label: Subscription
+        description: Flat monthly subscription
+        name: subscription
+        type: recurring
+        metric: month
+        limit: 1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: '35.00'
+        userMultiplied: false
+      - label: Flows
+        name: flows
+        type: quota
+        metric: flows
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Predictions
+        name: predictions
+        type: quota
+        metric: predictions
+        limit: 10000
+        timeFrame: month
+        geo: global
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Storage
+        name: storage
+        type: quota
+        metric: storage_gb
+        limit: 1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: Unlimited Flows
+      - name: Custom Branded Embed
+      - name: Email Support
+      - name: API Access
+      - name: SDK Access
+  - id: flowise-pro
+    name: Pro
+    type: paid
+    description: Pro tier at USD 65 per month. 50,000 predictions per month,
+      10 GB storage, unlimited workspaces, additional users billed at USD 15
+      each beyond the first 5.
+    entries:
+      - label: Subscription
+        name: subscription
+        type: recurring
+        metric: month
+        limit: 1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: '65.00'
+        userMultiplied: false
+      - label: Predictions
+        name: predictions
+        type: quota
+        metric: predictions
+        limit: 50000
+        timeFrame: month
+        geo: global
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Storage
+        name: storage
+        type: quota
+        metric: storage_gb
+        limit: 10
+        timeFrame: month
+        geo: global
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Additional Users
+        description: Per-seat price for users beyond the 5 included seats
+        name: additional_user
+        type: metered
+        metric: users
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: '15.00'
+        userMultiplied: true
+    elements:
+      - name: Unlimited Workspaces
+      - name: 5 Included Users
+      - name: Priority Email Support
+      - name: Observability Hooks
+      - name: All Starter Features
+  - id: flowise-enterprise
+    name: Enterprise
+    type: enterprise
+    description: Custom-negotiated tier for Flowise Enterprise. Includes
+      self-hostable enterprise build (commercial license), RBAC, SSO,
+      encrypted credentials, secret managers, restricted domains, and
+      horizontal scaling via message queues and workers.
+    entries:
+      - label: Subscription
+        description: Negotiated annual contract
+        name: subscription
+        type: recurring
+        metric: year
+        limit: 1
+        timeFrame: year
+        geo: configurable
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: custom
+        userMultiplied: false
+      - label: Predictions
+        name: predictions
+        type: quota
+        metric: predictions
+        limit: -1
+        timeFrame: month
+        geo: configurable
+        domains:
+          - https://flowiseai.com
+        unit: 1
+        price: custom
+        userMultiplied: false
+    elements:
+      - name: Self-Host or Managed Cloud
+      - name: RBAC and SSO
+      - name: Encrypted Credentials and Secret Managers
+      - name: Restricted Domains
+      - name: Rate Limit Controls
+      - name: Horizontal Scaling (Queues and Workers)
+      - name: Dedicated Support
+      - name: Commercial Enterprise License
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

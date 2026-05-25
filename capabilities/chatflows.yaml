@@ -1,0 +1,40 @@
+name: flowise-chatflows
+description: |
+  Manage Flowise chatflows and agentflows: the canvas-defined LLM workflow graphs
+  that Flowise executes. Covers full CRUD plus lookup by API key for chatflow
+  authorization checks.
+provider: flowise
+api: flowise
+authentication:
+  type: bearer
+  description: HTTP Bearer using a Flowise API key generated in the admin UI.
+baseUrl: http://localhost:3000/api/v1
+operations:
+  - id: list-chatflows
+    method: GET
+    path: /chatflows
+    summary: List all chatflows
+  - id: create-chatflow
+    method: POST
+    path: /chatflows
+    summary: Create a new chatflow
+  - id: get-chatflow
+    method: GET
+    path: /chatflows/{id}
+    summary: Get chatflow by ID
+  - id: update-chatflow
+    method: PUT
+    path: /chatflows/{id}
+    summary: Update chatflow details
+  - id: delete-chatflow
+    method: DELETE
+    path: /chatflows/{id}
+    summary: Delete a chatflow
+  - id: get-chatflow-by-api-key
+    method: GET
+    path: /chatflows/apikey/{apikey}
+    summary: Get chatflow by API key
+tags:
+  - Chatflows
+  - Agentflows
+  - Workflow Management

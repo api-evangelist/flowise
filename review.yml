@@ -1,0 +1,52 @@
+provider: Flowise
+providerId: flowise
+type: opensource
+reviewer: Kin Lane
+reviewedOn: '2026-05-24'
+sources:
+  - https://flowiseai.com/
+  - https://docs.flowiseai.com/
+  - https://docs.flowiseai.com/api-reference
+  - https://github.com/FlowiseAI/Flowise
+  - https://github.com/FlowiseAI/FlowiseSDK
+  - https://github.com/FlowiseAI/FlowisePy
+  - https://github.com/FlowiseAI/FlowiseChatEmbed
+  - https://github.com/FlowiseAI/FlowiseEmbedReact
+  - https://github.com/FlowiseAI/FlowiseDocs
+  - https://raw.githubusercontent.com/FlowiseAI/Flowise/main/packages/api-documentation/src/yml/swagger.yml
+  - https://raw.githubusercontent.com/FlowiseAI/Flowise/main/LICENSE.md
+findings:
+  - area: Identity
+    note: Flowise is an Apache 2.0-licensed (with a separately-licensed enterprise
+      directory) visual builder for LangChain-based LLM workflows. The org
+      ships a server, React UI, components library, an auto-generated Swagger
+      UI, official TS and Python SDKs, an embed widget and React component,
+      and a docs repo. 53k+ stars on the primary repo. Acquired by Workday in 2025.
+  - area: API Surface
+    note: One REST API on /api/v1 with 13 tag groups and 46 operations (chatflows,
+      agentflows, assistants, tools, variables, document stores, vector upsert,
+      attachments, feedback, leads, chat messages, upsert history, prediction,
+      ping). OpenAPI 3.0.3 is shipped in repo and served at /api-docs.
+  - area: Authentication
+    note: HTTP Bearer using an API key generated in the Flowise admin UI.
+      Individual chatflows may also require their own per-flow API key.
+  - area: SDKs and Embeds
+    note: Official TypeScript SDK (FlowiseSDK, MIT), Python SDK (FlowisePy, MIT),
+      vanilla chat embed (FlowiseChatEmbed), and React embed (FlowiseEmbedReact).
+  - area: Commercial
+    note: Flowise Cloud offers Free (2 flows, 100 predictions/month, 5MB),
+      Starter ($35/mo, unlimited flows, 10k predictions, 1GB), Pro ($65/mo,
+      50k predictions, 10GB, +$15/user beyond 5), and a custom Enterprise tier
+      with RBAC, SSO, encrypted credentials, secret managers, restricted
+      domains, rate-limit controls, and horizontal scaling via queues/workers.
+  - area: Operations
+    note: Self-host targets include AWS, Azure, GCP, Digital Ocean, Alibaba,
+      Railway, Northflank, Render, HuggingFace Spaces. Docker image available.
+      Observability via Prometheus and OpenTelemetry. BullMQ for horizontal
+      scaling.
+  - area: Integrations
+    note: 100+ integrations including OpenAI, Anthropic, Google Gemini, AWS
+      Bedrock, Azure OpenAI, Hugging Face, Ollama, Mistral, Cohere; vector
+      stores Pinecone, Chroma, Weaviate, Qdrant, Milvus, pgvector, MongoDB
+      Atlas; messaging via Slack, Discord, Telegram, WhatsApp.
+tier: 1

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowise/main/json-schema/flowise-tool-schema.json",
+  "title": "Tool",
+  "description": "A Flowise tool definition: a callable function or HTTP shim that agents can invoke.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "color": { "type": ["string", "null"] },
+    "iconSrc": { "type": ["string", "null"] },
+    "schema": { "type": "string", "description": "JSON schema of the tool's parameters." },
+    "func": { "type": "string", "description": "Tool implementation, typically JavaScript." },
+    "createdDate": { "type": "string", "format": "date-time" },
+    "updatedDate": { "type": "string", "format": "date-time" }
+  },
+  "required": ["id", "name", "description"]
+}

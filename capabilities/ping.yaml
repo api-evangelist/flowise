@@ -1,0 +1,15 @@
+name: flowise-ping
+description: Health probe for a Flowise server.
+provider: flowise
+api: flowise
+authentication:
+  type: none
+baseUrl: http://localhost:3000/api/v1
+operations:
+  - id: ping
+    method: GET
+    path: /ping
+    summary: Ping the server
+tags:
+  - Health
+  - Observability

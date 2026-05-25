@@ -1,0 +1,19 @@
+{
+  "entity": "Chatflow",
+  "description": "Structural view of a Flowise chatflow record.",
+  "fields": [
+    { "name": "id", "type": "uuid", "required": true },
+    { "name": "name", "type": "string", "required": true },
+    { "name": "flowData", "type": "string", "required": true, "notes": "Serialized canvas graph (nodes + edges) as JSON string." },
+    { "name": "deployed", "type": "boolean" },
+    { "name": "isPublic", "type": "boolean" },
+    { "name": "apikeyid", "type": "uuid|null" },
+    { "name": "chatbotConfig", "type": "string|null" },
+    { "name": "apiConfig", "type": "string|null" },
+    { "name": "analytic", "type": "string|null" },
+    { "name": "category", "type": "string|null" },
+    { "name": "type", "type": "enum", "values": ["CHATFLOW", "AGENTFLOW", "MULTIAGENT"] },
+    { "name": "createdDate", "type": "datetime" },
+    { "name": "updatedDate", "type": "datetime" }
+  ]
+}

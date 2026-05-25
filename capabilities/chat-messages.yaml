@@ -1,0 +1,23 @@
+name: flowise-chat-messages
+description: |
+  Read and bulk-delete chat messages associated with a chatflow. Supports
+  filtering by chat type, chat ID, memory type, session ID, date range, and
+  feedback flag.
+provider: flowise
+api: flowise
+authentication:
+  type: bearer
+baseUrl: http://localhost:3000/api/v1
+operations:
+  - id: list-chat-messages
+    method: GET
+    path: /chatmessage/{id}
+    summary: List all chat messages for a chatflow
+  - id: delete-chat-messages
+    method: DELETE
+    path: /chatmessage/{id}
+    summary: Delete all chat messages for a chatflow
+tags:
+  - Chat Messages
+  - History
+  - Memory

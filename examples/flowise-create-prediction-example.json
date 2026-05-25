@@ -1,0 +1,38 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:3000/api/v1/prediction/abcd1234-aaaa-bbbb-cccc-1234567890ab",
+    "headers": {
+      "Authorization": "Bearer flw_sk_xxx",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "question": "What is the refund policy?",
+      "streaming": false,
+      "overrideConfig": {
+        "temperature": 0.2
+      },
+      "history": [
+        { "role": "user", "content": "Hi" },
+        { "role": "assistant", "content": "Hello! How can I help?" }
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "text": "Our standard refund policy allows returns within 30 days...",
+      "question": "What is the refund policy?",
+      "chatId": "5f0a...",
+      "chatMessageId": "9c12...",
+      "sessionId": "5f0a...",
+      "sourceDocuments": [
+        {
+          "pageContent": "Refund policy: customers may return items within 30 days...",
+          "metadata": { "source": "policies/refund.pdf", "page": 1 }
+        }
+      ],
+      "usedTools": []
+    }
+  }
+}

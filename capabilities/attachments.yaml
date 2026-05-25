@@ -1,0 +1,19 @@
+name: flowise-attachments
+description: |
+  Upload file attachments scoped to a chatflow and chat session. The returned
+  attachment descriptors can be referenced as `uploads` on a subsequent
+  Prediction call.
+provider: flowise
+api: flowise
+authentication:
+  type: bearer
+baseUrl: http://localhost:3000/api/v1
+operations:
+  - id: create-attachment
+    method: POST
+    path: /attachments/{chatflowId}/{chatId}
+    summary: Create an attachments array for a chatflow/chat
+tags:
+  - Attachments
+  - Uploads
+  - Multimodal

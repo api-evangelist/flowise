@@ -1,0 +1,171 @@
+aid: flowise
+name: Flowise
+description: 'Flowise is an open-source, low-code visual builder for LangChain-based LLM workflows and AI agents. Built
+  on Node.js and TypeScript as a pnpm/Turbo monorepo, Flowise lets developers and non-developers compose chatflows, multi-agent
+  agentflows, RAG pipelines, tools, and assistants on a drag-and-drop canvas, then expose them as REST APIs, embeddable
+  chat widgets, or programmatic SDK calls. The project ships a self-hostable server, a React admin UI, a third-party node
+  component library, an auto-generated Swagger UI, official TypeScript and Python SDKs, an embed widget, and a managed
+  Flowise Cloud offering with metered prediction quotas. Flowise was acquired by Workday in 2025.'
+kind: contract
+position: Consuming
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- Agents
+- Agent Workflows
+- Artificial Intelligence
+- Large Language Models
+- Low Code
+- Visual Builder
+- LangChain
+- RAG
+- Retrieval Augmented Generation
+- Chatbots
+- Open Source
+- Node.js
+- TypeScript
+created: '2026-05-24'
+modified: '2026-05-24'
+url: https://raw.githubusercontent.com/api-evangelist/flowise/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+- aid: flowise:flowise
+  name: Flowise API
+  description: The Flowise REST API exposes the full surface of a Flowise server, covering chatflows, agentflows, assistants,
+    tools, variables, document stores, vector upserts, attachments, feedback, leads, chat messages, upsert history, predictions,
+    and a ping health probe. It is documented as OpenAPI 3.0.3 from a Swagger UI shipped in the `packages/api-documentation`
+    workspace of the FlowiseAI/Flowise monorepo and served at `/api-docs` on the Flowise server. Authentication uses an
+    HTTP Bearer token (an API key generated in the Flowise admin UI). The default base URL is `http://localhost:3000/api/v1`
+    on a self-hosted instance, or the corresponding `/api/v1` path on a Flowise Cloud workspace.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - Agents
+  - Agent Workflows
+  - Artificial Intelligence
+  - Large Language Models
+  - Chatflows
+  - Agentflows
+  - Assistants
+  - Tools
+  - Variables
+  - Document Stores
+  - Vector
+  - Predictions
+  - Feedback
+  - Leads
+  - Chat Messages
+  properties:
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: OpenAPI
+    url: openapi/flowise-openapi.yml
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+common:
+- name: Website
+  url: https://flowiseai.com/
+  type: Website
+- name: Documentation
+  url: https://docs.flowiseai.com/
+  type: Documentation
+- name: GitHub
+  url: https://github.com/FlowiseAI/Flowise
+  type: GitHub
+- name: GitHub Organization
+  url: https://github.com/FlowiseAI
+  type: GitHubOrganization
+- name: Pricing
+  url: https://flowiseai.com/pricing
+  type: Pricing
+- name: SignUp
+  url: https://flowiseai.com/
+  type: SignUp
+- name: License
+  url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
+  type: License
+- name: Discord
+  url: https://discord.gg/jbaHfsRVBW
+  type: Discord
+- name: X
+  url: https://twitter.com/FlowiseAI
+  type: Twitter
+- name: YouTube
+  url: https://www.youtube.com/@FlowiseAI
+  type: YouTube
+- name: Marketplace
+  url: https://flowiseai.com/marketplace
+  type: Marketplace
+- name: TypeScript SDK
+  url: https://github.com/FlowiseAI/FlowiseSDK
+  type: SDK
+- name: Python SDK
+  url: https://github.com/FlowiseAI/FlowisePy
+  type: SDK
+- name: Embed Widget
+  url: https://github.com/FlowiseAI/FlowiseChatEmbed
+  type: SDK
+- name: React Embed Component
+  url: https://github.com/FlowiseAI/FlowiseEmbedReact
+  type: SDK
+- name: Docs Repository
+  url: https://github.com/FlowiseAI/FlowiseDocs
+  type: Documentation
+- name: Docker Image
+  url: https://hub.docker.com/r/flowiseai/flowise
+  type: ContainerImage
+- name: NPM Package
+  url: https://www.npmjs.com/package/flowise
+  type: Package
+- name: Pricing Plans
+  url: plans/flowise-plans-pricing.yml
+  type: Plans
+- name: Rate Limits
+  url: rate-limits/flowise-rate-limits.yml
+  type: RateLimits
+- name: FinOps
+  url: finops/flowise-finops.yml
+  type: FinOps
+integrations:
+- name: LangChain
+- name: LangGraph
+- name: OpenAI
+- name: Anthropic
+- name: Google Gemini
+- name: AWS Bedrock
+- name: Azure OpenAI
+- name: Hugging Face
+- name: Ollama
+- name: Mistral
+- name: Cohere
+- name: Pinecone
+- name: Chroma
+- name: Weaviate
+- name: Qdrant
+- name: Milvus
+- name: Redis
+- name: PostgreSQL
+- name: Supabase
+- name: Elasticsearch
+- name: MongoDB Atlas Vector Search
+- name: Prometheus
+- name: OpenTelemetry
+- name: Slack
+- name: Discord
+- name: Telegram
+- name: WhatsApp
+- name: AWS
+- name: Azure
+- name: GCP
+- name: Digital Ocean
+- name: Railway
+- name: Render
+- name: HuggingFace Spaces
+- name: Workday
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,148 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+provider: Flowise
+providerId: flowise
+publisherName: FlowiseAI
+serviceCategory: API
+created: '2026-05-24'
+modified: '2026-05-24'
+tags:
+  - Agents
+  - Agent Workflows
+  - Artificial Intelligence
+  - Large Language Models
+  - Low Code
+  - LangChain
+  - FinOps
+  - Cost Management
+  - FOCUS
+description: |
+  FinOps framework definition for Flowise Cloud, the managed tier of the
+  Flowise open-source LLM workflow builder. Captures FOCUS-aligned cost
+  allocation, usage measurement, and unit-economics signals across the
+  Prediction API and supporting management surface. Self-hosted Flowise
+  costs are infrastructure costs (compute, storage, vector DB, model
+  inference) borne by the operator rather than line items billed by FlowiseAI.
+principles:
+  - name: Visibility
+    description: Make per-flow and per-workspace prediction consumption visible
+      to engineering, product, and finance teams in near real-time.
+  - name: Allocation
+    description: Tag predictions with workspace, chatflow, environment, and
+      consuming team so cost can be allocated across products and use cases.
+  - name: Optimization
+    description: Continuously evaluate model selection, RAG chunk sizing,
+      tool-call patterns, and caching to reduce cost per useful answer.
+  - name: Accountability
+    description: Establish budget owners for each workspace and chargeback or
+      showback flows for each consuming team.
+domains:
+  - name: Understand Usage and Cost
+    capabilities:
+      - Data Ingestion
+      - Allocation
+      - Reporting and Analytics
+      - Anomaly Management
+  - name: Quantify Business Value
+    capabilities:
+      - Planning and Estimating
+      - Forecasting
+      - Budgeting
+      - Benchmarking
+      - Unit Economics
+  - name: Optimize Usage and Cost
+    capabilities:
+      - Architecting for Cloud
+      - Rate Optimization
+      - Workload Optimization
+      - Cloud Sustainability
+      - Licensing and SaaS
+  - name: Manage the FinOps Practice
+    capabilities:
+      - FinOps Practice Operations
+      - FinOps Education and Enablement
+      - Invoicing and Chargeback
+      - Onboarding Workloads
+      - Intersecting Disciplines
+billingModel:
+  pricingCategory: Subscription with Usage Caps
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+    - Purchase
+    - Tax
+    - Credit
+    - Adjustment
+  chargeFrequency: Recurring
+focusColumns:
+  ServiceName: Flowise
+  ServiceCategory: Developer Tools / AI Workflow Builder
+  ProviderName: FlowiseAI
+  PublisherName: FlowiseAI
+  InvoiceIssuerName: FlowiseAI
+  PricingCategory: Subscription
+  PricingUnit: prediction
+  BillingCurrency: USD
+  ChargeCategory: Usage
+meters:
+  - name: predictions
+    description: Count of prediction calls executed against a chatflow or agentflow
+    unit: prediction
+    aggregation: sum
+    dimensions:
+      - workspace
+      - chatflow
+      - environment
+      - tier
+      - consumer
+  - name: storage_bytes
+    description: Bytes stored in document stores and uploads
+    unit: byte
+    aggregation: max
+    dimensions:
+      - workspace
+      - document_store
+  - name: flows
+    description: Count of chatflows and agentflows in a workspace
+    unit: flow
+    aggregation: max
+    dimensions:
+      - workspace
+  - name: seats
+    description: Count of users in a workspace beyond included seats
+    unit: user
+    aggregation: max
+    dimensions:
+      - workspace
+apis:
+  - name: Flowise API
+    baseURL: http://localhost:3000/api/v1
+    tags:
+      - Agents
+      - Agent Workflows
+      - Artificial Intelligence
+      - Large Language Models
+      - Chatflows
+      - Predictions
+    serviceName: Flowise API
+    serviceCategory: API
+unitEconomics:
+  - name: Cost per 1K Predictions
+    metric: billed_cost / (predictions / 1000)
+    target: TBD
+  - name: Cost per Active Workspace
+    metric: billed_cost / active_workspaces
+    target: TBD
+  - name: Cost per Useful Answer
+    metric: billed_cost / (predictions * answer_quality_score)
+    target: TBD
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

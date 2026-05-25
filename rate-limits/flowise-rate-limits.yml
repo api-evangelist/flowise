@@ -1,0 +1,93 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Flowise
+providerId: flowise
+created: '2026-05-24'
+modified: '2026-05-24'
+tags:
+  - Agents
+  - Agent Workflows
+  - Artificial Intelligence
+  - Large Language Models
+  - Rate Limiting
+  - Quotas
+  - Throttling
+description: |
+  Rate limit definitions for Flowise. Self-hosted Flowise has no built-in
+  request-rate limits beyond what the operator configures (the enterprise
+  build adds per-route rate limiting and restricted domains). Flowise Cloud
+  enforces monthly prediction quotas per plan. Scaffold values reflect the
+  publicly-documented per-tier prediction caps; per-minute caps are listed
+  as scaffold defaults and should be reconciled with the operator's deployed
+  configuration.
+headers:
+  limit: X-RateLimit-Limit
+  remaining: X-RateLimit-Remaining
+  reset: X-RateLimit-Reset
+  retryAfter: Retry-After
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+  serviceUnavailable: 503
+limits:
+  - tier: free
+    name: Free Tier Predictions
+    scope: workspace
+    metric: predictions_per_month
+    limit: 100
+    timeFrame: month
+    applies:
+      - Flowise API
+  - tier: starter
+    name: Starter Tier Predictions
+    scope: workspace
+    metric: predictions_per_month
+    limit: 10000
+    timeFrame: month
+    applies:
+      - Flowise API
+  - tier: pro
+    name: Pro Tier Predictions
+    scope: workspace
+    metric: predictions_per_month
+    limit: 50000
+    timeFrame: month
+    applies:
+      - Flowise API
+  - tier: enterprise
+    name: Enterprise Negotiated Predictions
+    scope: contract
+    metric: predictions_per_month
+    limit: -1
+    timeFrame: month
+    applies:
+      - Flowise API
+  - tier: self-hosted
+    name: Self-Hosted Default
+    scope: instance
+    metric: requests_per_minute
+    limit: -1
+    timeFrame: minute
+    applies:
+      - Flowise API
+    notes: |
+      Self-hosted Flowise does not enforce request-rate limits by default.
+      The Enterprise build supports configurable per-route rate limiting.
+policies:
+  - name: Backoff Strategy
+    description: Clients should implement exponential backoff with jitter and
+      respect Retry-After headers when returned.
+  - name: Quota Reset
+    description: Cloud prediction quotas reset at the start of the workspace's
+      billing cycle.
+  - name: Enterprise Rate Limiting
+    description: Operators of the Flowise Enterprise build can configure
+      per-route rate limiting and restricted domains, exposed in the admin
+      configuration.
+  - name: Horizontal Scaling
+    description: For high-throughput deployments, Flowise supports horizontal
+      scaling via BullMQ workers and a message-queue backplane.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

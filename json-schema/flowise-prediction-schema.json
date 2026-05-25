@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowise/main/json-schema/flowise-prediction-schema.json",
+  "title": "Prediction",
+  "description": "Request and response shape for POST /prediction/{id}.",
+  "type": "object",
+  "properties": {
+    "question": { "type": "string" },
+    "streaming": { "type": "boolean", "default": false },
+    "overrideConfig": { "type": "object" },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": { "type": "string", "enum": ["user", "assistant", "system"] },
+          "content": { "type": "string" }
+        },
+        "required": ["role", "content"]
+      }
+    },
+    "uploads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string", "enum": ["file", "url", "audio"] },
+          "name": { "type": "string" },
+          "data": { "type": "string" },
+          "mime": { "type": "string" }
+        }
+      }
+    },
+    "form": { "type": "object" },
+    "text": { "type": "string", "description": "Returned in the response body." },
+    "json": { "type": "object", "description": "Structured output (response side)." },
+    "chatId": { "type": "string" },
+    "chatMessageId": { "type": "string" },
+    "sourceDocuments": { "type": "array", "items": { "type": "object" } },
+    "usedTools": { "type": "array", "items": { "type": "object" } }
+  },
+  "required": ["question"]
+}

@@ -1,0 +1,73 @@
+vocabulary:
+  name: Flowise
+  description: |
+    Domain vocabulary for Flowise, an open-source low-code visual builder for
+    LangChain-based LLM workflows. Covers canvas constructs, runtime objects,
+    and the REST API surface.
+  terms:
+    - term: Chatflow
+      definition: A Flowise canvas graph representing a single-agent chatbot
+        with tool calling, memory, and optional RAG.
+    - term: Agentflow
+      definition: A multi-agent workflow graph composed of supervisor and
+        worker nodes, conditionals, and human-in-the-loop steps.
+    - term: Multiagent
+      definition: A specialized Agentflow that orchestrates multiple agents
+        with explicit role assignments.
+    - term: Assistant
+      definition: A reusable, instruction-bound conversational agent that can
+        be referenced from chatflows.
+    - term: Tool
+      definition: A callable function or HTTP shim that an agent can invoke
+        during execution.
+    - term: Variable
+      definition: A named static or runtime value (e.g. API key, configuration
+        value) referenced by chatflows.
+    - term: Document Store
+      definition: A named container of loaders, chunks, and a vector index
+        used to power RAG.
+    - term: Loader
+      definition: A connector that pulls documents from a source (PDF, web,
+        S3, Notion, etc.) and chunks them for embedding.
+    - term: Chunk
+      definition: A unit of text emitted by a loader and stored in the vector
+        index.
+    - term: Vector Store
+      definition: The backing vector database for a document store (Pinecone,
+        Chroma, Weaviate, Qdrant, Milvus, pgvector, etc.).
+    - term: Prediction
+      definition: A single invocation of a chatflow that produces a response,
+        optionally with streaming, source documents, and tool calls.
+    - term: Override Config
+      definition: A per-request map of runtime values that override values
+        baked into the chatflow.
+    - term: Upload
+      definition: A file (image, audio, document) attached to a Prediction or
+        Attachment call for multimodal flows.
+    - term: Source Document
+      definition: A retrieved document chunk returned with a Prediction
+        response to attribute RAG answers.
+    - term: Used Tool
+      definition: A tool invocation that occurred during a Prediction,
+        returned in the response for transparency.
+    - term: Feedback
+      definition: User signal (thumbs up/down, text) attached to a chat
+        message for evaluation purposes.
+    - term: Lead
+      definition: Contact information captured by a chatflow's lead-capture
+        node.
+    - term: Upsert History
+      definition: Audit trail of vector-upsert operations against a chatflow
+        or document store.
+    - term: Embed
+      definition: The Flowise chat widget that can be embedded in any web
+        page via a script tag or React component.
+    - term: Marketplace
+      definition: The Flowise template gallery of pre-built chatflows and
+        agentflows.
+    - term: HITL
+      definition: Human-in-the-Loop. An Agentflow pattern that pauses for
+        human review or input before continuing.
+    - term: API Key
+      definition: A Flowise-issued bearer credential used to authenticate
+        REST API calls. Managed in the admin UI.

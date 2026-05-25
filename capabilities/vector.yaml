@@ -1,0 +1,19 @@
+name: flowise-vector
+description: |
+  Upsert vector embeddings into a chatflow's configured vector store. This is
+  the lightweight runtime path that complements the heavier Document Store
+  CRUD surface.
+provider: flowise
+api: flowise
+authentication:
+  type: bearer
+baseUrl: http://localhost:3000/api/v1
+operations:
+  - id: vector-upsert
+    method: POST
+    path: /vector/upsert/{id}
+    summary: Upsert vector embeddings for a chatflow
+tags:
+  - Vector
+  - Embeddings
+  - Upsert

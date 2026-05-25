@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowise/main/json-schema/flowise-variable-schema.json",
+  "title": "Variable",
+  "description": "A named runtime variable referenced by chatflows and agentflows.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "name": { "type": "string" },
+    "value": { "type": "string" },
+    "type": { "type": "string", "enum": ["static", "runtime"] },
+    "createdDate": { "type": "string", "format": "date-time" },
+    "updatedDate": { "type": "string", "format": "date-time" }
+  },
+  "required": ["id", "name", "value"]
+}

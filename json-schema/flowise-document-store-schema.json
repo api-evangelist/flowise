@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowise/main/json-schema/flowise-document-store-schema.json",
+  "title": "DocumentStore",
+  "description": "A Flowise document store: a named container of loaders, chunks, and a vector index.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "name": { "type": "string" },
+    "description": { "type": ["string", "null"] },
+    "loaders": { "type": "string", "description": "JSON-encoded loader configurations." },
+    "whereUsed": { "type": ["string", "null"] },
+    "status": { "type": "string", "enum": ["EMPTY", "SYNC", "SYNCING", "STALE", "NEW", "UPSERTING", "UPSERTED"] },
+    "vectorStoreConfig": { "type": ["string", "null"] },
+    "embeddingConfig": { "type": ["string", "null"] },
+    "recordManagerConfig": { "type": ["string", "null"] },
+    "createdDate": { "type": "string", "format": "date-time" },
+    "updatedDate": { "type": "string", "format": "date-time" }
+  },
+  "required": ["id", "name"]
+}

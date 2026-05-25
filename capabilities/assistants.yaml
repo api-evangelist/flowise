@@ -1,0 +1,34 @@
+name: flowise-assistants
+description: |
+  Manage Flowise assistants. Assistants are persistent, instruction-bound
+  conversational agents that can be reused across chatflows and bound to tools
+  and document stores.
+provider: flowise
+api: flowise
+authentication:
+  type: bearer
+baseUrl: http://localhost:3000/api/v1
+operations:
+  - id: list-assistants
+    method: GET
+    path: /assistants
+    summary: List all assistants
+  - id: create-assistant
+    method: POST
+    path: /assistants
+    summary: Create a new assistant
+  - id: get-assistant
+    method: GET
+    path: /assistants/{id}
+    summary: Get assistant by ID
+  - id: update-assistant
+    method: PUT
+    path: /assistants/{id}
+    summary: Update assistant details
+  - id: delete-assistant
+    method: DELETE
+    path: /assistants/{id}
+    summary: Delete an assistant
+tags:
+  - Assistants
+  - Agents

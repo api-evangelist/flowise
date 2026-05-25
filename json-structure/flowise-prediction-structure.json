@@ -1,0 +1,20 @@
+{
+  "entity": "Prediction",
+  "description": "Structural view of a Flowise Prediction call.",
+  "request": [
+    { "name": "question", "type": "string", "required": true },
+    { "name": "streaming", "type": "boolean", "default": false },
+    { "name": "overrideConfig", "type": "object" },
+    { "name": "history", "type": "array<{role,content}>" },
+    { "name": "uploads", "type": "array<{type,name,data,mime}>" },
+    { "name": "form", "type": "object", "notes": "Used by Agentflow V2 form interactions." }
+  ],
+  "response": [
+    { "name": "text", "type": "string" },
+    { "name": "json", "type": "object", "notes": "Structured output if a structured output node is in the flow." },
+    { "name": "chatId", "type": "string" },
+    { "name": "chatMessageId", "type": "uuid" },
+    { "name": "sourceDocuments", "type": "array<Document>" },
+    { "name": "usedTools", "type": "array<UsedTool>" }
+  ]
+}

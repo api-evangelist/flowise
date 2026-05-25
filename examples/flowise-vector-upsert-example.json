@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:3000/api/v1/vector/upsert/abcd1234-aaaa-bbbb-cccc-1234567890ab",
+    "headers": {
+      "Authorization": "Bearer flw_sk_xxx",
+      "Content-Type": "multipart/form-data"
+    },
+    "form": {
+      "files": ["@./policies/refund.pdf"]
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "numAdded": 12,
+      "numDeleted": 0,
+      "numUpdated": 0,
+      "numSkipped": 0,
+      "addedDocs": [
+        { "pageContent": "Refund policy: customers may return items within 30 days...", "metadata": { "source": "policies/refund.pdf" } }
+      ]
+    }
+  }
+}

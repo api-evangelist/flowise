@@ -1,0 +1,48 @@
+extends:
+  - spectral:oas
+rules:
+  flowise-info-contact:
+    description: Flowise OpenAPI must declare a contact email.
+    given: "$.info"
+    severity: warn
+    then:
+      field: contact.email
+      function: truthy
+  flowise-info-license-apache:
+    description: Flowise is Apache 2.0 — the spec should reference Apache 2.0.
+    given: "$.info.license"
+    severity: warn
+    then:
+      field: name
+      function: pattern
+      functionOptions:
+        match: "Apache"
+  flowise-bearer-auth:
+    description: Every Flowise operation (except /ping) must require bearerAuth.
+    given: "$.paths[?(@property != '/ping')][*].security"
+    severity: warn
+    then:
+      function: truthy
+  flowise-operation-id-required:
+    description: Every Flowise operation must define an operationId.
+    given: "$.paths[*][*]"
+    severity: error
+    then:
+      field: operationId
+      function: truthy
+  flowise-summary-title-case:
+    description: Operation summaries should start with a capitalised word.
+    given: "$.paths[*][*].summary"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z]"
+  flowise-tag-lowercase-kebab:
+    description: Flowise tags are lowercase, hyphen-separated (matches existing convention).
+    given: "$.tags[*].name"
+    severity: info
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z0-9]+(-[a-z0-9]+)*$"

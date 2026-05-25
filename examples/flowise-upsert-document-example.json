@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:3000/api/v1/document-store/upsert/ds_abcd1234",
+    "headers": {
+      "Authorization": "Bearer flw_sk_xxx",
+      "Content-Type": "multipart/form-data"
+    },
+    "form": {
+      "loader": "pdfFile",
+      "loaderConfig": "{\"chunkSize\":1000,\"chunkOverlap\":200}",
+      "files": ["@./policies/refund.pdf"]
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "numAdded": 12,
+      "numUpdated": 0,
+      "numSkipped": 0,
+      "numDeleted": 0
+    }
+  }
+}

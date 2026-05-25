@@ -1,0 +1,27 @@
+name: flowise-prediction
+description: |
+  Invoke a Flowise chatflow or agentflow to generate a model response. The
+  Prediction endpoint is the primary runtime surface for any Flowise-built AI
+  application. Supports streaming, multi-turn history, runtime overrides, RAG
+  source documents, tool use, and file uploads.
+provider: flowise
+api: flowise
+authentication:
+  type: bearer
+  description: HTTP Bearer using a Flowise API key. The chatflow may also have
+    its own per-flow API key requirement.
+baseUrl: http://localhost:3000/api/v1
+operations:
+  - id: create-prediction
+    method: POST
+    path: /prediction/{id}
+    summary: Send a message to a flow and receive an AI response
+    notes: |
+      Body fields include `question`, `streaming`, `overrideConfig`,
+      `history`, `uploads`, and `form` (for Agentflow V2). When `streaming`
+      is true the response is delivered as Server-Sent Events.
+tags:
+  - Prediction
+  - Inference
+  - Runtime
+  - Streaming

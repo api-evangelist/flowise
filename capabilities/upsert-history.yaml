@@ -1,0 +1,20 @@
+name: flowise-upsert-history
+description: |
+  Read and prune the history of vector-upsert runs against a chatflow.
+provider: flowise
+api: flowise
+authentication:
+  type: bearer
+baseUrl: http://localhost:3000/api/v1
+operations:
+  - id: list-upsert-history
+    method: GET
+    path: /upsert-history/{id}
+    summary: Get all upsert history records for a chatflow
+  - id: delete-upsert-history
+    method: PATCH
+    path: /upsert-history/{id}
+    summary: Soft-delete upsert history records
+tags:
+  - Upsert History
+  - Audit

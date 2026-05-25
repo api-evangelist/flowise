@@ -1,0 +1,34 @@
+name: flowise-tools
+description: |
+  Manage custom Flowise tools. Tools wrap external HTTP APIs or JavaScript
+  functions that agents can call during execution.
+provider: flowise
+api: flowise
+authentication:
+  type: bearer
+baseUrl: http://localhost:3000/api/v1
+operations:
+  - id: list-tools
+    method: GET
+    path: /tools
+    summary: List all tools
+  - id: create-tool
+    method: POST
+    path: /tools
+    summary: Create a new tool
+  - id: get-tool
+    method: GET
+    path: /tools/{id}
+    summary: Get a tool by ID
+  - id: update-tool
+    method: PUT
+    path: /tools/{id}
+    summary: Update a tool by ID
+  - id: delete-tool
+    method: DELETE
+    path: /tools/{id}
+    summary: Delete a tool by ID
+tags:
+  - Tools
+  - Tool Use
+  - Function Calling

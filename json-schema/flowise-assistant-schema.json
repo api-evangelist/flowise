@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowise/main/json-schema/flowise-assistant-schema.json",
+  "title": "Assistant",
+  "description": "A reusable Flowise assistant configuration.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "credential": { "type": "string", "format": "uuid" },
+    "details": { "type": "string", "description": "JSON-encoded assistant details (name, instructions, tools, etc.)." },
+    "iconSrc": { "type": ["string", "null"] },
+    "type": { "type": "string", "enum": ["OPENAI", "AZURE", "CUSTOM"] },
+    "createdDate": { "type": "string", "format": "date-time" },
+    "updatedDate": { "type": "string", "format": "date-time" }
+  },
+  "required": ["id", "details"]
+}

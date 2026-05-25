@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowise/main/json-schema/flowise-chat-message-schema.json",
+  "title": "ChatMessage",
+  "description": "A single chat message persisted by a Flowise chatflow.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "role": { "type": "string", "enum": ["userMessage", "apiMessage"] },
+    "chatflowid": { "type": "string", "format": "uuid" },
+    "content": { "type": "string" },
+    "sourceDocuments": { "type": ["string", "null"] },
+    "usedTools": { "type": ["string", "null"] },
+    "fileAnnotations": { "type": ["string", "null"] },
+    "fileUploads": { "type": ["string", "null"] },
+    "agentReasoning": { "type": ["string", "null"] },
+    "action": { "type": ["string", "null"] },
+    "chatType": { "type": "string", "enum": ["INTERNAL", "EXTERNAL"] },
+    "chatId": { "type": "string" },
+    "memoryType": { "type": ["string", "null"] },
+    "sessionId": { "type": ["string", "null"] },
+    "createdDate": { "type": "string", "format": "date-time" }
+  },
+  "required": ["id", "role", "chatflowid", "content"]
+}

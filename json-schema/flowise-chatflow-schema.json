@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/flowise/main/json-schema/flowise-chatflow-schema.json",
+  "title": "Chatflow",
+  "description": "A Flowise chatflow or agentflow definition.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "name": { "type": "string" },
+    "flowData": {
+      "type": "string",
+      "description": "Serialized JSON of the canvas nodes and edges."
+    },
+    "deployed": { "type": "boolean" },
+    "isPublic": { "type": "boolean" },
+    "apikeyid": { "type": ["string", "null"], "format": "uuid" },
+    "chatbotConfig": { "type": ["string", "null"] },
+    "apiConfig": { "type": ["string", "null"] },
+    "analytic": { "type": ["string", "null"] },
+    "speechToText": { "type": ["string", "null"] },
+    "category": { "type": ["string", "null"] },
+    "type": { "type": "string", "enum": ["CHATFLOW", "AGENTFLOW", "MULTIAGENT"] },
+    "createdDate": { "type": "string", "format": "date-time" },
+    "updatedDate": { "type": "string", "format": "date-time" }
+  },
+  "required": ["id", "name", "flowData"]
+}

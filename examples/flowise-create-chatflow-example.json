@@ -1,0 +1,32 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:3000/api/v1/chatflows",
+    "headers": {
+      "Authorization": "Bearer flw_sk_xxx",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "name": "Support Bot",
+      "flowData": "{\"nodes\":[],\"edges\":[]}",
+      "deployed": false,
+      "isPublic": false,
+      "type": "CHATFLOW",
+      "category": "support"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "id": "abcd1234-aaaa-bbbb-cccc-1234567890ab",
+      "name": "Support Bot",
+      "flowData": "{\"nodes\":[],\"edges\":[]}",
+      "deployed": false,
+      "isPublic": false,
+      "type": "CHATFLOW",
+      "category": "support",
+      "createdDate": "2026-05-24T12:00:00Z",
+      "updatedDate": "2026-05-24T12:00:00Z"
+    }
+  }
+}
