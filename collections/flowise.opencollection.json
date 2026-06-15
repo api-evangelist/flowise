@@ -1,0 +1,1335 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowise APIs",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "chatmessage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all chat messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/chatmessage/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              },
+              {
+                "name": "chatType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by chat type"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order"
+              },
+              {
+                "name": "chatId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by chat ID"
+              },
+              {
+                "name": "memoryType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by memory type"
+              },
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by session ID"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter by start date"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter by end date"
+              },
+              {
+                "name": "feedback",
+                "value": "",
+                "type": "query",
+                "description": "Filter by feedback"
+              },
+              {
+                "name": "feedbackType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by feedback type. Only applicable if feedback is true"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve all chat messages for a specific chatflow."
+        },
+        {
+          "info": {
+            "name": "Delete all chat messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/chatmessage/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              },
+              {
+                "name": "chatId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by chat ID"
+              },
+              {
+                "name": "memoryType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by memory type"
+              },
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by session ID"
+              },
+              {
+                "name": "chatType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by chat type"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter by start date"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter by end date"
+              },
+              {
+                "name": "feedbackType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by feedback type"
+              },
+              {
+                "name": "hardDelete",
+                "value": "",
+                "type": "query",
+                "description": "If hardDelete is true, messages will be deleted from the third party service as well"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete all chat messages for a specific chatflow."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "assistants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all assistants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/assistants",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve a list of all assistants"
+        },
+        {
+          "info": {
+            "name": "Create a new assistant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/assistants",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a new assistant with the provided details"
+        },
+        {
+          "info": {
+            "name": "Get assistant by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/assistants/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Assistant ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve a specific assistant by ID"
+        },
+        {
+          "info": {
+            "name": "Update assistant details",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:3000/api/v1/assistants/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Assistant ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update the details of an existing assistant"
+        },
+        {
+          "info": {
+            "name": "Delete an assistant",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/assistants/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Assistant ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete an assistant by ID"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "attachments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create attachments array",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/attachments/:chatflowId/:chatId",
+            "params": [
+              {
+                "name": "chatflowId",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              },
+              {
+                "name": "chatId",
+                "value": "",
+                "type": "path",
+                "description": "Chat ID"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "files",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "base64",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Return contents of the files in plain string format"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "chatflows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all chatflows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/chatflows",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve a list of all chatflows"
+        },
+        {
+          "info": {
+            "name": "Create a new chatflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/chatflows",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a new chatflow with the provided details"
+        },
+        {
+          "info": {
+            "name": "Get chatflow by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/chatflows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve a specific chatflow by ID"
+        },
+        {
+          "info": {
+            "name": "Update chatflow details",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:3000/api/v1/chatflows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update the details of an existing chatflow"
+        },
+        {
+          "info": {
+            "name": "Delete a chatflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/chatflows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a chatflow by ID"
+        },
+        {
+          "info": {
+            "name": "Get chatflow by API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/chatflows/apikey/:apikey",
+            "params": [
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "path",
+                "description": "API key associated with the chatflow"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve a chatflow using an API key"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "document-store",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all document stores",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/document-store/store",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieves a list of all document stores"
+        },
+        {
+          "info": {
+            "name": "Create a new document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/document-store/store",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Creates a new document store with the provided details"
+        },
+        {
+          "info": {
+            "name": "Get a specific document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/document-store/store/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieves details of a specific document store by its ID"
+        },
+        {
+          "info": {
+            "name": "Update a specific document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:3000/api/v1/document-store/store/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Updates the details of a specific document store by its ID"
+        },
+        {
+          "info": {
+            "name": "Delete a specific document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/document-store/store/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Deletes a document store by its ID"
+        },
+        {
+          "info": {
+            "name": "Upsert document to document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/document-store/upsert/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Upsert document to document store"
+        },
+        {
+          "info": {
+            "name": "Re-process and upsert all documents in document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/document-store/refresh/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Re-process and upsert all existing documents in document store"
+        },
+        {
+          "info": {
+            "name": "Retrieval query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/document-store/vectorstore/query",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieval query for the upserted chunks"
+        },
+        {
+          "info": {
+            "name": "Delete specific document loader and associated chunks from document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/document-store/loader/:storeId/:loaderId",
+            "params": [
+              {
+                "name": "storeId",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              },
+              {
+                "name": "loaderId",
+                "value": "",
+                "type": "path",
+                "description": "Document Loader ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete specific document loader and associated chunks from document store. This does not delete data from vector store."
+        },
+        {
+          "info": {
+            "name": "Delete data from vector store",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/document-store/vectorstore/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Only data that were upserted with Record Manager will be deleted from vector store"
+        },
+        {
+          "info": {
+            "name": "Get chunks from a specific document loader",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/document-store/chunks/:storeId/:loaderId/:pageNo",
+            "params": [
+              {
+                "name": "storeId",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              },
+              {
+                "name": "loaderId",
+                "value": "",
+                "type": "path",
+                "description": "Document loader ID"
+              },
+              {
+                "name": "pageNo",
+                "value": "",
+                "type": "path",
+                "description": "Pagination number"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get chunks from a specific document loader within a document store"
+        },
+        {
+          "info": {
+            "name": "Update a specific chunk",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:3000/api/v1/document-store/chunks/:storeId/:loaderId/:chunkId",
+            "params": [
+              {
+                "name": "storeId",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              },
+              {
+                "name": "loaderId",
+                "value": "",
+                "type": "path",
+                "description": "Document Loader ID"
+              },
+              {
+                "name": "chunkId",
+                "value": "",
+                "type": "path",
+                "description": "Document Chunk ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Updates a specific chunk from a document loader"
+        },
+        {
+          "info": {
+            "name": "Delete a specific chunk from a document loader",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/document-store/chunks/:storeId/:loaderId/:chunkId",
+            "params": [
+              {
+                "name": "storeId",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              },
+              {
+                "name": "loaderId",
+                "value": "",
+                "type": "path",
+                "description": "Document Loader ID"
+              },
+              {
+                "name": "chunkId",
+                "value": "",
+                "type": "path",
+                "description": "Document Chunk ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a specific chunk from a document loader"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "feedback",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create new chat message feedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/feedback",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create new feedback for a specific chat flow."
+        },
+        {
+          "info": {
+            "name": "List all chat message feedbacks for a chatflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/feedback/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              },
+              {
+                "name": "chatId",
+                "value": "",
+                "type": "query",
+                "description": "Chat ID to filter feedbacks (optional)"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort order of feedbacks (optional)"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter feedbacks starting from this date (optional)"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter feedbacks up to this date (optional)"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve all feedbacks for a chatflow"
+        },
+        {
+          "info": {
+            "name": "Update chat message feedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:3000/api/v1/feedback/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chat Message Feedback ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update a specific feedback"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "leads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new lead in a chatflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/leads",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a new lead associated with a specific chatflow"
+        },
+        {
+          "info": {
+            "name": "Get all leads for a specific chatflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/leads/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve all leads associated with a specific chatflow"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ping",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Ping the server",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/ping"
+          },
+          "docs": "Ping the server to check if it is running"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "prediction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send message to flow and get AI response",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/prediction/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "your-flow-id",
+                "type": "path",
+                "description": "Flow ID - the unique identifier of your flow"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Send a message to your flow and receive an AI-generated response. This is the primary endpoint for interacting with your flows and assistants.\n**Authentication**: API key may be required depending on flow settings.\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "tools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all tools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/tools",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve a list of all tools"
+        },
+        {
+          "info": {
+            "name": "Create a new tool",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/tools",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a new tool"
+        },
+        {
+          "info": {
+            "name": "Get a tool by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/tools/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Tool ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve a specific tool by ID"
+        },
+        {
+          "info": {
+            "name": "Update a tool by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:3000/api/v1/tools/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Tool ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update a specific tool by ID"
+        },
+        {
+          "info": {
+            "name": "Delete a tool by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/tools/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Tool ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a specific tool by ID"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "upsert-history",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all upsert history records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/upsert-history/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID to filter records by"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order of the results (ascending or descending)"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter records from this start date (inclusive)"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter records until this end date (inclusive)"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve all upsert history records with optional filters"
+        },
+        {
+          "info": {
+            "name": "Delete upsert history records",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://localhost:3000/api/v1/upsert-history/:id",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Soft delete upsert history records by IDs"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "variables",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all variables",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/variables",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve a list of all variables"
+        },
+        {
+          "info": {
+            "name": "Create a new variable",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/variables",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a new variable"
+        },
+        {
+          "info": {
+            "name": "Update a variable by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:3000/api/v1/variables/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Variable ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Update a specific variable by ID"
+        },
+        {
+          "info": {
+            "name": "Delete a variable by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/variables/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Variable ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a specific variable by ID"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "vector",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upsert vector embeddings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/vector/upsert/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Upsert vector embeddings of documents in a chatflow"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
