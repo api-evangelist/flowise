@@ -84,7 +84,7 @@ common:
   type: Pricing
 - name: SignUp
   url: https://flowiseai.com/
-  type: SignUp
+  type: Signup
 - name: License
   url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
   type: License
@@ -102,16 +102,16 @@ common:
   type: Marketplace
 - name: TypeScript SDK
   url: https://github.com/FlowiseAI/FlowiseSDK
-  type: SDK
+  type: SDKs
 - name: Python SDK
   url: https://github.com/FlowiseAI/FlowisePy
-  type: SDK
+  type: SDKs
 - name: Embed Widget
   url: https://github.com/FlowiseAI/FlowiseChatEmbed
-  type: SDK
+  type: SDKs
 - name: React Embed Component
   url: https://github.com/FlowiseAI/FlowiseEmbedReact
-  type: SDK
+  type: SDKs
 - name: Docs Repository
   url: https://github.com/FlowiseAI/FlowiseDocs
   type: Documentation
