@@ -67,6 +67,10 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 common:
+- type: DomainSecurity
+  url: security/flowise-domain-security.yml
+- type: Authentication
+  url: authentication/flowise-authentication.yml
 - name: Website
   url: https://flowiseai.com/
   type: Website
