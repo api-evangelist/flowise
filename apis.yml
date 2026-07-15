@@ -67,6 +67,8 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 common:
+- type: AgenticAccess
+  url: agentic-access/flowise-agentic-access.yml
 - type: DomainSecurity
   url: security/flowise-domain-security.yml
 - type: Authentication
