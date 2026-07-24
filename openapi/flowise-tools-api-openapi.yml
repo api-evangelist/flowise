@@ -1,0 +1,210 @@
+openapi: 3.0.3
+info:
+  title: Flowise APIs assistants tools API
+  version: 1.0.0
+  description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
+
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
+
+    '
+  license:
+    name: Apache 2.0
+    url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
+  contact:
+    name: FlowiseAI
+    email: support@flowiseai.com
+servers:
+- url: http://localhost:3000/api/v1
+  description: Local Flowise server
+- url: https://{instance}.flowiseai.com/api/v1
+  description: Flowise Cloud instance
+  variables:
+    instance:
+      default: app
+tags:
+- name: tools
+paths:
+  /tools:
+    post:
+      tags:
+      - tools
+      security:
+      - bearerAuth: []
+      operationId: createTool
+      summary: Create a new tool
+      description: Create a new tool
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tool'
+        required: true
+      responses:
+        '200':
+          description: Tool created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tool'
+        '400':
+          description: Invalid request body
+        '422':
+          description: Validation error
+        '500':
+          description: Internal server error
+    get:
+      tags:
+      - tools
+      security:
+      - bearerAuth: []
+      summary: List all tools
+      description: Retrieve a list of all tools
+      operationId: getAllTools
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tool'
+        '500':
+          description: Internal server error
+  /tools/{id}:
+    get:
+      tags:
+      - tools
+      security:
+      - bearerAuth: []
+      summary: Get a tool by ID
+      description: Retrieve a specific tool by ID
+      operationId: getToolById
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Tool ID
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tool'
+        '400':
+          description: Invalid ID provided
+        '404':
+          description: Tool not found
+        '500':
+          description: Internal server error
+    put:
+      tags:
+      - tools
+      security:
+      - bearerAuth: []
+      summary: Update a tool by ID
+      description: Update a specific tool by ID
+      operationId: updateTool
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Tool ID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tool'
+        required: true
+      responses:
+        '200':
+          description: Tool updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tool'
+        '400':
+          description: Invalid ID or request body provided
+        '404':
+          description: Tool not found
+        '500':
+          description: Internal server error
+    delete:
+      tags:
+      - tools
+      security:
+      - bearerAuth: []
+      summary: Delete a tool by ID
+      description: Delete a specific tool by ID
+      operationId: deleteTool
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Tool ID
+      responses:
+        '200':
+          description: Tool deleted successfully
+        '400':
+          description: Invalid ID provided
+        '404':
+          description: Tool not found
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    Tool:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the tool
+          example: cfd531e0-82fc-11e9-bc42-526af7764f64
+        name:
+          type: string
+          description: Name of the tool
+          example: date_time_tool
+        description:
+          type: string
+          description: Description of the tool
+          example: A tool used for date and time operations
+        color:
+          type: string
+          description: Color associated with the tool
+          example: '#FF5733'
+        iconSrc:
+          type: string
+          nullable: true
+          description: Source URL for the tool's icon
+          example: https://example.com/icons/date.png
+        schema:
+          type: string
+          nullable: true
+          description: JSON schema associated with the tool
+        func:
+          type: string
+          nullable: true
+          description: Functionality description or code associated with the tool
+        createdDate:
+          type: string
+          format: date-time
+          description: Date and time when the tool was created
+          example: '2024-08-24T14:15:22Z'
+        updatedDate:
+          type: string
+          format: date-time
+          description: Date and time when the tool was last updated
+          example: '2024-08-24T14:15:22Z'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

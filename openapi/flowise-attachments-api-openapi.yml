@@ -1,0 +1,106 @@
+openapi: 3.0.3
+info:
+  title: Flowise APIs assistants attachments API
+  version: 1.0.0
+  description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
+
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
+
+    '
+  license:
+    name: Apache 2.0
+    url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
+  contact:
+    name: FlowiseAI
+    email: support@flowiseai.com
+servers:
+- url: http://localhost:3000/api/v1
+  description: Local Flowise server
+- url: https://{instance}.flowiseai.com/api/v1
+  description: Flowise Cloud instance
+  variables:
+    instance:
+      default: app
+tags:
+- name: attachments
+paths:
+  /attachments/{chatflowId}/{chatId}:
+    post:
+      tags:
+      - attachments
+      security:
+      - bearerAuth: []
+      operationId: createAttachment
+      summary: Create attachments array
+      description: Return contents of the files in plain string format
+      parameters:
+      - in: path
+        name: chatflowId
+        required: true
+        schema:
+          type: string
+        description: Chatflow ID
+      - in: path
+        name: chatId
+        required: true
+        schema:
+          type: string
+        description: Chat ID
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                files:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+                  description: Files to be uploaded
+                base64:
+                  type: boolean
+                  default: false
+                  description: Return contents of the files in base64 format
+              required:
+              - files
+        required: true
+      responses:
+        '200':
+          description: Attachments created successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CreateAttachmentResponse'
+        '400':
+          description: Invalid input provided
+        '404':
+          description: Chatflow or ChatId not found
+        '422':
+          description: Validation error
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    CreateAttachmentResponse:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the file
+        mimeType:
+          type: string
+          description: Mime type of the file
+        size:
+          type: string
+          description: Size of the file
+        content:
+          type: string
+          description: Content of the file in string format
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

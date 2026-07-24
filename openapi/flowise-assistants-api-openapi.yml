@@ -1,0 +1,219 @@
+openapi: 3.0.3
+info:
+  title: Flowise APIs assistants API
+  version: 1.0.0
+  description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
+
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
+
+    '
+  license:
+    name: Apache 2.0
+    url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
+  contact:
+    name: FlowiseAI
+    email: support@flowiseai.com
+servers:
+- url: http://localhost:3000/api/v1
+  description: Local Flowise server
+- url: https://{instance}.flowiseai.com/api/v1
+  description: Flowise Cloud instance
+  variables:
+    instance:
+      default: app
+tags:
+- name: assistants
+paths:
+  /assistants:
+    post:
+      tags:
+      - assistants
+      security:
+      - bearerAuth: []
+      operationId: createAssistant
+      summary: Create a new assistant
+      description: Create a new assistant with the provided details
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Assistant'
+        required: true
+      responses:
+        '200':
+          description: Assistant created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assistant'
+        '400':
+          description: Invalid input provided
+        '422':
+          description: Validation exception
+    get:
+      tags:
+      - assistants
+      security:
+      - bearerAuth: []
+      summary: List all assistants
+      description: Retrieve a list of all assistants
+      operationId: listAssistants
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Assistant'
+        '500':
+          description: Internal error
+  /assistants/{id}:
+    get:
+      tags:
+      - assistants
+      security:
+      - bearerAuth: []
+      summary: Get assistant by ID
+      description: Retrieve a specific assistant by ID
+      operationId: getAssistantById
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Assistant ID
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assistant'
+        '400':
+          description: The specified ID is invalid
+        '404':
+          description: Assistant not found
+        '500':
+          description: Internal error
+    put:
+      tags:
+      - assistants
+      security:
+      - bearerAuth: []
+      summary: Update assistant details
+      description: Update the details of an existing assistant
+      operationId: updateAssistant
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Assistant ID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Assistant'
+      responses:
+        '200':
+          description: Assistant updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assistant'
+        '400':
+          description: The specified ID is invalid or body is missing
+        '404':
+          description: Assistant not found
+        '500':
+          description: Internal error
+    delete:
+      tags:
+      - assistants
+      security:
+      - bearerAuth: []
+      summary: Delete an assistant
+      description: Delete an assistant by ID
+      operationId: deleteAssistant
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Assistant ID
+      responses:
+        '200':
+          description: Assistant deleted successfully
+        '400':
+          description: The specified ID is invalid
+        '404':
+          description: Assistant not found
+        '500':
+          description: Internal error
+components:
+  schemas:
+    Assistant:
+      type: object
+      properties:
+        id:
+          type: string
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        details:
+          type: object
+          properties:
+            id:
+              type: string
+              example: asst_zbNeYIuXIUSKVHjJkfRo6ilv
+            name:
+              type: string
+              example: assistant
+            description:
+              type: string
+            model:
+              type: string
+              example: gpt-4
+            instructions:
+              type: string
+              example: You are a helpful assistant, do your best to answer question and query
+            temperature:
+              type: number
+              example: 1
+            top_p:
+              type: number
+              example: 1
+            tools:
+              type: array
+              items:
+                type: string
+              example:
+              - function
+              - code_interpreter
+              - file_search
+            tool_resources:
+              type: object
+              additionalProperties:
+                type: object
+        credential:
+          type: string
+          example: 7db93c02-8d5a-4117-a8f1-3dfb6721b339
+        iconSrc:
+          type: string
+          example: /images/assistant.png
+        createdDate:
+          type: string
+          format: date-time
+          example: '2024-08-24T14:15:22Z'
+        updatedDate:
+          type: string
+          format: date-time
+          example: '2024-08-24T14:15:22Z'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

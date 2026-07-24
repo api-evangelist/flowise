@@ -1,0 +1,239 @@
+openapi: 3.0.3
+info:
+  title: Flowise APIs assistants chatflows API
+  version: 1.0.0
+  description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
+
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
+
+    '
+  license:
+    name: Apache 2.0
+    url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
+  contact:
+    name: FlowiseAI
+    email: support@flowiseai.com
+servers:
+- url: http://localhost:3000/api/v1
+  description: Local Flowise server
+- url: https://{instance}.flowiseai.com/api/v1
+  description: Flowise Cloud instance
+  variables:
+    instance:
+      default: app
+tags:
+- name: chatflows
+paths:
+  /chatflows:
+    post:
+      tags:
+      - chatflows
+      security:
+      - bearerAuth: []
+      operationId: createChatflow
+      summary: Create a new chatflow
+      description: Create a new chatflow with the provided details
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Chatflow'
+        required: true
+      responses:
+        '200':
+          description: Chatflow created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chatflow'
+        '400':
+          description: Invalid input provided
+        '422':
+          description: Validation exception
+    get:
+      tags:
+      - chatflows
+      security:
+      - bearerAuth: []
+      summary: List all chatflows
+      description: Retrieve a list of all chatflows
+      operationId: listChatflows
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Chatflow'
+        '500':
+          description: Internal error
+  /chatflows/{id}:
+    get:
+      tags:
+      - chatflows
+      security:
+      - bearerAuth: []
+      summary: Get chatflow by ID
+      description: Retrieve a specific chatflow by ID
+      operationId: getChatflowById
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Chatflow ID
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chatflow'
+        '400':
+          description: The specified ID is invalid
+        '404':
+          description: Chatflow not found
+        '500':
+          description: Internal error
+    put:
+      tags:
+      - chatflows
+      security:
+      - bearerAuth: []
+      summary: Update chatflow details
+      description: Update the details of an existing chatflow
+      operationId: updateChatflow
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Chatflow ID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Chatflow'
+      responses:
+        '200':
+          description: Chatflow updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chatflow'
+        '400':
+          description: The specified ID is invalid or body is missing
+        '404':
+          description: Chatflow not found
+        '500':
+          description: Internal error
+    delete:
+      tags:
+      - chatflows
+      security:
+      - bearerAuth: []
+      summary: Delete a chatflow
+      description: Delete a chatflow by ID
+      operationId: deleteChatflow
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Chatflow ID
+      responses:
+        '200':
+          description: Chatflow deleted successfully
+        '400':
+          description: The specified ID is invalid
+        '404':
+          description: Chatflow not found
+        '500':
+          description: Internal error
+  /chatflows/apikey/{apikey}:
+    get:
+      tags:
+      - chatflows
+      security:
+      - bearerAuth: []
+      summary: Get chatflow by API key
+      description: Retrieve a chatflow using an API key
+      operationId: getChatflowByApiKey
+      parameters:
+      - in: path
+        name: apikey
+        required: true
+        schema:
+          type: string
+        description: API key associated with the chatflow
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chatflow'
+        '400':
+          description: The specified API key is invalid
+        '404':
+          description: Chatflow not found
+        '500':
+          description: Internal error
+components:
+  schemas:
+    Chatflow:
+      type: object
+      properties:
+        id:
+          type: string
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        name:
+          type: string
+          example: MyChatFlow
+        flowData:
+          type: string
+          example: '{}'
+        deployed:
+          type: boolean
+        isPublic:
+          type: boolean
+        apikeyid:
+          type: string
+        chatbotConfig:
+          type: string
+          example: '{}'
+        apiConfig:
+          type: string
+          example: '{}'
+        analytic:
+          type: string
+          example: '{}'
+        speechToText:
+          type: string
+          example: '{}'
+        category:
+          type: string
+          example: category1;category2
+        type:
+          type: string
+          enum:
+          - CHATFLOW
+          - MULTIAGENT
+        createdDate:
+          type: string
+          format: date-time
+          example: '2024-08-24T14:15:22Z'
+        updatedDate:
+          type: string
+          format: date-time
+          example: '2024-08-24T14:15:22Z'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

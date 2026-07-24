@@ -1,0 +1,343 @@
+openapi: 3.0.3
+info:
+  title: Flowise APIs assistants prediction API
+  version: 1.0.0
+  description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
+
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
+
+    '
+  license:
+    name: Apache 2.0
+    url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
+  contact:
+    name: FlowiseAI
+    email: support@flowiseai.com
+servers:
+- url: http://localhost:3000/api/v1
+  description: Local Flowise server
+- url: https://{instance}.flowiseai.com/api/v1
+  description: Flowise Cloud instance
+  variables:
+    instance:
+      default: app
+tags:
+- name: prediction
+paths:
+  /prediction/{id}:
+    post:
+      tags:
+      - prediction
+      security:
+      - bearerAuth: []
+      operationId: createPrediction
+      summary: Send message to flow and get AI response
+      description: 'Send a message to your flow and receive an AI-generated response. This is the primary endpoint for interacting with your flows and assistants.
+
+        **Authentication**: API key may be required depending on flow settings.
+
+        '
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Flow ID - the unique identifier of your flow
+        example: your-flow-id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Prediction'
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                question:
+                  type: string
+                  description: Question/message to send to the flow
+                  example: Analyze this uploaded file and summarize its contents
+                files:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+                  description: Files to be uploaded (images, audio, documents, etc.)
+                streaming:
+                  type: boolean
+                  description: Enable streaming responses
+                  default: false
+                overrideConfig:
+                  type: string
+                  description: JSON string of configuration overrides
+                  example: '{"sessionId":"user-123","temperature":0.7}'
+                history:
+                  type: string
+                  description: JSON string of conversation history
+                  example: '[{"role":"userMessage","content":"Hello"},{"role":"apiMessage","content":"Hi there!"}]'
+                humanInput:
+                  type: string
+                  description: JSON string of human input for resuming execution
+                  example: '{"type":"proceed","feedback":"Continue with the plan"}'
+              required:
+              - question
+        required: true
+      responses:
+        '200':
+          description: Successful prediction response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  text:
+                    type: string
+                    description: The AI-generated response text
+                    example: Artificial intelligence (AI) is a branch of computer science that focuses on creating systems capable of performing tasks that typically require human intelligence.
+                  json:
+                    type: object
+                    description: The result in JSON format if available (for structured outputs)
+                    nullable: true
+                  question:
+                    type: string
+                    description: The original question/message sent to the flow
+                    example: What is artificial intelligence?
+                  chatId:
+                    type: string
+                    description: Unique identifier for the chat session
+                    example: chat-12345
+                  chatMessageId:
+                    type: string
+                    description: Unique identifier for this specific message
+                    example: msg-67890
+                  sessionId:
+                    type: string
+                    description: Session identifier for conversation continuity
+                    example: user-session-123
+                    nullable: true
+                  memoryType:
+                    type: string
+                    description: Type of memory used for conversation context
+                    example: Buffer Memory
+                    nullable: true
+                  sourceDocuments:
+                    type: array
+                    description: Documents retrieved from vector store (if RAG is enabled)
+                    items:
+                      $ref: '#/components/schemas/Document'
+                    nullable: true
+                  usedTools:
+                    type: array
+                    description: Tools that were invoked during the response generation
+                    items:
+                      $ref: '#/components/schemas/UsedTool'
+                    nullable: true
+        '400':
+          description: Bad Request - Invalid input provided or request format is incorrect
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Invalid request format. Check required fields and parameter types.
+        '401':
+          description: Unauthorized - API key required or invalid
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Unauthorized access. Please verify your API key.
+        '404':
+          description: Not Found - Chatflow with specified ID does not exist
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Chatflow not found. Please verify the chatflow ID.
+        '413':
+          description: Payload Too Large - Request payload exceeds size limits
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Request payload too large. Please reduce file sizes or split large requests.
+        '422':
+          description: Validation Error - Request validation failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Validation failed. Check parameter requirements and data types.
+        '500':
+          description: Internal Server Error - Flow configuration or execution error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Internal server error. Check flow configuration and node settings.
+components:
+  schemas:
+    Document:
+      type: object
+      properties:
+        pageContent:
+          type: string
+          example: This is the content of the page.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            author: John Doe
+            date: '2024-08-24'
+    Prediction:
+      type: object
+      properties:
+        question:
+          type: string
+          description: The question/message to send to the flow
+          example: What is artificial intelligence?
+        form:
+          type: object
+          description: The form object to send to the flow (alternative to question for Agentflow V2)
+          additionalProperties: true
+          example:
+            title: Example
+            count: 1
+        streaming:
+          type: boolean
+          description: Enable streaming responses for real-time output
+          default: false
+          example: false
+        overrideConfig:
+          type: object
+          description: Override flow configuration and pass variables at runtime
+          additionalProperties: true
+          example:
+            sessionId: user-session-123
+            temperature: 0.7
+            maxTokens: 500
+            vars:
+              user_name: Alice
+        history:
+          type: array
+          description: Previous conversation messages for context
+          items:
+            type: object
+            properties:
+              role:
+                type: string
+                enum:
+                - apiMessage
+                - userMessage
+                description: The role of the message
+                example: apiMessage
+              content:
+                type: string
+                description: The content of the message
+                example: Hello, how can I help you?
+          example:
+          - role: apiMessage
+            content: Hello! I'm an AI assistant. How can I help you today?
+          - role: userMessage
+            content: Hi, my name is Sarah and I'm learning about AI
+        uploads:
+          type: array
+          description: Files to upload (images, audio, documents, etc.)
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                - audio
+                - url
+                - file
+                - file:rag
+                - file:full
+                description: The type of file upload
+                example: file
+              name:
+                type: string
+                description: The name of the file or resource
+                example: image.png
+              data:
+                type: string
+                description: The base64-encoded data or URL for the resource
+                example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABjElEQVRIS+2Vv0oDQRDG
+              mime:
+                type: string
+                description: The MIME type of the file or resource
+                enum:
+                - image/png
+                - image/jpeg
+                - image/jpg
+                - image/gif
+                - image/webp
+                - audio/mp4
+                - audio/webm
+                - audio/wav
+                - audio/mpeg
+                - audio/ogg
+                - audio/aac
+                example: image/png
+          example:
+          - type: file
+            name: example.png
+            data: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABjElEQVRIS+2Vv0oDQRDG
+            mime: image/png
+        humanInput:
+          type: object
+          description: Return human feedback and resume execution from a stopped checkpoint
+          properties:
+            type:
+              type: string
+              enum:
+              - proceed
+              - reject
+              description: Type of human input response
+              example: reject
+            feedback:
+              type: string
+              description: Feedback to the last output
+              example: Include more emoji
+          example:
+            type: reject
+            feedback: Include more emoji
+    UsedTool:
+      type: object
+      properties:
+        tool:
+          type: string
+          example: Name of the tool
+        toolInput:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            input: search query
+        toolOutput:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

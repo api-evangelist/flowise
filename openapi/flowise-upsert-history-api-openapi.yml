@@ -1,0 +1,136 @@
+openapi: 3.0.3
+info:
+  title: Flowise APIs assistants upsert-history API
+  version: 1.0.0
+  description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
+
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
+
+    '
+  license:
+    name: Apache 2.0
+    url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
+  contact:
+    name: FlowiseAI
+    email: support@flowiseai.com
+servers:
+- url: http://localhost:3000/api/v1
+  description: Local Flowise server
+- url: https://{instance}.flowiseai.com/api/v1
+  description: Flowise Cloud instance
+  variables:
+    instance:
+      default: app
+tags:
+- name: upsert-history
+paths:
+  /upsert-history/{id}:
+    get:
+      tags:
+      - upsert-history
+      security:
+      - bearerAuth: []
+      summary: Get all upsert history records
+      description: Retrieve all upsert history records with optional filters
+      operationId: getAllUpsertHistory
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Chatflow ID to filter records by
+      - in: query
+        name: order
+        required: false
+        schema:
+          type: string
+          enum:
+          - ASC
+          - DESC
+          default: ASC
+        description: Sort order of the results (ascending or descending)
+      - in: query
+        name: startDate
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Filter records from this start date (inclusive)
+      - in: query
+        name: endDate
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Filter records until this end date (inclusive)
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UpsertHistoryResponse'
+        '500':
+          description: Internal server error
+    patch:
+      tags:
+      - upsert-history
+      security:
+      - bearerAuth: []
+      summary: Delete upsert history records
+      description: Soft delete upsert history records by IDs
+      operationId: patchDeleteUpsertHistory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
+                  description: List of upsert history record IDs to delete
+      responses:
+        '200':
+          description: Successfully deleted records
+        '400':
+          description: Invalid request body
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    UpsertHistoryResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the upsert history record
+          example: cfd531e0-82fc-11e9-bc42-526af7764f64
+        chatflowid:
+          type: string
+          description: ID of the chatflow associated with the upsert history
+          example: 7c4e8b7a-7b9a-4b4d-9f3e-2d28f1ebea02
+        result:
+          type: string
+          description: Result of the upsert operation, stored as a JSON string
+          example: '{"status":"success","data":{"key":"value"}}'
+        flowData:
+          type: string
+          description: Flow data associated with the upsert operation, stored as a JSON string
+          example: '{"nodes":[],"edges":[]}'
+        date:
+          type: string
+          format: date-time
+          description: Date and time when the upsert operation was performed
+          example: '2024-08-24T14:15:22Z'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
