@@ -7,9 +7,22 @@ description: 'Flowise is an open-source, low-code visual builder for LangChain-b
   component library, an auto-generated Swagger UI, official TypeScript and Python SDKs, an embed widget, and a managed
   Flowise Cloud offering with metered prediction quotas. Flowise was acquired by Workday in 2025.'
 kind: contract
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consuming
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/flowise.png
 tags:
 - Agents
 - Agent Workflows
@@ -29,37 +42,234 @@ modified: '2026-05-24'
 url: https://raw.githubusercontent.com/api-evangelist/flowise/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-- aid: flowise:flowise
-  name: Flowise API
-  description: The Flowise REST API exposes the full surface of a Flowise server, covering chatflows, agentflows, assistants,
-    tools, variables, document stores, vector upserts, attachments, feedback, leads, chat messages, upsert history, predictions,
-    and a ping health probe. It is documented as OpenAPI 3.0.3 from a Swagger UI shipped in the `packages/api-documentation`
-    workspace of the FlowiseAI/Flowise monorepo and served at `/api-docs` on the Flowise server. Authentication uses an
-    HTTP Bearer token (an API key generated in the Flowise admin UI). The default base URL is `http://localhost:3000/api/v1`
-    on a self-hosted instance, or the corresponding `/api/v1` path on a Flowise Cloud workspace.
+- aid: flowise:flowise-assistants-api
+  name: Flowise assistants API
+  description: The assistants API from Flowise — 2 operation(s) for assistants.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
-  - Agents
-  - Agent Workflows
-  - Artificial Intelligence
-  - Large Language Models
-  - Chatflows
-  - Agentflows
-  - Assistants
-  - Tools
-  - Variables
-  - Document Stores
-  - Vector
-  - Predictions
-  - Feedback
-  - Leads
-  - Chat Messages
+  - assistants
   properties:
+  - type: OpenAPI
+    url: openapi/flowise-assistants-api-openapi.yml
   - type: Documentation
     url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-attachments-api
+  name: Flowise attachments API
+  description: The attachments API from Flowise — 1 operation(s) for attachments.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - attachments
+  properties:
   - type: OpenAPI
-    url: openapi/flowise-openapi.yml
+    url: openapi/flowise-attachments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-chatflows-api
+  name: Flowise chatflows API
+  description: The chatflows API from Flowise — 3 operation(s) for chatflows.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - chatflows
+  properties:
+  - type: OpenAPI
+    url: openapi/flowise-chatflows-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-chatmessage-api
+  name: Flowise chatmessage API
+  description: The chatmessage API from Flowise — 1 operation(s) for chatmessage.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - chatmessage
+  properties:
+  - type: OpenAPI
+    url: openapi/flowise-chatmessage-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-document-store-api
+  name: Flowise document-store API
+  description: The document-store API from Flowise — 9 operation(s) for document-store.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - document-store
+  properties:
+  - type: OpenAPI
+    url: openapi/flowise-document-store-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-feedback-api
+  name: Flowise feedback API
+  description: The feedback API from Flowise — 2 operation(s) for feedback.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - feedback
+  properties:
+  - type: OpenAPI
+    url: openapi/flowise-feedback-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-leads-api
+  name: Flowise leads API
+  description: The leads API from Flowise — 2 operation(s) for leads.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - leads
+  properties:
+  - type: OpenAPI
+    url: openapi/flowise-leads-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-ping-api
+  name: Flowise ping API
+  description: The ping API from Flowise — 1 operation(s) for ping.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - ping
+  properties:
+  - type: OpenAPI
+    url: openapi/flowise-ping-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-prediction-api
+  name: Flowise prediction API
+  description: The prediction API from Flowise — 1 operation(s) for prediction.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - prediction
+  properties:
+  - type: OpenAPI
+    url: openapi/flowise-prediction-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-tools-api
+  name: Flowise tools API
+  description: The tools API from Flowise — 2 operation(s) for tools.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - tools
+  properties:
+  - type: OpenAPI
+    url: openapi/flowise-tools-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-upsert-history-api
+  name: Flowise upsert-history API
+  description: The upsert-history API from Flowise — 1 operation(s) for upsert-history.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - upsert-history
+  properties:
+  - type: OpenAPI
+    url: openapi/flowise-upsert-history-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-variables-api
+  name: Flowise variables API
+  description: The variables API from Flowise — 2 operation(s) for variables.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - variables
+  properties:
+  - type: OpenAPI
+    url: openapi/flowise-variables-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
+  - type: Authentication
+    url: https://docs.flowiseai.com/using-flowise/api-keys
+  - type: SwaggerUI
+    url: https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation
+  - type: Prediction
+    url: https://docs.flowiseai.com/api-reference/prediction
+- aid: flowise:flowise-vector-api
+  name: Flowise vector API
+  description: The vector API from Flowise — 1 operation(s) for vector.
+  humanURL: https://docs.flowiseai.com/api-reference
+  baseURL: http://localhost:3000/api/v1
+  tags:
+  - vector
+  properties:
+  - type: OpenAPI
+    url: openapi/flowise-vector-api-openapi.yml
+  - type: Documentation
+    url: https://docs.flowiseai.com/api-reference
   - type: Authentication
     url: https://docs.flowiseai.com/using-flowise/api-keys
   - type: SwaggerUI
