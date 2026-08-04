@@ -1,0 +1,38 @@
+{
+  "provider": "flowise",
+  "sources": [
+    "flowise-assistants-api-openapi.yml",
+    "flowise-attachments-api-openapi.yml",
+    "flowise-chatflows-api-openapi.yml",
+    "flowise-chatmessage-api-openapi.yml",
+    "flowise-document-store-api-openapi.yml",
+    "flowise-feedback-api-openapi.yml",
+    "flowise-leads-api-openapi.yml",
+    "flowise-ping-api-openapi.yml",
+    "flowise-prediction-api-openapi.yml",
+    "flowise-tools-api-openapi.yml",
+    "flowise-upsert-history-api-openapi.yml",
+    "flowise-variables-api-openapi.yml",
+    "flowise-vector-api-openapi.yml"
+  ],
+  "outputs": [
+    "flowise-assistants-api-openapi.yml",
+    "flowise-attachments-api-openapi.yml",
+    "flowise-chatflows-api-openapi.yml",
+    "flowise-chatmessage-api-openapi.yml",
+    "flowise-document-store-api-openapi.yml",
+    "flowise-feedback-api-openapi.yml",
+    "flowise-leads-api-openapi.yml",
+    "flowise-ping-api-openapi.yml",
+    "flowise-prediction-api-openapi.yml",
+    "flowise-tools-api-openapi.yml",
+    "flowise-upsert-history-api-openapi.yml",
+    "flowise-variables-api-openapi.yml",
+    "flowise-vector-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
