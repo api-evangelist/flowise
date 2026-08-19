@@ -1,0 +1,1137 @@
+{
+  "item": [
+    {
+      "id": "b96eb0fe-9409-43fb-9cd2-8a17f5585fa7",
+      "name": "assistants",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5cba8aa3-13cf-4c68-9a7b-e7b141f06d26",
+          "name": "Create a new assistant",
+          "request": {
+            "name": "Create a new assistant",
+            "description": {
+              "content": "Create a new assistant with the provided details",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "assistants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"details\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"model\": \"<string>\",\n    \"instructions\": \"<string>\",\n    \"temperature\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"tools\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"credential\": \"<string>\",\n  \"iconSrc\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "01bbe826-1f9b-4dff-acff-a50a13176c61",
+              "name": "Assistant created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"details\": {\n    \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n    \"name\": \"assistant\",\n    \"description\": \"<string>\",\n    \"model\": \"gpt-4\",\n    \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n    \"temperature\": 1,\n    \"top_p\": 1,\n    \"tools\": [\n      \"function\",\n      \"code_interpreter\",\n      \"file_search\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n  \"iconSrc\": \"/images/assistant.png\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"details\": {\n    \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n    \"name\": \"assistant\",\n    \"description\": \"<string>\",\n    \"model\": \"gpt-4\",\n    \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n    \"temperature\": 1,\n    \"top_p\": 1,\n    \"tools\": [\n      \"function\",\n      \"code_interpreter\",\n      \"file_search\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n  \"iconSrc\": \"/images/assistant.png\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba745db6-0b28-4fd1-ac16-ce2f50722135",
+              "name": "Invalid input provided",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"details\": {\n    \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n    \"name\": \"assistant\",\n    \"description\": \"<string>\",\n    \"model\": \"gpt-4\",\n    \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n    \"temperature\": 1,\n    \"top_p\": 1,\n    \"tools\": [\n      \"function\",\n      \"code_interpreter\",\n      \"file_search\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n  \"iconSrc\": \"/images/assistant.png\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f928777c-fbeb-411f-9f0e-777d2dd63b73",
+              "name": "Validation exception",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"details\": {\n    \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n    \"name\": \"assistant\",\n    \"description\": \"<string>\",\n    \"model\": \"gpt-4\",\n    \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n    \"temperature\": 1,\n    \"top_p\": 1,\n    \"tools\": [\n      \"function\",\n      \"code_interpreter\",\n      \"file_search\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n  \"iconSrc\": \"/images/assistant.png\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "16089ee8-8420-4a5e-90c3-0403d504ae47",
+          "name": "List all assistants",
+          "request": {
+            "name": "List all assistants",
+            "description": {
+              "content": "Retrieve a list of all assistants",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "assistants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "89f2535f-ae0c-42a4-a1e4-8185e9dc1ba8",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n    \"details\": {\n      \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n      \"name\": \"assistant\",\n      \"description\": \"<string>\",\n      \"model\": \"gpt-4\",\n      \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n      \"temperature\": 1,\n      \"top_p\": 1,\n      \"tools\": [\n        \"function\",\n        \"code_interpreter\",\n        \"file_search\"\n      ],\n      \"tool_resources\": {\n        \"key_0\": \"<object>\",\n        \"key_1\": \"<object>\"\n      }\n    },\n    \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n    \"iconSrc\": \"/images/assistant.png\",\n    \"createdDate\": \"2024-08-24T14:15:22Z\",\n    \"updatedDate\": \"2024-08-24T14:15:22Z\"\n  },\n  {\n    \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n    \"details\": {\n      \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n      \"name\": \"assistant\",\n      \"description\": \"<string>\",\n      \"model\": \"gpt-4\",\n      \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n      \"temperature\": 1,\n      \"top_p\": 1,\n      \"tools\": [\n        \"function\",\n        \"code_interpreter\",\n        \"file_search\"\n      ],\n      \"tool_resources\": {\n        \"key_0\": \"<object>\",\n        \"key_1\": \"<object>\"\n      }\n    },\n    \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n    \"iconSrc\": \"/images/assistant.png\",\n    \"createdDate\": \"2024-08-24T14:15:22Z\",\n    \"updatedDate\": \"2024-08-24T14:15:22Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "184c6dbf-1076-4e12-8a3d-962e129e2c6c",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23b1578f-862e-4f2a-a7b5-ab763479948c",
+          "name": "Get assistant by ID",
+          "request": {
+            "name": "Get assistant by ID",
+            "description": {
+              "content": "Retrieve a specific assistant by ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "assistants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Assistant ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d5642670-a8bc-47bc-8745-7f6bd14c23c5",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"details\": {\n    \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n    \"name\": \"assistant\",\n    \"description\": \"<string>\",\n    \"model\": \"gpt-4\",\n    \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n    \"temperature\": 1,\n    \"top_p\": 1,\n    \"tools\": [\n      \"function\",\n      \"code_interpreter\",\n      \"file_search\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n  \"iconSrc\": \"/images/assistant.png\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0634e8f-f926-484a-9897-a4458eb236bd",
+              "name": "The specified ID is invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ae63024c-bc11-4d68-bac6-ebea0ccb124a",
+              "name": "Assistant not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b67746f1-3978-47f5-9768-33fe79754f7f",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6350bdbf-005c-4133-b274-cb35cbfa0216",
+          "name": "Update assistant details",
+          "request": {
+            "name": "Update assistant details",
+            "description": {
+              "content": "Update the details of an existing assistant",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "assistants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Assistant ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"details\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"model\": \"<string>\",\n    \"instructions\": \"<string>\",\n    \"temperature\": \"<number>\",\n    \"top_p\": \"<number>\",\n    \"tools\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\",\n      \"key_2\": \"<object>\"\n    }\n  },\n  \"credential\": \"<string>\",\n  \"iconSrc\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "483d0c43-ceec-4069-a4b9-ebdd6de1cf32",
+              "name": "Assistant updated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"details\": {\n    \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n    \"name\": \"assistant\",\n    \"description\": \"<string>\",\n    \"model\": \"gpt-4\",\n    \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n    \"temperature\": 1,\n    \"top_p\": 1,\n    \"tools\": [\n      \"function\",\n      \"code_interpreter\",\n      \"file_search\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n  \"iconSrc\": \"/images/assistant.png\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"details\": {\n    \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n    \"name\": \"assistant\",\n    \"description\": \"<string>\",\n    \"model\": \"gpt-4\",\n    \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n    \"temperature\": 1,\n    \"top_p\": 1,\n    \"tools\": [\n      \"function\",\n      \"code_interpreter\",\n      \"file_search\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n  \"iconSrc\": \"/images/assistant.png\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e0c1236f-cabc-4c99-9e9f-bf970dc2b201",
+              "name": "The specified ID is invalid or body is missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"details\": {\n    \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n    \"name\": \"assistant\",\n    \"description\": \"<string>\",\n    \"model\": \"gpt-4\",\n    \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n    \"temperature\": 1,\n    \"top_p\": 1,\n    \"tools\": [\n      \"function\",\n      \"code_interpreter\",\n      \"file_search\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n  \"iconSrc\": \"/images/assistant.png\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3cb30c60-b8dd-4d04-b632-fcc03daf1863",
+              "name": "Assistant not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"details\": {\n    \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n    \"name\": \"assistant\",\n    \"description\": \"<string>\",\n    \"model\": \"gpt-4\",\n    \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n    \"temperature\": 1,\n    \"top_p\": 1,\n    \"tools\": [\n      \"function\",\n      \"code_interpreter\",\n      \"file_search\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n  \"iconSrc\": \"/images/assistant.png\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "70c24d59-a612-446c-9eec-a99ea52b7ab1",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"details\": {\n    \"id\": \"asst_zbNeYIuXIUSKVHjJkfRo6ilv\",\n    \"name\": \"assistant\",\n    \"description\": \"<string>\",\n    \"model\": \"gpt-4\",\n    \"instructions\": \"You are a helpful assistant, do your best to answer question and query\",\n    \"temperature\": 1,\n    \"top_p\": 1,\n    \"tools\": [\n      \"function\",\n      \"code_interpreter\",\n      \"file_search\"\n    ],\n    \"tool_resources\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"credential\": \"7db93c02-8d5a-4117-a8f1-3dfb6721b339\",\n  \"iconSrc\": \"/images/assistant.png\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f4899af-7701-4e10-86a5-6ce718f0d60f",
+          "name": "Delete an assistant",
+          "request": {
+            "name": "Delete an assistant",
+            "description": {
+              "content": "Delete an assistant by ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "assistants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Assistant ID"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ab9f3be6-a80e-4646-b17b-fa6a9121b077",
+              "name": "Assistant deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6d6a115-899b-4fd2-b391-abe7dac454d7",
+              "name": "The specified ID is invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3ab2c286-90e7-4f4a-90aa-f60a46f2ede2",
+              "name": "Assistant not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9f24fc9c-0985-4e35-b9c8-2db4f13fc212",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assistants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Assistant ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "05935227-58c3-4768-a99e-7ae3c9de8297",
+    "name": "Flowise APIs assistants API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.\nBearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.\n\n\nContact Support:\n Name: FlowiseAI\n Email: support@flowiseai.com",
+      "type": "text/plain"
+    }
+  }
+}

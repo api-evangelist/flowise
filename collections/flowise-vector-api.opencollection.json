@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowise APIs assistants vector API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "vector",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upsert vector embeddings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/vector/upsert/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Upsert vector embeddings of documents in a chatflow"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

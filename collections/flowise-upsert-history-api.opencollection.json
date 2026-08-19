@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowise APIs assistants upsert-history API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "upsert-history",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all upsert history records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/upsert-history/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID to filter records by"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order of the results (ascending or descending)"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter records from this start date (inclusive)"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter records until this end date (inclusive)"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve all upsert history records with optional filters"
+        },
+        {
+          "info": {
+            "name": "Delete upsert history records",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://localhost:3000/api/v1/upsert-history/:id",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Soft delete upsert history records by IDs"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

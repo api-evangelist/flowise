@@ -1,0 +1,3464 @@
+{
+  "item": [
+    {
+      "id": "515a6ae2-dd43-40be-9798-0ae5499e8ee1",
+      "name": "document-store",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "956ec45b-0cff-444c-9a33-50be45f364d5",
+          "name": "Create a new document store",
+          "request": {
+            "name": "Create a new document store",
+            "description": {
+              "content": "Creates a new document store with the provided details",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "store"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"loaders\": \"<string>\",\n  \"whereUsed\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vectorStoreConfig\": \"<string>\",\n  \"embeddingConfig\": \"<string>\",\n  \"recordManagerConfig\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2be82073-2061-4bd2-92fd-7aa81b636197",
+              "name": "Successfully created document store",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"loaders\": \"<string>\",\n  \"whereUsed\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vectorStoreConfig\": \"<string>\",\n  \"embeddingConfig\": \"<string>\",\n  \"recordManagerConfig\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"loaders\": \"<string>\",\n  \"whereUsed\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vectorStoreConfig\": \"<string>\",\n  \"embeddingConfig\": \"<string>\",\n  \"recordManagerConfig\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b7022783-8122-4714-9a0d-4f208b10e58b",
+              "name": "Invalid request body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"loaders\": \"<string>\",\n  \"whereUsed\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vectorStoreConfig\": \"<string>\",\n  \"embeddingConfig\": \"<string>\",\n  \"recordManagerConfig\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ed282a47-8575-439f-8595-1fdb9abfabdb",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"loaders\": \"<string>\",\n  \"whereUsed\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vectorStoreConfig\": \"<string>\",\n  \"embeddingConfig\": \"<string>\",\n  \"recordManagerConfig\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "63d33d88-8872-428c-896f-77a5c3b89e42",
+          "name": "List all document stores",
+          "request": {
+            "name": "List all document stores",
+            "description": {
+              "content": "Retrieves a list of all document stores",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "store"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5a12c9d8-bd7a-47e0-bc25-c8abb0c5e5bf",
+              "name": "A list of document stores",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"loaders\": \"<string>\",\n    \"whereUsed\": \"<string>\",\n    \"status\": \"<string>\",\n    \"vectorStoreConfig\": \"<string>\",\n    \"embeddingConfig\": \"<string>\",\n    \"recordManagerConfig\": \"<string>\",\n    \"createdDate\": \"<dateTime>\",\n    \"updatedDate\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"loaders\": \"<string>\",\n    \"whereUsed\": \"<string>\",\n    \"status\": \"<string>\",\n    \"vectorStoreConfig\": \"<string>\",\n    \"embeddingConfig\": \"<string>\",\n    \"recordManagerConfig\": \"<string>\",\n    \"createdDate\": \"<dateTime>\",\n    \"updatedDate\": \"<dateTime>\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ead39cfb-c883-48f9-9822-fc55f6123ea4",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d940bb54-ddcb-4c62-baf3-ae207467ceae",
+          "name": "Get a specific document store",
+          "request": {
+            "name": "Get a specific document store",
+            "description": {
+              "content": "Retrieves details of a specific document store by its ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "store",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Document Store ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "359f1c8a-d8a8-4498-8d5c-c6f2fe6e977b",
+              "name": "Successfully retrieved document store",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"loaders\": \"<string>\",\n  \"whereUsed\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vectorStoreConfig\": \"<string>\",\n  \"embeddingConfig\": \"<string>\",\n  \"recordManagerConfig\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0efe7f5d-b89e-4f8f-a9c3-436f8600c125",
+              "name": "Document store not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ae467767-8609-4eaf-89a5-6d225f95db3b",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "475a0ef5-11d3-4a95-8796-1eee3f452d75",
+          "name": "Update a specific document store",
+          "request": {
+            "name": "Update a specific document store",
+            "description": {
+              "content": "Updates the details of a specific document store by its ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "store",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Document Store ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"loaders\": \"<string>\",\n  \"whereUsed\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vectorStoreConfig\": \"<string>\",\n  \"embeddingConfig\": \"<string>\",\n  \"recordManagerConfig\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cd0bcc53-b203-417d-bd8b-13cf945f561a",
+              "name": "Successfully updated document store",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"loaders\": \"<string>\",\n  \"whereUsed\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vectorStoreConfig\": \"<string>\",\n  \"embeddingConfig\": \"<string>\",\n  \"recordManagerConfig\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"loaders\": \"<string>\",\n  \"whereUsed\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vectorStoreConfig\": \"<string>\",\n  \"embeddingConfig\": \"<string>\",\n  \"recordManagerConfig\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8fcbaaca-8c38-43be-8705-397f058e6886",
+              "name": "Document store not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"loaders\": \"<string>\",\n  \"whereUsed\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vectorStoreConfig\": \"<string>\",\n  \"embeddingConfig\": \"<string>\",\n  \"recordManagerConfig\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "51fe0be1-ffb0-422d-871c-ec083090b603",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"loaders\": \"<string>\",\n  \"whereUsed\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vectorStoreConfig\": \"<string>\",\n  \"embeddingConfig\": \"<string>\",\n  \"recordManagerConfig\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1fde85f1-758a-46b2-9b9e-53c519d0f4ad",
+          "name": "Delete a specific document store",
+          "request": {
+            "name": "Delete a specific document store",
+            "description": {
+              "content": "Deletes a document store by its ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "store",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Document Store ID"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "575855b3-b1e4-43bf-aebe-e508f0805eae",
+              "name": "Successfully deleted document store",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "44224493-7ad9-4c8a-9fa9-fa5bc098f4ec",
+              "name": "Document store not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6100ed3-2129-47c8-8509-f96c577c7dd7",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "store",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8777754-b65e-49fa-9bfd-91f171b25136",
+          "name": "Upsert document to document store",
+          "request": {
+            "name": "Upsert document to document store",
+            "description": {
+              "content": "Upsert document to document store",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "upsert",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Document Store ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "(Required) Files to be uploaded"
+                },
+                {
+                  "key": "docId",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Document ID to use existing configuration"
+                },
+                {
+                  "key": "loader",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Loader configurations"
+                },
+                {
+                  "key": "splitter",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Splitter configurations"
+                },
+                {
+                  "key": "embedding",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Embedding configurations"
+                },
+                {
+                  "key": "vectorStore",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Vector Store configurations"
+                },
+                {
+                  "key": "recordManager",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Record Manager configurations"
+                },
+                {
+                  "key": "metadata",
+                  "value": "<object>",
+                  "type": "text",
+                  "description": "Metadata associated with the document"
+                },
+                {
+                  "key": "replaceExisting",
+                  "value": "<boolean>",
+                  "type": "text",
+                  "description": "Whether to replace existing document loader with the new upserted chunks. However this does not delete the existing embeddings in the vector store"
+                },
+                {
+                  "key": "createNewDocStore",
+                  "value": "<boolean>",
+                  "type": "text",
+                  "description": "Whether to create a new document store"
+                },
+                {
+                  "key": "docStore",
+                  "value": "{\"name\":\"<string>\",\"description\":\"<string>\"}",
+                  "type": "text",
+                  "description": "Only when createNewDocStore is true, pass in the new document store configuration"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fc0161ba-f169-45aa-bf19-51a31f23454e",
+              "name": "Successfully execute upsert operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "upsert",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Files to be uploaded",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Document ID to use existing configuration",
+                        "type": "text/plain"
+                      },
+                      "key": "docId",
+                      "value": "603a7b51-ae7c-4b0a-8865-e454ed2f6766",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Loader configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "loader",
+                      "value": "{\"name\":\"plainText\",\"config\":{\"text\":\"why the sky is blue\"}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Splitter configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "splitter",
+                      "value": "{\"name\":\"recursiveCharacterTextSplitter\",\"config\":{\"chunkSize\":2000}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Embedding configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "embedding",
+                      "value": "{\"name\":\"openAIEmbeddings\",\"config\":{\"modelName\":\"text-embedding-ada-002\"}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Vector Store configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "vectorStore",
+                      "value": "{\"name\":\"faiss\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Record Manager configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "recordManager",
+                      "value": "{\"name\":\"postgresRecordManager\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Metadata associated with the document",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"foo\":\"bar\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to replace existing document loader with the new upserted chunks. However this does not delete the existing embeddings in the vector store",
+                        "type": "text/plain"
+                      },
+                      "key": "replaceExisting",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to create a new document store",
+                        "type": "text/plain"
+                      },
+                      "key": "createNewDocStore",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Only when createNewDocStore is true, pass in the new document store configuration",
+                        "type": "text/plain"
+                      },
+                      "key": "docStore",
+                      "value": "{\"name\":\"plainText\",\"description\":\"plainText\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"numAdded\": 1,\n  \"numDeleted\": 1,\n  \"numUpdated\": 1,\n  \"numSkipped\": 1,\n  \"addedDocs\": [\n    {\n      \"pageContent\": \"This is the content of the page.\",\n      \"metadata\": {\n        \"author\": \"John Doe\",\n        \"date\": \"2024-08-24\"\n      }\n    },\n    {\n      \"pageContent\": \"This is the content of the page.\",\n      \"metadata\": {\n        \"author\": \"John Doe\",\n        \"date\": \"2024-08-24\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06556a68-5b04-44b6-8587-a83ff72baa4d",
+              "name": "Invalid request body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "upsert",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Files to be uploaded",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Document ID to use existing configuration",
+                        "type": "text/plain"
+                      },
+                      "key": "docId",
+                      "value": "603a7b51-ae7c-4b0a-8865-e454ed2f6766",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Loader configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "loader",
+                      "value": "{\"name\":\"plainText\",\"config\":{\"text\":\"why the sky is blue\"}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Splitter configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "splitter",
+                      "value": "{\"name\":\"recursiveCharacterTextSplitter\",\"config\":{\"chunkSize\":2000}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Embedding configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "embedding",
+                      "value": "{\"name\":\"openAIEmbeddings\",\"config\":{\"modelName\":\"text-embedding-ada-002\"}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Vector Store configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "vectorStore",
+                      "value": "{\"name\":\"faiss\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Record Manager configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "recordManager",
+                      "value": "{\"name\":\"postgresRecordManager\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Metadata associated with the document",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"foo\":\"bar\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to replace existing document loader with the new upserted chunks. However this does not delete the existing embeddings in the vector store",
+                        "type": "text/plain"
+                      },
+                      "key": "replaceExisting",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to create a new document store",
+                        "type": "text/plain"
+                      },
+                      "key": "createNewDocStore",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Only when createNewDocStore is true, pass in the new document store configuration",
+                        "type": "text/plain"
+                      },
+                      "key": "docStore",
+                      "value": "{\"name\":\"plainText\",\"description\":\"plainText\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "75233b84-861c-4a7e-8442-10d74f8bffb5",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "upsert",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Files to be uploaded",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Document ID to use existing configuration",
+                        "type": "text/plain"
+                      },
+                      "key": "docId",
+                      "value": "603a7b51-ae7c-4b0a-8865-e454ed2f6766",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Loader configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "loader",
+                      "value": "{\"name\":\"plainText\",\"config\":{\"text\":\"why the sky is blue\"}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Splitter configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "splitter",
+                      "value": "{\"name\":\"recursiveCharacterTextSplitter\",\"config\":{\"chunkSize\":2000}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Embedding configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "embedding",
+                      "value": "{\"name\":\"openAIEmbeddings\",\"config\":{\"modelName\":\"text-embedding-ada-002\"}}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Vector Store configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "vectorStore",
+                      "value": "{\"name\":\"faiss\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Record Manager configurations",
+                        "type": "text/plain"
+                      },
+                      "key": "recordManager",
+                      "value": "{\"name\":\"postgresRecordManager\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Metadata associated with the document",
+                        "type": "text/plain"
+                      },
+                      "key": "metadata",
+                      "value": "{\"foo\":\"bar\"}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to replace existing document loader with the new upserted chunks. However this does not delete the existing embeddings in the vector store",
+                        "type": "text/plain"
+                      },
+                      "key": "replaceExisting",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Whether to create a new document store",
+                        "type": "text/plain"
+                      },
+                      "key": "createNewDocStore",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Only when createNewDocStore is true, pass in the new document store configuration",
+                        "type": "text/plain"
+                      },
+                      "key": "docStore",
+                      "value": "{\"name\":\"plainText\",\"description\":\"plainText\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "526f06b7-a375-4e0e-b6be-8b45ed1ddd45",
+          "name": "Re-process and upsert all documents in document store",
+          "request": {
+            "name": "Re-process and upsert all documents in document store",
+            "description": {
+              "content": "Re-process and upsert all existing documents in document store",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "refresh",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Document Store ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    {\n      \"docId\": \"<uuid>\",\n      \"metadata\": \"<object>\",\n      \"replaceExisting\": \"<boolean>\",\n      \"createNewDocStore\": \"<boolean>\",\n      \"docStore\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      \"loader\": {\n        \"name\": \"<string>\",\n        \"config\": \"<object>\"\n      },\n      \"splitter\": {\n        \"name\": \"<string>\",\n        \"config\": \"<object>\"\n      },\n      \"embedding\": {\n        \"name\": \"<string>\",\n        \"config\": \"<object>\"\n      },\n      \"vectorStore\": {\n        \"name\": \"<string>\",\n        \"config\": \"<object>\"\n      },\n      \"recordManager\": {\n        \"name\": \"<string>\",\n        \"config\": \"<object>\"\n      }\n    },\n    {\n      \"docId\": \"<uuid>\",\n      \"metadata\": \"<object>\",\n      \"replaceExisting\": \"<boolean>\",\n      \"createNewDocStore\": \"<boolean>\",\n      \"docStore\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      \"loader\": {\n        \"name\": \"<string>\",\n        \"config\": \"<object>\"\n      },\n      \"splitter\": {\n        \"name\": \"<string>\",\n        \"config\": \"<object>\"\n      },\n      \"embedding\": {\n        \"name\": \"<string>\",\n        \"config\": \"<object>\"\n      },\n      \"vectorStore\": {\n        \"name\": \"<string>\",\n        \"config\": \"<object>\"\n      },\n      \"recordManager\": {\n        \"name\": \"<string>\",\n        \"config\": \"<object>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7b69a21e-2338-4376-bf22-9056e7630a58",
+              "name": "Successfully execute refresh operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "refresh",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"items\": [\n    {\n      \"docId\": \"<uuid>\",\n      \"metadata\": {\n        \"foo\": \"bar\"\n      },\n      \"replaceExisting\": \"<boolean>\",\n      \"createNewDocStore\": \"<boolean>\",\n      \"docStore\": {\n        \"name\": \"plainText\",\n        \"description\": \"plainText\"\n      },\n      \"loader\": {\n        \"name\": \"plainText\",\n        \"config\": \"<object>\"\n      },\n      \"splitter\": {\n        \"name\": \"recursiveCharacterTextSplitter\",\n        \"config\": \"<object>\"\n      },\n      \"embedding\": {\n        \"name\": \"openAIEmbeddings\",\n        \"config\": \"<object>\"\n      },\n      \"vectorStore\": {\n        \"name\": \"faiss\",\n        \"config\": \"<object>\"\n      },\n      \"recordManager\": {\n        \"name\": \"postgresRecordManager\",\n        \"config\": \"<object>\"\n      }\n    },\n    {\n      \"docId\": \"<uuid>\",\n      \"metadata\": {\n        \"foo\": \"bar\"\n      },\n      \"replaceExisting\": \"<boolean>\",\n      \"createNewDocStore\": \"<boolean>\",\n      \"docStore\": {\n        \"name\": \"plainText\",\n        \"description\": \"plainText\"\n      },\n      \"loader\": {\n        \"name\": \"plainText\",\n        \"config\": \"<object>\"\n      },\n      \"splitter\": {\n        \"name\": \"recursiveCharacterTextSplitter\",\n        \"config\": \"<object>\"\n      },\n      \"embedding\": {\n        \"name\": \"openAIEmbeddings\",\n        \"config\": \"<object>\"\n      },\n      \"vectorStore\": {\n        \"name\": \"faiss\",\n        \"config\": \"<object>\"\n      },\n      \"recordManager\": {\n        \"name\": \"postgresRecordManager\",\n        \"config\": \"<object>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"numAdded\": 1,\n    \"numDeleted\": 1,\n    \"numUpdated\": 1,\n    \"numSkipped\": 1,\n    \"addedDocs\": [\n      {\n        \"pageContent\": \"This is the content of the page.\",\n        \"metadata\": {\n          \"author\": \"John Doe\",\n          \"date\": \"2024-08-24\"\n        }\n      },\n      {\n        \"pageContent\": \"This is the content of the page.\",\n        \"metadata\": {\n          \"author\": \"John Doe\",\n          \"date\": \"2024-08-24\"\n        }\n      }\n    ]\n  },\n  {\n    \"numAdded\": 1,\n    \"numDeleted\": 1,\n    \"numUpdated\": 1,\n    \"numSkipped\": 1,\n    \"addedDocs\": [\n      {\n        \"pageContent\": \"This is the content of the page.\",\n        \"metadata\": {\n          \"author\": \"John Doe\",\n          \"date\": \"2024-08-24\"\n        }\n      },\n      {\n        \"pageContent\": \"This is the content of the page.\",\n        \"metadata\": {\n          \"author\": \"John Doe\",\n          \"date\": \"2024-08-24\"\n        }\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d9540da-6c39-47ea-bab8-a197afc16be2",
+              "name": "Invalid request body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "refresh",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"items\": [\n    {\n      \"docId\": \"<uuid>\",\n      \"metadata\": {\n        \"foo\": \"bar\"\n      },\n      \"replaceExisting\": \"<boolean>\",\n      \"createNewDocStore\": \"<boolean>\",\n      \"docStore\": {\n        \"name\": \"plainText\",\n        \"description\": \"plainText\"\n      },\n      \"loader\": {\n        \"name\": \"plainText\",\n        \"config\": \"<object>\"\n      },\n      \"splitter\": {\n        \"name\": \"recursiveCharacterTextSplitter\",\n        \"config\": \"<object>\"\n      },\n      \"embedding\": {\n        \"name\": \"openAIEmbeddings\",\n        \"config\": \"<object>\"\n      },\n      \"vectorStore\": {\n        \"name\": \"faiss\",\n        \"config\": \"<object>\"\n      },\n      \"recordManager\": {\n        \"name\": \"postgresRecordManager\",\n        \"config\": \"<object>\"\n      }\n    },\n    {\n      \"docId\": \"<uuid>\",\n      \"metadata\": {\n        \"foo\": \"bar\"\n      },\n      \"replaceExisting\": \"<boolean>\",\n      \"createNewDocStore\": \"<boolean>\",\n      \"docStore\": {\n        \"name\": \"plainText\",\n        \"description\": \"plainText\"\n      },\n      \"loader\": {\n        \"name\": \"plainText\",\n        \"config\": \"<object>\"\n      },\n      \"splitter\": {\n        \"name\": \"recursiveCharacterTextSplitter\",\n        \"config\": \"<object>\"\n      },\n      \"embedding\": {\n        \"name\": \"openAIEmbeddings\",\n        \"config\": \"<object>\"\n      },\n      \"vectorStore\": {\n        \"name\": \"faiss\",\n        \"config\": \"<object>\"\n      },\n      \"recordManager\": {\n        \"name\": \"postgresRecordManager\",\n        \"config\": \"<object>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "08154b26-2043-4e5e-ae77-92e31027bf6c",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "refresh",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"items\": [\n    {\n      \"docId\": \"<uuid>\",\n      \"metadata\": {\n        \"foo\": \"bar\"\n      },\n      \"replaceExisting\": \"<boolean>\",\n      \"createNewDocStore\": \"<boolean>\",\n      \"docStore\": {\n        \"name\": \"plainText\",\n        \"description\": \"plainText\"\n      },\n      \"loader\": {\n        \"name\": \"plainText\",\n        \"config\": \"<object>\"\n      },\n      \"splitter\": {\n        \"name\": \"recursiveCharacterTextSplitter\",\n        \"config\": \"<object>\"\n      },\n      \"embedding\": {\n        \"name\": \"openAIEmbeddings\",\n        \"config\": \"<object>\"\n      },\n      \"vectorStore\": {\n        \"name\": \"faiss\",\n        \"config\": \"<object>\"\n      },\n      \"recordManager\": {\n        \"name\": \"postgresRecordManager\",\n        \"config\": \"<object>\"\n      }\n    },\n    {\n      \"docId\": \"<uuid>\",\n      \"metadata\": {\n        \"foo\": \"bar\"\n      },\n      \"replaceExisting\": \"<boolean>\",\n      \"createNewDocStore\": \"<boolean>\",\n      \"docStore\": {\n        \"name\": \"plainText\",\n        \"description\": \"plainText\"\n      },\n      \"loader\": {\n        \"name\": \"plainText\",\n        \"config\": \"<object>\"\n      },\n      \"splitter\": {\n        \"name\": \"recursiveCharacterTextSplitter\",\n        \"config\": \"<object>\"\n      },\n      \"embedding\": {\n        \"name\": \"openAIEmbeddings\",\n        \"config\": \"<object>\"\n      },\n      \"vectorStore\": {\n        \"name\": \"faiss\",\n        \"config\": \"<object>\"\n      },\n      \"recordManager\": {\n        \"name\": \"postgresRecordManager\",\n        \"config\": \"<object>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "25bf119d-e59a-407a-a9cf-f96655e86cd6",
+          "name": "Retrieval query",
+          "request": {
+            "name": "Retrieval query",
+            "description": {
+              "content": "Retrieval query for the upserted chunks",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "vectorstore",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"storeId\": \"<string>\",\n  \"query\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "13ec44a4-63d3-466b-9d40-8c4380e4f4a4",
+              "name": "Successfully executed query on vector store",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "vectorstore",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"storeId\": \"603a7b51-ae7c-4b0a-8865-e454ed2f6766\",\n  \"query\": \"What is the capital of France?\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timeTaken\": 667.2008427198007,\n  \"docs\": [\n    {\n      \"pageContent\": \"This is the content of the page.\",\n      \"metadata\": {\n        \"author\": \"John Doe\",\n        \"date\": \"2024-08-24\"\n      }\n    },\n    {\n      \"pageContent\": \"This is the content of the page.\",\n      \"metadata\": {\n        \"author\": \"John Doe\",\n        \"date\": \"2024-08-24\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1817653e-6900-49ad-b413-da3f6d29007a",
+              "name": "Invalid request body",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "vectorstore",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"storeId\": \"603a7b51-ae7c-4b0a-8865-e454ed2f6766\",\n  \"query\": \"What is the capital of France?\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7cecc671-45e4-4997-91f0-a00b78b4839a",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "vectorstore",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"storeId\": \"603a7b51-ae7c-4b0a-8865-e454ed2f6766\",\n  \"query\": \"What is the capital of France?\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87db484a-aa0f-426e-8de4-bf9b2508cb2a",
+          "name": "Delete specific document loader and associated chunks from document store",
+          "request": {
+            "name": "Delete specific document loader and associated chunks from document store",
+            "description": {
+              "content": "Delete specific document loader and associated chunks from document store. This does not delete data from vector store.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "loader",
+                ":storeId",
+                ":loaderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "storeId",
+                  "description": "(Required) Document Store ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "loaderId",
+                  "description": "(Required) Document Loader ID"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5c0e9e0f-3a1c-4b64-b5d9-bca49b6fb4c7",
+              "name": "Successfully deleted loader from document store",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "loader",
+                    ":storeId",
+                    ":loaderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loaderId",
+                      "description": "(Required) Document Loader ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "59c0a695-60bd-40ae-a579-576e34fa75c8",
+              "name": "Invalid ID provided",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "loader",
+                    ":storeId",
+                    ":loaderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loaderId",
+                      "description": "(Required) Document Loader ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "da0131cf-ace1-4017-9a26-0252e0ef6338",
+              "name": "Document Store not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "loader",
+                    ":storeId",
+                    ":loaderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loaderId",
+                      "description": "(Required) Document Loader ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a9723c04-1681-4430-953f-c59fdbba3e52",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "loader",
+                    ":storeId",
+                    ":loaderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loaderId",
+                      "description": "(Required) Document Loader ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9aa23bbc-a5ff-4816-ada5-aa07734df4a3",
+          "name": "Delete data from vector store",
+          "request": {
+            "name": "Delete data from vector store",
+            "description": {
+              "content": "Only data that were upserted with Record Manager will be deleted from vector store",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "vectorstore",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Document Store ID"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4e6023e6-651f-4afb-a8f9-5ab9a2f04946",
+              "name": "Successfully deleted data from vector store",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "vectorstore",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fbf7977d-8144-4e0f-bf7f-e767cf9f3fee",
+              "name": "Invalid ID provided",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "vectorstore",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a8333a70-2d40-460f-99d5-8e796a17e8cf",
+              "name": "Document Store not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "vectorstore",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3eb7f68f-f1ae-4547-b9f6-e477f2ca9a79",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "vectorstore",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Document Store ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e872ea67-3bc0-4e1d-bef0-8051e6b8b5b8",
+          "name": "Get chunks from a specific document loader",
+          "request": {
+            "name": "Get chunks from a specific document loader",
+            "description": {
+              "content": "Get chunks from a specific document loader within a document store",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "chunks",
+                ":storeId",
+                ":loaderId",
+                ":pageNo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "storeId",
+                  "description": "(Required) Document Store ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "loaderId",
+                  "description": "(Required) Document loader ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pageNo",
+                  "description": "(Required) Pagination number"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0a08e7b2-b9b7-4b1a-a87e-4afc32477560",
+              "name": "Successfully retrieved chunks from document loader",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "chunks",
+                    ":storeId",
+                    ":loaderId",
+                    ":pageNo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "loaderId",
+                      "description": "(Required) Document loader ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pageNo",
+                      "description": "(Required) Pagination number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"chunks\": [\n    {\n      \"id\": \"c0b08f44-4d79-f78b-b173-3158edca3740\",\n      \"docId\": \"41cfd43d-77ef-7b65-0689-8eef30db3737\",\n      \"storeId\": \"091760ee-5793-0cd5-f85c-6ddeb3fa6948\",\n      \"chunkNo\": 5391,\n      \"pageContent\": \"string\",\n      \"metadata\": \"string\"\n    },\n    {\n      \"id\": \"825d6db0-9a63-cc6c-f276-c85ccdc5cc58\",\n      \"docId\": \"7e466477-4bfc-d8b8-700f-d90eb6a2fc0e\",\n      \"storeId\": \"8f586759-532a-6ce8-747d-6b3a669e3af2\",\n      \"chunkNo\": 5270,\n      \"pageContent\": \"string\",\n      \"metadata\": \"string\"\n    }\n  ],\n  \"count\": 1,\n  \"file\": {\n    \"id\": \"ef402f68-a193-913b-cef2-87f0380a6572\",\n    \"loaderId\": \"string\",\n    \"loaderName\": \"string\",\n    \"loaderConfig\": {},\n    \"splitterId\": \"string\",\n    \"splitterName\": \"string\",\n    \"splitterConfig\": {},\n    \"totalChunks\": 8744.717123321505,\n    \"totalChars\": 385.80403096350466,\n    \"status\": \"NEW\",\n    \"storeId\": \"string\",\n    \"files\": [\n      {\n        \"id\": \"2bded6d7-20bd-8323-b05e-e7c0bb42045c\",\n        \"name\": \"string\",\n        \"mimePrefix\": \"string\",\n        \"size\": 6921.524053237104,\n        \"status\": \"UPSERTING\",\n        \"uploaded\": \"1957-04-23T01:31:17.437Z\"\n      },\n      {\n        \"id\": \"5507c3ed-2d44-238a-94a2-3259c66c441a\",\n        \"name\": \"string\",\n        \"mimePrefix\": \"string\",\n        \"size\": 9102.583211647274,\n        \"status\": \"NEW\",\n        \"uploaded\": \"1988-07-20T17:35:48.287Z\"\n      }\n    ],\n    \"source\": \"string\",\n    \"credential\": \"string\",\n    \"rehydrated\": false,\n    \"preview\": false,\n    \"previewChunkCount\": 6025.584587581737\n  },\n  \"currentPage\": 1797.657147104189,\n  \"storeName\": \"string\",\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "db6a2125-d9b9-425d-bf62-8e7475e40508",
+              "name": "Document store not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "chunks",
+                    ":storeId",
+                    ":loaderId",
+                    ":pageNo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "loaderId",
+                      "description": "(Required) Document loader ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pageNo",
+                      "description": "(Required) Pagination number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "81237c59-080f-4875-89e4-f9e66e05e96f",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "chunks",
+                    ":storeId",
+                    ":loaderId",
+                    ":pageNo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "loaderId",
+                      "description": "(Required) Document loader ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pageNo",
+                      "description": "(Required) Pagination number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "718b80b3-75ee-448f-8da8-a0a964c01437",
+          "name": "Update a specific chunk",
+          "request": {
+            "name": "Update a specific chunk",
+            "description": {
+              "content": "Updates a specific chunk from a document loader",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "chunks",
+                ":storeId",
+                ":loaderId",
+                ":chunkId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "storeId",
+                  "description": "(Required) Document Store ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "loaderId",
+                  "description": "(Required) Document Loader ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "chunkId",
+                  "description": "(Required) Document Chunk ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pageContent\": \"<string>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4f979922-2c5e-46a9-ac25-0ccf3b57caea",
+              "name": "Successfully updated chunk",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "chunks",
+                    ":storeId",
+                    ":loaderId",
+                    ":chunkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loaderId",
+                      "description": "(Required) Document Loader ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chunkId",
+                      "description": "(Required) Document Chunk ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageContent\": \"This is the content of the page.\",\n  \"metadata\": {\n    \"author\": \"John Doe\",\n    \"date\": \"2024-08-24\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"chunks\": [\n    {\n      \"id\": \"3bdbd451-253b-964b-dcad-453cf57f0f8f\",\n      \"docId\": \"96250dab-16ef-fdc0-bdca-7654bbf7ca02\",\n      \"storeId\": \"7d611342-d28c-f8b2-a82d-74fee48429db\",\n      \"chunkNo\": 9776,\n      \"pageContent\": \"string\",\n      \"metadata\": \"string\"\n    },\n    {\n      \"id\": \"2ad9047f-b0ed-3ea2-ec87-3fa009c3e73e\",\n      \"docId\": \"c7166a8e-70db-7b78-7c23-567fda048459\",\n      \"storeId\": \"280c2005-9a29-a820-7193-06002efcd85f\",\n      \"chunkNo\": 5630,\n      \"pageContent\": \"string\",\n      \"metadata\": \"string\"\n    }\n  ],\n  \"count\": 1,\n  \"file\": {\n    \"id\": \"e1a45d47-1670-480f-50a2-a170ea1003f1\",\n    \"loaderId\": \"string\",\n    \"loaderName\": \"string\",\n    \"loaderConfig\": {},\n    \"splitterId\": \"string\",\n    \"splitterName\": \"string\",\n    \"splitterConfig\": {},\n    \"totalChunks\": 5694.9967806077675,\n    \"totalChars\": 9651.160566952005,\n    \"status\": \"SYNC\",\n    \"storeId\": \"string\",\n    \"files\": [\n      {\n        \"id\": \"1debd35b-e63c-36dc-3360-c831ed4a004a\",\n        \"name\": \"string\",\n        \"mimePrefix\": \"string\",\n        \"size\": 5999.7982348445585,\n        \"status\": \"UPSERTING\",\n        \"uploaded\": \"1971-11-16T15:58:49.240Z\"\n      },\n      {\n        \"id\": \"d5ff5fd1-caad-d98c-934c-df0762a34cc4\",\n        \"name\": \"string\",\n        \"mimePrefix\": \"string\",\n        \"size\": 8846.158598700236,\n        \"status\": \"NEW\",\n        \"uploaded\": \"1964-12-28T11:57:32.153Z\"\n      }\n    ],\n    \"source\": \"string\",\n    \"credential\": \"string\",\n    \"rehydrated\": true,\n    \"preview\": true,\n    \"previewChunkCount\": 9289.973105575888\n  },\n  \"currentPage\": 6555.333926885575,\n  \"storeName\": \"string\",\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09ca8132-d719-4af7-8f53-7b932c46eb0a",
+              "name": "Document store not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "chunks",
+                    ":storeId",
+                    ":loaderId",
+                    ":chunkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loaderId",
+                      "description": "(Required) Document Loader ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chunkId",
+                      "description": "(Required) Document Chunk ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageContent\": \"This is the content of the page.\",\n  \"metadata\": {\n    \"author\": \"John Doe\",\n    \"date\": \"2024-08-24\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "997959d7-4e30-40ee-a6ab-456b3b11b7bf",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "chunks",
+                    ":storeId",
+                    ":loaderId",
+                    ":chunkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loaderId",
+                      "description": "(Required) Document Loader ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chunkId",
+                      "description": "(Required) Document Chunk ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pageContent\": \"This is the content of the page.\",\n  \"metadata\": {\n    \"author\": \"John Doe\",\n    \"date\": \"2024-08-24\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69c2c3fc-7d3e-4592-a067-2a649b3f0b0a",
+          "name": "Delete a specific chunk from a document loader",
+          "request": {
+            "name": "Delete a specific chunk from a document loader",
+            "description": {
+              "content": "Delete a specific chunk from a document loader",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "document-store",
+                "chunks",
+                ":storeId",
+                ":loaderId",
+                ":chunkId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "storeId",
+                  "description": "(Required) Document Store ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "loaderId",
+                  "description": "(Required) Document Loader ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "chunkId",
+                  "description": "(Required) Document Chunk ID"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "16d323a4-d7a8-4354-b038-e90cbbb1ece2",
+              "name": "Successfully deleted chunk",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "chunks",
+                    ":storeId",
+                    ":loaderId",
+                    ":chunkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loaderId",
+                      "description": "(Required) Document Loader ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chunkId",
+                      "description": "(Required) Document Chunk ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b658252e-184a-4fb1-8ef4-3fc65646a84d",
+              "name": "Invalid ID provided",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "chunks",
+                    ":storeId",
+                    ":loaderId",
+                    ":chunkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loaderId",
+                      "description": "(Required) Document Loader ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chunkId",
+                      "description": "(Required) Document Chunk ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2bb379a0-a602-4885-ada7-c1f31b5155d7",
+              "name": "Document Store not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "chunks",
+                    ":storeId",
+                    ":loaderId",
+                    ":chunkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loaderId",
+                      "description": "(Required) Document Loader ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chunkId",
+                      "description": "(Required) Document Chunk ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0225eab2-2a49-43db-abbb-e94f47cdd354",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "document-store",
+                    "chunks",
+                    ":storeId",
+                    ":loaderId",
+                    ":chunkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "storeId",
+                      "description": "(Required) Document Store ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loaderId",
+                      "description": "(Required) Document Loader ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chunkId",
+                      "description": "(Required) Document Chunk ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "79f319ed-31cb-47bc-98b0-faa103d02517",
+    "name": "Flowise APIs assistants document-store API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.\nBearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.\n\n\nContact Support:\n Name: FlowiseAI\n Email: support@flowiseai.com",
+      "type": "text/plain"
+    }
+  }
+}

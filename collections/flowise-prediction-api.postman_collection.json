@@ -1,0 +1,899 @@
+{
+  "item": [
+    {
+      "id": "e0143c9a-55f2-49e5-8769-8ba892b86614",
+      "name": "prediction",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6ad9a803-a5b5-4258-9cbf-9d6641234e74",
+          "name": "Send message to flow and get AI response",
+          "request": {
+            "name": "Send message to flow and get AI response",
+            "description": {
+              "content": "Send a message to your flow and receive an AI-generated response. This is the primary endpoint for interacting with your flows and assistants.\n**Authentication**: API key may be required depending on flow settings.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "prediction",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Flow ID - the unique identifier of your flow"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "question",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Question/message to send to the flow"
+                },
+                {
+                  "key": "files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "Files to be uploaded (images, audio, documents, etc.)"
+                },
+                {
+                  "key": "streaming",
+                  "value": "false",
+                  "type": "text",
+                  "description": "Enable streaming responses"
+                },
+                {
+                  "key": "overrideConfig",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "JSON string of configuration overrides"
+                },
+                {
+                  "key": "history",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "JSON string of conversation history"
+                },
+                {
+                  "key": "humanInput",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "JSON string of human input for resuming execution"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "664e6c75-e1d3-482e-89e2-05d56a0c3d2e",
+              "name": "Successful prediction response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "prediction",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Flow ID - the unique identifier of your flow"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Question/message to send to the flow",
+                        "type": "text/plain"
+                      },
+                      "key": "question",
+                      "value": "Analyze this uploaded file and summarize its contents",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to be uploaded (images, audio, documents, etc.)",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Enable streaming responses",
+                        "type": "text/plain"
+                      },
+                      "key": "streaming",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of configuration overrides",
+                        "type": "text/plain"
+                      },
+                      "key": "overrideConfig",
+                      "value": "{\"sessionId\":\"user-123\",\"temperature\":0.7}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of conversation history",
+                        "type": "text/plain"
+                      },
+                      "key": "history",
+                      "value": "[{\"role\":\"userMessage\",\"content\":\"Hello\"},{\"role\":\"apiMessage\",\"content\":\"Hi there!\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of human input for resuming execution",
+                        "type": "text/plain"
+                      },
+                      "key": "humanInput",
+                      "value": "{\"type\":\"proceed\",\"feedback\":\"Continue with the plan\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"text\": \"Artificial intelligence (AI) is a branch of computer science that focuses on creating systems capable of performing tasks that typically require human intelligence.\",\n  \"json\": {},\n  \"question\": \"What is artificial intelligence?\",\n  \"chatId\": \"chat-12345\",\n  \"chatMessageId\": \"msg-67890\",\n  \"sessionId\": \"user-session-123\",\n  \"memoryType\": \"Buffer Memory\",\n  \"sourceDocuments\": [\n    {\n      \"pageContent\": \"This is the content of the page.\",\n      \"metadata\": {\n        \"author\": \"John Doe\",\n        \"date\": \"2024-08-24\"\n      }\n    },\n    {\n      \"pageContent\": \"This is the content of the page.\",\n      \"metadata\": {\n        \"author\": \"John Doe\",\n        \"date\": \"2024-08-24\"\n      }\n    }\n  ],\n  \"usedTools\": [\n    {\n      \"tool\": \"Name of the tool\",\n      \"toolInput\": {\n        \"input\": \"search query\"\n      },\n      \"toolOutput\": \"string\"\n    },\n    {\n      \"tool\": \"Name of the tool\",\n      \"toolInput\": {\n        \"input\": \"search query\"\n      },\n      \"toolOutput\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d4d562a4-3295-4735-988c-83882af65b81",
+              "name": "Bad Request - Invalid input provided or request format is incorrect",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "prediction",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Flow ID - the unique identifier of your flow"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Question/message to send to the flow",
+                        "type": "text/plain"
+                      },
+                      "key": "question",
+                      "value": "Analyze this uploaded file and summarize its contents",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to be uploaded (images, audio, documents, etc.)",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Enable streaming responses",
+                        "type": "text/plain"
+                      },
+                      "key": "streaming",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of configuration overrides",
+                        "type": "text/plain"
+                      },
+                      "key": "overrideConfig",
+                      "value": "{\"sessionId\":\"user-123\",\"temperature\":0.7}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of conversation history",
+                        "type": "text/plain"
+                      },
+                      "key": "history",
+                      "value": "[{\"role\":\"userMessage\",\"content\":\"Hello\"},{\"role\":\"apiMessage\",\"content\":\"Hi there!\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of human input for resuming execution",
+                        "type": "text/plain"
+                      },
+                      "key": "humanInput",
+                      "value": "{\"type\":\"proceed\",\"feedback\":\"Continue with the plan\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Invalid request format. Check required fields and parameter types.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79ca28e2-7486-4b90-9a47-5366cc5ae049",
+              "name": "Unauthorized - API key required or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "prediction",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Flow ID - the unique identifier of your flow"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Question/message to send to the flow",
+                        "type": "text/plain"
+                      },
+                      "key": "question",
+                      "value": "Analyze this uploaded file and summarize its contents",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to be uploaded (images, audio, documents, etc.)",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Enable streaming responses",
+                        "type": "text/plain"
+                      },
+                      "key": "streaming",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of configuration overrides",
+                        "type": "text/plain"
+                      },
+                      "key": "overrideConfig",
+                      "value": "{\"sessionId\":\"user-123\",\"temperature\":0.7}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of conversation history",
+                        "type": "text/plain"
+                      },
+                      "key": "history",
+                      "value": "[{\"role\":\"userMessage\",\"content\":\"Hello\"},{\"role\":\"apiMessage\",\"content\":\"Hi there!\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of human input for resuming execution",
+                        "type": "text/plain"
+                      },
+                      "key": "humanInput",
+                      "value": "{\"type\":\"proceed\",\"feedback\":\"Continue with the plan\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Unauthorized access. Please verify your API key.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "95b2ec1a-ed0a-4685-b0c7-a280868bea29",
+              "name": "Not Found - Chatflow with specified ID does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "prediction",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Flow ID - the unique identifier of your flow"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Question/message to send to the flow",
+                        "type": "text/plain"
+                      },
+                      "key": "question",
+                      "value": "Analyze this uploaded file and summarize its contents",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to be uploaded (images, audio, documents, etc.)",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Enable streaming responses",
+                        "type": "text/plain"
+                      },
+                      "key": "streaming",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of configuration overrides",
+                        "type": "text/plain"
+                      },
+                      "key": "overrideConfig",
+                      "value": "{\"sessionId\":\"user-123\",\"temperature\":0.7}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of conversation history",
+                        "type": "text/plain"
+                      },
+                      "key": "history",
+                      "value": "[{\"role\":\"userMessage\",\"content\":\"Hello\"},{\"role\":\"apiMessage\",\"content\":\"Hi there!\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of human input for resuming execution",
+                        "type": "text/plain"
+                      },
+                      "key": "humanInput",
+                      "value": "{\"type\":\"proceed\",\"feedback\":\"Continue with the plan\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Chatflow not found. Please verify the chatflow ID.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bb9b0c20-d7f1-44bd-a244-b954e5851a2d",
+              "name": "Payload Too Large - Request payload exceeds size limits",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "prediction",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Flow ID - the unique identifier of your flow"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Question/message to send to the flow",
+                        "type": "text/plain"
+                      },
+                      "key": "question",
+                      "value": "Analyze this uploaded file and summarize its contents",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to be uploaded (images, audio, documents, etc.)",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Enable streaming responses",
+                        "type": "text/plain"
+                      },
+                      "key": "streaming",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of configuration overrides",
+                        "type": "text/plain"
+                      },
+                      "key": "overrideConfig",
+                      "value": "{\"sessionId\":\"user-123\",\"temperature\":0.7}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of conversation history",
+                        "type": "text/plain"
+                      },
+                      "key": "history",
+                      "value": "[{\"role\":\"userMessage\",\"content\":\"Hello\"},{\"role\":\"apiMessage\",\"content\":\"Hi there!\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of human input for resuming execution",
+                        "type": "text/plain"
+                      },
+                      "key": "humanInput",
+                      "value": "{\"type\":\"proceed\",\"feedback\":\"Continue with the plan\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Request payload too large. Please reduce file sizes or split large requests.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4b3b916b-0af5-421c-861f-003d3ba00061",
+              "name": "Validation Error - Request validation failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "prediction",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Flow ID - the unique identifier of your flow"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Question/message to send to the flow",
+                        "type": "text/plain"
+                      },
+                      "key": "question",
+                      "value": "Analyze this uploaded file and summarize its contents",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to be uploaded (images, audio, documents, etc.)",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Enable streaming responses",
+                        "type": "text/plain"
+                      },
+                      "key": "streaming",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of configuration overrides",
+                        "type": "text/plain"
+                      },
+                      "key": "overrideConfig",
+                      "value": "{\"sessionId\":\"user-123\",\"temperature\":0.7}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of conversation history",
+                        "type": "text/plain"
+                      },
+                      "key": "history",
+                      "value": "[{\"role\":\"userMessage\",\"content\":\"Hello\"},{\"role\":\"apiMessage\",\"content\":\"Hi there!\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of human input for resuming execution",
+                        "type": "text/plain"
+                      },
+                      "key": "humanInput",
+                      "value": "{\"type\":\"proceed\",\"feedback\":\"Continue with the plan\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Validation failed. Check parameter requirements and data types.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "280f5955-08d3-4b19-9bb5-259d67ae84fb",
+              "name": "Internal Server Error - Flow configuration or execution error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "prediction",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Flow ID - the unique identifier of your flow"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Question/message to send to the flow",
+                        "type": "text/plain"
+                      },
+                      "key": "question",
+                      "value": "Analyze this uploaded file and summarize its contents",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Files to be uploaded (images, audio, documents, etc.)",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Enable streaming responses",
+                        "type": "text/plain"
+                      },
+                      "key": "streaming",
+                      "value": "false",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of configuration overrides",
+                        "type": "text/plain"
+                      },
+                      "key": "overrideConfig",
+                      "value": "{\"sessionId\":\"user-123\",\"temperature\":0.7}",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of conversation history",
+                        "type": "text/plain"
+                      },
+                      "key": "history",
+                      "value": "[{\"role\":\"userMessage\",\"content\":\"Hello\"},{\"role\":\"apiMessage\",\"content\":\"Hi there!\"}]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "JSON string of human input for resuming execution",
+                        "type": "text/plain"
+                      },
+                      "key": "humanInput",
+                      "value": "{\"type\":\"proceed\",\"feedback\":\"Continue with the plan\"}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Internal server error. Check flow configuration and node settings.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e7e505c9-cf28-49a3-9692-d2b838cc0581",
+    "name": "Flowise APIs assistants prediction API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.\nBearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.\n\n\nContact Support:\n Name: FlowiseAI\n Email: support@flowiseai.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowise APIs assistants chatmessage API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "chatmessage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all chat messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/chatmessage/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              },
+              {
+                "name": "chatType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by chat type"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order"
+              },
+              {
+                "name": "chatId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by chat ID"
+              },
+              {
+                "name": "memoryType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by memory type"
+              },
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by session ID"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter by start date"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter by end date"
+              },
+              {
+                "name": "feedback",
+                "value": "",
+                "type": "query",
+                "description": "Filter by feedback"
+              },
+              {
+                "name": "feedbackType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by feedback type. Only applicable if feedback is true"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve all chat messages for a specific chatflow."
+        },
+        {
+          "info": {
+            "name": "Delete all chat messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/chatmessage/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              },
+              {
+                "name": "chatId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by chat ID"
+              },
+              {
+                "name": "memoryType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by memory type"
+              },
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by session ID"
+              },
+              {
+                "name": "chatType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by chat type"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter by start date"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "Filter by end date"
+              },
+              {
+                "name": "feedbackType",
+                "value": "",
+                "type": "query",
+                "description": "Filter by feedback type"
+              },
+              {
+                "name": "hardDelete",
+                "value": "",
+                "type": "query",
+                "description": "If hardDelete is true, messages will be deleted from the third party service as well"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete all chat messages for a specific chatflow."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

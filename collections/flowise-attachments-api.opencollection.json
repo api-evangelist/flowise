@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowise APIs assistants attachments API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "attachments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create attachments array",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/attachments/:chatflowId/:chatId",
+            "params": [
+              {
+                "name": "chatflowId",
+                "value": "",
+                "type": "path",
+                "description": "Chatflow ID"
+              },
+              {
+                "name": "chatId",
+                "value": "",
+                "type": "path",
+                "description": "Chat ID"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "files",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "base64",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Return contents of the files in plain string format"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

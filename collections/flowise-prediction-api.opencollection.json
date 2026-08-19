@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowise APIs assistants prediction API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "prediction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send message to flow and get AI response",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/prediction/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "your-flow-id",
+                "type": "path",
+                "description": "Flow ID - the unique identifier of your flow"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Send a message to your flow and receive an AI-generated response. This is the primary endpoint for interacting with your flows and assistants.\n**Authentication**: API key may be required depending on flow settings.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

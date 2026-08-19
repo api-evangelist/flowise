@@ -1,0 +1,1390 @@
+{
+  "item": [
+    {
+      "id": "e0c424a6-6975-4fa8-87bb-d8960cb89ed0",
+      "name": "chatflows",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9dd42f2d-0728-4035-b2b8-0f95102215d9",
+          "name": "Create a new chatflow",
+          "request": {
+            "name": "Create a new chatflow",
+            "description": {
+              "content": "Create a new chatflow with the provided details",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chatflows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"flowData\": \"<string>\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"<string>\",\n  \"apiConfig\": \"<string>\",\n  \"analytic\": \"<string>\",\n  \"speechToText\": \"<string>\",\n  \"category\": \"<string>\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2bbbb735-d98e-4517-829f-0668a27b3a68",
+              "name": "Chatflow created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"name\": \"MyChatFlow\",\n  \"flowData\": \"{}\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"{}\",\n  \"apiConfig\": \"{}\",\n  \"analytic\": \"{}\",\n  \"speechToText\": \"{}\",\n  \"category\": \"category1;category2\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"name\": \"MyChatFlow\",\n  \"flowData\": \"{}\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"{}\",\n  \"apiConfig\": \"{}\",\n  \"analytic\": \"{}\",\n  \"speechToText\": \"{}\",\n  \"category\": \"category1;category2\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b7a1a654-f6ce-4e70-ab60-4bb8b3ca4b81",
+              "name": "Invalid input provided",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"name\": \"MyChatFlow\",\n  \"flowData\": \"{}\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"{}\",\n  \"apiConfig\": \"{}\",\n  \"analytic\": \"{}\",\n  \"speechToText\": \"{}\",\n  \"category\": \"category1;category2\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d54c1a84-586f-4ee5-b98a-9ea47b01faae",
+              "name": "Validation exception",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"name\": \"MyChatFlow\",\n  \"flowData\": \"{}\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"{}\",\n  \"apiConfig\": \"{}\",\n  \"analytic\": \"{}\",\n  \"speechToText\": \"{}\",\n  \"category\": \"category1;category2\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7395dc4-f395-4a3f-8c55-06497c348f92",
+          "name": "List all chatflows",
+          "request": {
+            "name": "List all chatflows",
+            "description": {
+              "content": "Retrieve a list of all chatflows",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chatflows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0166bab8-3629-4f3e-b3c8-f3846e88ec45",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n    \"name\": \"MyChatFlow\",\n    \"flowData\": \"{}\",\n    \"deployed\": \"<boolean>\",\n    \"isPublic\": \"<boolean>\",\n    \"apikeyid\": \"<string>\",\n    \"chatbotConfig\": \"{}\",\n    \"apiConfig\": \"{}\",\n    \"analytic\": \"{}\",\n    \"speechToText\": \"{}\",\n    \"category\": \"category1;category2\",\n    \"type\": \"<string>\",\n    \"createdDate\": \"2024-08-24T14:15:22Z\",\n    \"updatedDate\": \"2024-08-24T14:15:22Z\"\n  },\n  {\n    \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n    \"name\": \"MyChatFlow\",\n    \"flowData\": \"{}\",\n    \"deployed\": \"<boolean>\",\n    \"isPublic\": \"<boolean>\",\n    \"apikeyid\": \"<string>\",\n    \"chatbotConfig\": \"{}\",\n    \"apiConfig\": \"{}\",\n    \"analytic\": \"{}\",\n    \"speechToText\": \"{}\",\n    \"category\": \"category1;category2\",\n    \"type\": \"<string>\",\n    \"createdDate\": \"2024-08-24T14:15:22Z\",\n    \"updatedDate\": \"2024-08-24T14:15:22Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4979d0ee-6f10-4966-9a67-aa392512aa52",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6bc8bc6d-6beb-4110-999b-5727eed02eb6",
+          "name": "Get chatflow by ID",
+          "request": {
+            "name": "Get chatflow by ID",
+            "description": {
+              "content": "Retrieve a specific chatflow by ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chatflows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Chatflow ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "332da132-4d69-4bfd-8980-6f0b337a8d7e",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"name\": \"MyChatFlow\",\n  \"flowData\": \"{}\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"{}\",\n  \"apiConfig\": \"{}\",\n  \"analytic\": \"{}\",\n  \"speechToText\": \"{}\",\n  \"category\": \"category1;category2\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "99c88860-8d10-4089-bf60-d1519ed78615",
+              "name": "The specified ID is invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f3449131-7c37-4486-9b5a-05a5e4cbcd36",
+              "name": "Chatflow not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b1c7e3ae-c976-40ba-a8d5-2865a1114544",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ed8aa43-28ae-411c-982d-8751e8aeb0cb",
+          "name": "Update chatflow details",
+          "request": {
+            "name": "Update chatflow details",
+            "description": {
+              "content": "Update the details of an existing chatflow",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chatflows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Chatflow ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"flowData\": \"<string>\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"<string>\",\n  \"apiConfig\": \"<string>\",\n  \"analytic\": \"<string>\",\n  \"speechToText\": \"<string>\",\n  \"category\": \"<string>\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"<dateTime>\",\n  \"updatedDate\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7cfc16d0-0d50-4d10-a867-1027bb6b0216",
+              "name": "Chatflow updated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"name\": \"MyChatFlow\",\n  \"flowData\": \"{}\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"{}\",\n  \"apiConfig\": \"{}\",\n  \"analytic\": \"{}\",\n  \"speechToText\": \"{}\",\n  \"category\": \"category1;category2\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"name\": \"MyChatFlow\",\n  \"flowData\": \"{}\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"{}\",\n  \"apiConfig\": \"{}\",\n  \"analytic\": \"{}\",\n  \"speechToText\": \"{}\",\n  \"category\": \"category1;category2\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea4d122b-e655-443e-9962-a107605dd14b",
+              "name": "The specified ID is invalid or body is missing",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"name\": \"MyChatFlow\",\n  \"flowData\": \"{}\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"{}\",\n  \"apiConfig\": \"{}\",\n  \"analytic\": \"{}\",\n  \"speechToText\": \"{}\",\n  \"category\": \"category1;category2\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "59d229d1-6a1d-4504-a889-e15a5bcf3cf3",
+              "name": "Chatflow not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"name\": \"MyChatFlow\",\n  \"flowData\": \"{}\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"{}\",\n  \"apiConfig\": \"{}\",\n  \"analytic\": \"{}\",\n  \"speechToText\": \"{}\",\n  \"category\": \"category1;category2\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f5f5e05d-095f-4b75-b02d-739b8af285c5",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"name\": \"MyChatFlow\",\n  \"flowData\": \"{}\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"{}\",\n  \"apiConfig\": \"{}\",\n  \"analytic\": \"{}\",\n  \"speechToText\": \"{}\",\n  \"category\": \"category1;category2\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1afabab7-9c82-4e68-b124-518fc7d87aa2",
+          "name": "Delete a chatflow",
+          "request": {
+            "name": "Delete a chatflow",
+            "description": {
+              "content": "Delete a chatflow by ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chatflows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Chatflow ID"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "132a4c7a-1cc1-4615-a228-2e5eaf5244ca",
+              "name": "Chatflow deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ad829524-af88-45fa-ae1b-dbcda77b3573",
+              "name": "The specified ID is invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f638e858-4720-409c-a901-a73aa2394630",
+              "name": "Chatflow not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b1e3df4d-b611-4d7d-8805-c936cd34ca28",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f9b1e42-db2e-4955-b435-91524598aeb1",
+          "name": "Get chatflow by API key",
+          "request": {
+            "name": "Get chatflow by API key",
+            "description": {
+              "content": "Retrieve a chatflow using an API key",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chatflows",
+                "apikey",
+                ":apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "apikey",
+                  "description": "(Required) API key associated with the chatflow"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1a149b15-0bbc-4f96-98fd-a94c075fc982",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    "apikey",
+                    ":apikey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apikey",
+                      "description": "(Required) API key associated with the chatflow"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n  \"name\": \"MyChatFlow\",\n  \"flowData\": \"{}\",\n  \"deployed\": \"<boolean>\",\n  \"isPublic\": \"<boolean>\",\n  \"apikeyid\": \"<string>\",\n  \"chatbotConfig\": \"{}\",\n  \"apiConfig\": \"{}\",\n  \"analytic\": \"{}\",\n  \"speechToText\": \"{}\",\n  \"category\": \"category1;category2\",\n  \"type\": \"<string>\",\n  \"createdDate\": \"2024-08-24T14:15:22Z\",\n  \"updatedDate\": \"2024-08-24T14:15:22Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "043b5ed8-9709-42c2-818b-8d31eec2e790",
+              "name": "The specified API key is invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    "apikey",
+                    ":apikey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apikey",
+                      "description": "(Required) API key associated with the chatflow"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4815e075-aef9-45e6-92f0-1e5e9f3ba159",
+              "name": "Chatflow not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    "apikey",
+                    ":apikey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apikey",
+                      "description": "(Required) API key associated with the chatflow"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bef80d84-6e28-4120-9f25-852ad38120c0",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatflows",
+                    "apikey",
+                    ":apikey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apikey",
+                      "description": "(Required) API key associated with the chatflow"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "07d75ffc-0b91-43a6-8367-7de08553344a",
+    "name": "Flowise APIs assistants chatflows API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.\nBearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.\n\n\nContact Support:\n Name: FlowiseAI\n Email: support@flowiseai.com",
+      "type": "text/plain"
+    }
+  }
+}

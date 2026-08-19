@@ -1,0 +1,359 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Flowise APIs assistants document-store API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "document-store",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all document stores",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/document-store/store",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieves a list of all document stores"
+        },
+        {
+          "info": {
+            "name": "Create a new document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/document-store/store",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Creates a new document store with the provided details"
+        },
+        {
+          "info": {
+            "name": "Get a specific document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/document-store/store/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieves details of a specific document store by its ID"
+        },
+        {
+          "info": {
+            "name": "Update a specific document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:3000/api/v1/document-store/store/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Updates the details of a specific document store by its ID"
+        },
+        {
+          "info": {
+            "name": "Delete a specific document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/document-store/store/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Deletes a document store by its ID"
+        },
+        {
+          "info": {
+            "name": "Upsert document to document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/document-store/upsert/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Upsert document to document store"
+        },
+        {
+          "info": {
+            "name": "Re-process and upsert all documents in document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/document-store/refresh/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Re-process and upsert all existing documents in document store"
+        },
+        {
+          "info": {
+            "name": "Retrieval query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3000/api/v1/document-store/vectorstore/query",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieval query for the upserted chunks"
+        },
+        {
+          "info": {
+            "name": "Delete specific document loader and associated chunks from document store",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/document-store/loader/:storeId/:loaderId",
+            "params": [
+              {
+                "name": "storeId",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              },
+              {
+                "name": "loaderId",
+                "value": "",
+                "type": "path",
+                "description": "Document Loader ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete specific document loader and associated chunks from document store. This does not delete data from vector store."
+        },
+        {
+          "info": {
+            "name": "Delete data from vector store",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/document-store/vectorstore/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Only data that were upserted with Record Manager will be deleted from vector store"
+        },
+        {
+          "info": {
+            "name": "Get chunks from a specific document loader",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/v1/document-store/chunks/:storeId/:loaderId/:pageNo",
+            "params": [
+              {
+                "name": "storeId",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              },
+              {
+                "name": "loaderId",
+                "value": "",
+                "type": "path",
+                "description": "Document loader ID"
+              },
+              {
+                "name": "pageNo",
+                "value": "",
+                "type": "path",
+                "description": "Pagination number"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get chunks from a specific document loader within a document store"
+        },
+        {
+          "info": {
+            "name": "Update a specific chunk",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:3000/api/v1/document-store/chunks/:storeId/:loaderId/:chunkId",
+            "params": [
+              {
+                "name": "storeId",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              },
+              {
+                "name": "loaderId",
+                "value": "",
+                "type": "path",
+                "description": "Document Loader ID"
+              },
+              {
+                "name": "chunkId",
+                "value": "",
+                "type": "path",
+                "description": "Document Chunk ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Updates a specific chunk from a document loader"
+        },
+        {
+          "info": {
+            "name": "Delete a specific chunk from a document loader",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/v1/document-store/chunks/:storeId/:loaderId/:chunkId",
+            "params": [
+              {
+                "name": "storeId",
+                "value": "",
+                "type": "path",
+                "description": "Document Store ID"
+              },
+              {
+                "name": "loaderId",
+                "value": "",
+                "type": "path",
+                "description": "Document Loader ID"
+              },
+              {
+                "name": "chunkId",
+                "value": "",
+                "type": "path",
+                "description": "Document Chunk ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a specific chunk from a document loader"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

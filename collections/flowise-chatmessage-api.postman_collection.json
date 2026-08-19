@@ -1,0 +1,732 @@
+{
+  "item": [
+    {
+      "id": "16281863-ae33-43de-b61f-bbdd3de461f6",
+      "name": "chatmessage",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "34135030-89ea-4678-aa14-12a7d65505bf",
+          "name": "List all chat messages",
+          "request": {
+            "name": "List all chat messages",
+            "description": {
+              "content": "Retrieve all chat messages for a specific chatflow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chatmessage",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chatType",
+                  "value": "<string>",
+                  "description": "Filter by chat type"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>",
+                  "description": "Sort order"
+                },
+                {
+                  "disabled": false,
+                  "key": "chatId",
+                  "value": "<string>",
+                  "description": "Filter by chat ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "memoryType",
+                  "value": "<string>",
+                  "description": "Filter by memory type"
+                },
+                {
+                  "disabled": false,
+                  "key": "sessionId",
+                  "value": "<string>",
+                  "description": "Filter by session ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<dateTime>",
+                  "description": "Filter by start date"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<dateTime>",
+                  "description": "Filter by end date"
+                },
+                {
+                  "disabled": false,
+                  "key": "feedback",
+                  "value": "<boolean>",
+                  "description": "Filter by feedback"
+                },
+                {
+                  "disabled": false,
+                  "key": "feedbackType",
+                  "value": "<string>",
+                  "description": "Filter by feedback type. Only applicable if feedback is true"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Chatflow ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cd428f05-e394-4e47-8bdb-aa928b076126",
+              "name": "A list of chat messages",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatmessage",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chatType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chatId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "memoryType",
+                      "value": "Buffer Memory"
+                    },
+                    {
+                      "key": "sessionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "2025-01-01 11:28:36+00:00"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2025-01-13 11:28:36+00:00"
+                    },
+                    {
+                      "key": "feedback",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "feedbackType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n    \"role\": \"apiMessage\",\n    \"chatflowid\": \"d290f1ee-6c54-4b01-90e6-d701748f0852\",\n    \"content\": \"Hello, how can I help you today?\",\n    \"sourceDocuments\": [\n      {\n        \"pageContent\": \"This is the content of the page.\",\n        \"metadata\": {\n          \"author\": \"John Doe\",\n          \"date\": \"2024-08-24\"\n        }\n      },\n      {\n        \"pageContent\": \"This is the content of the page.\",\n        \"metadata\": {\n          \"author\": \"John Doe\",\n          \"date\": \"2024-08-24\"\n        }\n      }\n    ],\n    \"usedTools\": [\n      {\n        \"tool\": \"Name of the tool\",\n        \"toolInput\": {\n          \"input\": \"search query\"\n        },\n        \"toolOutput\": \"string\"\n      },\n      {\n        \"tool\": \"Name of the tool\",\n        \"toolInput\": {\n          \"input\": \"search query\"\n        },\n        \"toolOutput\": \"string\"\n      }\n    ],\n    \"fileAnnotations\": [\n      {\n        \"filePath\": \"path/to/file\",\n        \"fileName\": \"file.txt\"\n      },\n      {\n        \"filePath\": \"path/to/file\",\n        \"fileName\": \"file.txt\"\n      }\n    ],\n    \"agentReasoning\": [\n      {\n        \"agentName\": \"agent\",\n        \"messages\": [\n          \"hello\"\n        ],\n        \"nodeName\": \"seqAgent\",\n        \"nodeId\": \"seqAgent_0\",\n        \"usedTools\": [\n          {\n            \"tool\": \"Name of the tool\",\n            \"toolInput\": {\n              \"input\": \"search query\"\n            },\n            \"toolOutput\": \"string\"\n          },\n          {\n            \"tool\": \"Name of the tool\",\n            \"toolInput\": {\n              \"input\": \"search query\"\n            },\n            \"toolOutput\": \"string\"\n          }\n        ],\n        \"sourceDocuments\": [\n          {\n            \"pageContent\": \"This is the content of the page.\",\n            \"metadata\": {\n              \"author\": \"John Doe\",\n              \"date\": \"2024-08-24\"\n            }\n          },\n          {\n            \"pageContent\": \"This is the content of the page.\",\n            \"metadata\": {\n              \"author\": \"John Doe\",\n              \"date\": \"2024-08-24\"\n            }\n          }\n        ],\n        \"state\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      {\n        \"agentName\": \"agent\",\n        \"messages\": [\n          \"hello\"\n        ],\n        \"nodeName\": \"seqAgent\",\n        \"nodeId\": \"seqAgent_0\",\n        \"usedTools\": [\n          {\n            \"tool\": \"Name of the tool\",\n            \"toolInput\": {\n              \"input\": \"search query\"\n            },\n            \"toolOutput\": \"string\"\n          },\n          {\n            \"tool\": \"Name of the tool\",\n            \"toolInput\": {\n              \"input\": \"search query\"\n            },\n            \"toolOutput\": \"string\"\n          }\n        ],\n        \"sourceDocuments\": [\n          {\n            \"pageContent\": \"This is the content of the page.\",\n            \"metadata\": {\n              \"author\": \"John Doe\",\n              \"date\": \"2024-08-24\"\n            }\n          },\n          {\n            \"pageContent\": \"This is the content of the page.\",\n            \"metadata\": {\n              \"author\": \"John Doe\",\n              \"date\": \"2024-08-24\"\n            }\n          }\n        ],\n        \"state\": {\n          \"key_0\": \"string\"\n        }\n      }\n    ],\n    \"fileUploads\": [\n      {\n        \"data\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABjElEQVRIS+2Vv0oDQRDG\",\n        \"type\": \"image\",\n        \"name\": \"image.png\",\n        \"mime\": \"image/png\"\n      },\n      {\n        \"data\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABjElEQVRIS+2Vv0oDQRDG\",\n        \"type\": \"image\",\n        \"name\": \"image.png\",\n        \"mime\": \"image/png\"\n      }\n    ],\n    \"action\": [\n      {\n        \"id\": \"61beeb58-6ebe-4d51-aa0b-41d4c546ff08\",\n        \"mapping\": {\n          \"approve\": \"Yes\",\n          \"reject\": \"No\"\n        }\n      },\n      {\n        \"id\": \"61beeb58-6ebe-4d51-aa0b-41d4c546ff08\",\n        \"mapping\": {\n          \"approve\": \"Yes\",\n          \"reject\": \"No\"\n        }\n      }\n    ],\n    \"chatType\": \"INTERNAL\",\n    \"chatId\": \"chat12345\",\n    \"memoryType\": \"string\",\n    \"sessionId\": \"string\",\n    \"createdDate\": \"2024-08-24T14:15:22Z\",\n    \"leadEmail\": \"user@example.com\"\n  },\n  {\n    \"id\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n    \"role\": \"apiMessage\",\n    \"chatflowid\": \"d290f1ee-6c54-4b01-90e6-d701748f0852\",\n    \"content\": \"Hello, how can I help you today?\",\n    \"sourceDocuments\": [\n      {\n        \"pageContent\": \"This is the content of the page.\",\n        \"metadata\": {\n          \"author\": \"John Doe\",\n          \"date\": \"2024-08-24\"\n        }\n      },\n      {\n        \"pageContent\": \"This is the content of the page.\",\n        \"metadata\": {\n          \"author\": \"John Doe\",\n          \"date\": \"2024-08-24\"\n        }\n      }\n    ],\n    \"usedTools\": [\n      {\n        \"tool\": \"Name of the tool\",\n        \"toolInput\": {\n          \"input\": \"search query\"\n        },\n        \"toolOutput\": \"string\"\n      },\n      {\n        \"tool\": \"Name of the tool\",\n        \"toolInput\": {\n          \"input\": \"search query\"\n        },\n        \"toolOutput\": \"string\"\n      }\n    ],\n    \"fileAnnotations\": [\n      {\n        \"filePath\": \"path/to/file\",\n        \"fileName\": \"file.txt\"\n      },\n      {\n        \"filePath\": \"path/to/file\",\n        \"fileName\": \"file.txt\"\n      }\n    ],\n    \"agentReasoning\": [\n      {\n        \"agentName\": \"agent\",\n        \"messages\": [\n          \"hello\"\n        ],\n        \"nodeName\": \"seqAgent\",\n        \"nodeId\": \"seqAgent_0\",\n        \"usedTools\": [\n          {\n            \"tool\": \"Name of the tool\",\n            \"toolInput\": {\n              \"input\": \"search query\"\n            },\n            \"toolOutput\": \"string\"\n          },\n          {\n            \"tool\": \"Name of the tool\",\n            \"toolInput\": {\n              \"input\": \"search query\"\n            },\n            \"toolOutput\": \"string\"\n          }\n        ],\n        \"sourceDocuments\": [\n          {\n            \"pageContent\": \"This is the content of the page.\",\n            \"metadata\": {\n              \"author\": \"John Doe\",\n              \"date\": \"2024-08-24\"\n            }\n          },\n          {\n            \"pageContent\": \"This is the content of the page.\",\n            \"metadata\": {\n              \"author\": \"John Doe\",\n              \"date\": \"2024-08-24\"\n            }\n          }\n        ],\n        \"state\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      {\n        \"agentName\": \"agent\",\n        \"messages\": [\n          \"hello\"\n        ],\n        \"nodeName\": \"seqAgent\",\n        \"nodeId\": \"seqAgent_0\",\n        \"usedTools\": [\n          {\n            \"tool\": \"Name of the tool\",\n            \"toolInput\": {\n              \"input\": \"search query\"\n            },\n            \"toolOutput\": \"string\"\n          },\n          {\n            \"tool\": \"Name of the tool\",\n            \"toolInput\": {\n              \"input\": \"search query\"\n            },\n            \"toolOutput\": \"string\"\n          }\n        ],\n        \"sourceDocuments\": [\n          {\n            \"pageContent\": \"This is the content of the page.\",\n            \"metadata\": {\n              \"author\": \"John Doe\",\n              \"date\": \"2024-08-24\"\n            }\n          },\n          {\n            \"pageContent\": \"This is the content of the page.\",\n            \"metadata\": {\n              \"author\": \"John Doe\",\n              \"date\": \"2024-08-24\"\n            }\n          }\n        ],\n        \"state\": {\n          \"key_0\": \"string\"\n        }\n      }\n    ],\n    \"fileUploads\": [\n      {\n        \"data\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABjElEQVRIS+2Vv0oDQRDG\",\n        \"type\": \"image\",\n        \"name\": \"image.png\",\n        \"mime\": \"image/png\"\n      },\n      {\n        \"data\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABjElEQVRIS+2Vv0oDQRDG\",\n        \"type\": \"image\",\n        \"name\": \"image.png\",\n        \"mime\": \"image/png\"\n      }\n    ],\n    \"action\": [\n      {\n        \"id\": \"61beeb58-6ebe-4d51-aa0b-41d4c546ff08\",\n        \"mapping\": {\n          \"approve\": \"Yes\",\n          \"reject\": \"No\"\n        }\n      },\n      {\n        \"id\": \"61beeb58-6ebe-4d51-aa0b-41d4c546ff08\",\n        \"mapping\": {\n          \"approve\": \"Yes\",\n          \"reject\": \"No\"\n        }\n      }\n    ],\n    \"chatType\": \"INTERNAL\",\n    \"chatId\": \"chat12345\",\n    \"memoryType\": \"string\",\n    \"sessionId\": \"string\",\n    \"createdDate\": \"2024-08-24T14:15:22Z\",\n    \"leadEmail\": \"user@example.com\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a44d2bf-e9c4-4df3-8dbd-643d0c624417",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatmessage",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chatType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chatId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "memoryType",
+                      "value": "Buffer Memory"
+                    },
+                    {
+                      "key": "sessionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "2025-01-01 11:28:36+00:00"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2025-01-13 11:28:36+00:00"
+                    },
+                    {
+                      "key": "feedback",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "feedbackType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3cad8259-d3f1-493c-bb8e-e0fe7cd5b81d",
+          "name": "Delete all chat messages",
+          "request": {
+            "name": "Delete all chat messages",
+            "description": {
+              "content": "Delete all chat messages for a specific chatflow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "chatmessage",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chatId",
+                  "value": "<string>",
+                  "description": "Filter by chat ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "memoryType",
+                  "value": "<string>",
+                  "description": "Filter by memory type"
+                },
+                {
+                  "disabled": false,
+                  "key": "sessionId",
+                  "value": "<string>",
+                  "description": "Filter by session ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "chatType",
+                  "value": "<string>",
+                  "description": "Filter by chat type"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<string>",
+                  "description": "Filter by start date"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<string>",
+                  "description": "Filter by end date"
+                },
+                {
+                  "disabled": false,
+                  "key": "feedbackType",
+                  "value": "<string>",
+                  "description": "Filter by feedback type"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardDelete",
+                  "value": "<boolean>",
+                  "description": "If hardDelete is true, messages will be deleted from the third party service as well"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Chatflow ID"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b8a88458-b80a-436e-ac69-9768bd36e084",
+              "name": "Chat messages deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatmessage",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chatId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "memoryType",
+                      "value": "Buffer Memory"
+                    },
+                    {
+                      "key": "sessionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chatType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "2025-01-01 11:28:36+00:00"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2025-01-13 11:28:36+00:00"
+                    },
+                    {
+                      "key": "feedbackType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hardDelete",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "35be82a4-6161-416c-9c6f-d6635cef3a03",
+              "name": "Invalid parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatmessage",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chatId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "memoryType",
+                      "value": "Buffer Memory"
+                    },
+                    {
+                      "key": "sessionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chatType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "2025-01-01 11:28:36+00:00"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2025-01-13 11:28:36+00:00"
+                    },
+                    {
+                      "key": "feedbackType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hardDelete",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "029185a9-b5f8-470c-b0bf-b9fa44d796d3",
+              "name": "Chat messages not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatmessage",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chatId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "memoryType",
+                      "value": "Buffer Memory"
+                    },
+                    {
+                      "key": "sessionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chatType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "2025-01-01 11:28:36+00:00"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2025-01-13 11:28:36+00:00"
+                    },
+                    {
+                      "key": "feedbackType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hardDelete",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fa675e34-9036-4739-ad0c-4de0a92fb67f",
+              "name": "Internal error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chatmessage",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chatId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "memoryType",
+                      "value": "Buffer Memory"
+                    },
+                    {
+                      "key": "sessionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "chatType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "2025-01-01 11:28:36+00:00"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2025-01-13 11:28:36+00:00"
+                    },
+                    {
+                      "key": "feedbackType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hardDelete",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Chatflow ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "06d60b35-ab30-4663-baab-e58674767a48",
+    "name": "Flowise APIs assistants chatmessage API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.\nBearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.\n\n\nContact Support:\n Name: FlowiseAI\n Email: support@flowiseai.com",
+      "type": "text/plain"
+    }
+  }
+}
