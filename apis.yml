@@ -40,7 +40,7 @@ tags:
 created: '2026-05-24'
 modified: '2026-05-24'
 url: https://raw.githubusercontent.com/api-evangelist/flowise/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: flowise:flowise-assistants-api
   name: Flowise assistants API
