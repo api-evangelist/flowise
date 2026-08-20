@@ -28,6 +28,20 @@ tags:
 - Agent Workflows
 - Artificial Intelligence
 - Large Language Models
+- Low-Code
+- Visual Builder
+- LangChain
+- RAG
+- Retrieval Augmented Generation
+- Chatbots
+- Open-Source
+- Node.js
+- TypeScript
+tags_raw:
+- Agents
+- Agent Workflows
+- Artificial Intelligence
+- Large Language Models
 - Low Code
 - Visual Builder
 - LangChain
@@ -48,6 +62,8 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
+  - Assistants
+  tags_raw:
   - assistants
   properties:
   - type: OpenAPI
@@ -66,6 +82,8 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
+  - Attachments
+  tags_raw:
   - attachments
   properties:
   - type: OpenAPI
@@ -120,6 +138,8 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
+  - Document Store
+  tags_raw:
   - document-store
   properties:
   - type: OpenAPI
@@ -138,6 +158,8 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
+  - Feedback
+  tags_raw:
   - feedback
   properties:
   - type: OpenAPI
@@ -156,6 +178,8 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
+  - Leads
+  tags_raw:
   - leads
   properties:
   - type: OpenAPI
@@ -174,6 +198,8 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
+  - Ping
+  tags_raw:
   - ping
   properties:
   - type: OpenAPI
@@ -192,6 +218,8 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
+  - Prediction
+  tags_raw:
   - prediction
   properties:
   - type: OpenAPI
@@ -210,6 +238,8 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
+  - Tools
+  tags_raw:
   - tools
   properties:
   - type: OpenAPI
@@ -246,6 +276,8 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
+  - Variables
+  tags_raw:
   - variables
   properties:
   - type: OpenAPI
@@ -264,6 +296,8 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
+  - Vectors
+  tags_raw:
   - vector
   properties:
   - type: OpenAPI
