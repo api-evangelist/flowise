@@ -7,6 +7,20 @@ description: 'Flowise is an open-source, low-code visual builder for LangChain-b
   component library, an auto-generated Swagger UI, official TypeScript and Python SDKs, an embed widget, and a managed
   Flowise Cloud offering with metered prediction quotas. Flowise was acquired by Workday in 2025.'
 kind: contract
+deliveryModel:
+  model: saas
+  license: License
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - license
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
