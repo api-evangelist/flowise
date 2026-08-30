@@ -44,7 +44,7 @@ tags:
 - Agent Workflows
 - Artificial Intelligence
 - Large Language Models
-- Low-Code
+- Low Code
 - Visual Builder
 - LangChain
 - RAG
@@ -154,7 +154,7 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
-  - Document Store
+  - document-store
   tags_raw:
   - document-store
   properties:
@@ -234,7 +234,7 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
-  - Prediction
+  - prediction
   tags_raw:
   - prediction
   properties:
@@ -312,7 +312,7 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
-  - Vectors
+  - vector
   tags_raw:
   - vector
   properties:
@@ -327,6 +327,11 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/workday/
+  name: Workday
+  x-relationship: acquired
+  x-evidence: "Flowise was acquired by Workday in 2025."
 - type: AgenticAccess
   url: agentic-access/flowise-agentic-access.yml
 - type: DomainSecurity
