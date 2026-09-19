@@ -43,12 +43,11 @@ tags:
 - Agents
 - Agent Workflows
 - Artificial Intelligence
-- Large Language Models
+- LLM
 - Low-Code
 - Visual Builder
 - LangChain
 - RAG
-- Retrieval Augmented Generation
 - Chatbots
 - Open-Source
 - Node.js
@@ -78,7 +77,7 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
-  - Assistants
+  - Assistant
   tags_raw:
   - assistants
   properties:
@@ -234,7 +233,7 @@ apis:
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
   tags:
-  - Prediction
+  - Predictions
   tags_raw:
   - prediction
   properties:
