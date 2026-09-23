@@ -1,12 +1,10 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Flowise APIs assistants prediction API
+  title: Flowise Prediction API
   version: 1.0.0
   description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
 
-    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
-
-    '
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.'
   license:
     name: Apache 2.0
     url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
@@ -22,21 +20,19 @@ servers:
     instance:
       default: app
 tags:
-- name: prediction
+- name: Prediction
 paths:
   /prediction/{id}:
     post:
       tags:
-      - prediction
+      - Prediction
       security:
       - bearerAuth: []
       operationId: createPrediction
       summary: Send message to flow and get AI response
       description: 'Send a message to your flow and receive an AI-generated response. This is the primary endpoint for interacting with your flows and assistants.
 
-        **Authentication**: API key may be required depending on flow settings.
-
-        '
+        **Authentication**: API key may be required depending on flow settings.'
       parameters:
       - in: path
         name: id
@@ -96,9 +92,10 @@ paths:
                     description: The AI-generated response text
                     example: Artificial intelligence (AI) is a branch of computer science that focuses on creating systems capable of performing tasks that typically require human intelligence.
                   json:
-                    type: object
+                    type:
+                    - object
+                    - 'null'
                     description: The result in JSON format if available (for structured outputs)
-                    nullable: true
                   question:
                     type: string
                     description: The original question/message sent to the flow
@@ -112,27 +109,31 @@ paths:
                     description: Unique identifier for this specific message
                     example: msg-67890
                   sessionId:
-                    type: string
+                    type:
+                    - string
+                    - 'null'
                     description: Session identifier for conversation continuity
                     example: user-session-123
-                    nullable: true
                   memoryType:
-                    type: string
+                    type:
+                    - string
+                    - 'null'
                     description: Type of memory used for conversation context
                     example: Buffer Memory
-                    nullable: true
                   sourceDocuments:
-                    type: array
+                    type:
+                    - array
+                    - 'null'
                     description: Documents retrieved from vector store (if RAG is enabled)
                     items:
                       $ref: '#/components/schemas/Document'
-                    nullable: true
                   usedTools:
-                    type: array
+                    type:
+                    - array
+                    - 'null'
                     description: Tools that were invoked during the response generation
                     items:
                       $ref: '#/components/schemas/UsedTool'
-                    nullable: true
         '400':
           description: Bad Request - Invalid input provided or request format is incorrect
           content:
@@ -195,6 +196,20 @@ paths:
                     example: Internal server error. Check flow configuration and node settings.
 components:
   schemas:
+    UsedTool:
+      type: object
+      properties:
+        tool:
+          type: string
+          example: Name of the tool
+        toolInput:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            input: search query
+        toolOutput:
+          type: string
     Document:
       type: object
       properties:
@@ -322,20 +337,6 @@ components:
           example:
             type: reject
             feedback: Include more emoji
-    UsedTool:
-      type: object
-      properties:
-        tool:
-          type: string
-          example: Name of the tool
-        toolInput:
-          type: object
-          additionalProperties:
-            type: string
-          example:
-            input: search query
-        toolOutput:
-          type: string
   securitySchemes:
     bearerAuth:
       type: http

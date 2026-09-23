@@ -1,12 +1,10 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Flowise APIs assistants ping API
+  title: Flowise Ping API
   version: 1.0.0
   description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
 
-    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
-
-    '
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.'
   license:
     name: Apache 2.0
     url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
@@ -22,12 +20,12 @@ servers:
     instance:
       default: app
 tags:
-- name: ping
+- name: Ping
 paths:
   /ping:
     get:
       tags:
-      - ping
+      - Ping
       summary: Ping the server
       description: Ping the server to check if it is running
       operationId: pingServer

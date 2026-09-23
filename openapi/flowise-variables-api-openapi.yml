@@ -1,12 +1,10 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Flowise APIs assistants variables API
+  title: Flowise Variables API
   version: 1.0.0
   description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
 
-    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
-
-    '
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.'
   license:
     name: Apache 2.0
     url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
@@ -22,17 +20,16 @@ servers:
     instance:
       default: app
 tags:
-- name: variables
+- name: Variables
 paths:
   /variables:
     post:
       tags:
-      - variables
+      - Variables
       security:
       - bearerAuth: []
       operationId: createVariable
       summary: Create a new variable
-      description: Create a new variable
       requestBody:
         content:
           application/json:
@@ -54,7 +51,7 @@ paths:
           description: Internal server error
     get:
       tags:
-      - variables
+      - Variables
       security:
       - bearerAuth: []
       summary: List all variables
@@ -74,7 +71,7 @@ paths:
   /variables/{id}:
     put:
       tags:
-      - variables
+      - Variables
       security:
       - bearerAuth: []
       summary: Update a variable by ID
@@ -108,7 +105,7 @@ paths:
           description: Internal server error
     delete:
       tags:
-      - variables
+      - Variables
       security:
       - bearerAuth: []
       summary: Delete a variable by ID
@@ -145,9 +142,10 @@ components:
           description: Name of the variable
           example: API_KEY
         value:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Value of the variable
-          nullable: true
           example: my-secret-key
         type:
           type: string

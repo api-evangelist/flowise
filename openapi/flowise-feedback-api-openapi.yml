@@ -1,12 +1,10 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Flowise APIs assistants feedback API
+  title: Flowise Feedback API
   version: 1.0.0
   description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
 
-    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
-
-    '
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.'
   license:
     name: Apache 2.0
     url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
@@ -22,12 +20,12 @@ servers:
     instance:
       default: app
 tags:
-- name: feedback
+- name: Feedback
 paths:
   /feedback:
     post:
       tags:
-      - feedback
+      - Feedback
       security:
       - bearerAuth: []
       operationId: createChatMessageFeedbackForChatflow
@@ -53,7 +51,7 @@ paths:
   /feedback/{id}:
     get:
       tags:
-      - feedback
+      - Feedback
       security:
       - bearerAuth: []
       summary: List all chat message feedbacks for a chatflow
@@ -105,7 +103,7 @@ paths:
           description: Internal server error
     put:
       tags:
-      - feedback
+      - Feedback
       security:
       - bearerAuth: []
       summary: Update chat message feedback

@@ -1,19 +1,7 @@
 {
   "provider": "flowise",
   "sources": [
-    "flowise-assistants-api-openapi.yml",
-    "flowise-attachments-api-openapi.yml",
-    "flowise-chatflows-api-openapi.yml",
-    "flowise-chatmessage-api-openapi.yml",
-    "flowise-document-store-api-openapi.yml",
-    "flowise-feedback-api-openapi.yml",
-    "flowise-leads-api-openapi.yml",
-    "flowise-ping-api-openapi.yml",
-    "flowise-prediction-api-openapi.yml",
-    "flowise-tools-api-openapi.yml",
-    "flowise-upsert-history-api-openapi.yml",
-    "flowise-variables-api-openapi.yml",
-    "flowise-vector-api-openapi.yml"
+    "_original/flowise-openapi.yml"
   ],
   "outputs": [
     "flowise-assistants-api-openapi.yml",
@@ -33,6 +21,24 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "flowise-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "flowise-assistants-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-attachments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-chatflows-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-chatmessage-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-document-store-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-feedback-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-leads-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-ping-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-prediction-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-tools-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-upsert-history-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-variables-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "flowise-vector-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

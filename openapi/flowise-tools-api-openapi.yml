@@ -1,12 +1,10 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Flowise APIs assistants tools API
+  title: Flowise Tools API
   version: 1.0.0
   description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
 
-    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
-
-    '
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.'
   license:
     name: Apache 2.0
     url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
@@ -22,17 +20,16 @@ servers:
     instance:
       default: app
 tags:
-- name: tools
+- name: Tools
 paths:
   /tools:
     post:
       tags:
-      - tools
+      - Tools
       security:
       - bearerAuth: []
       operationId: createTool
       summary: Create a new tool
-      description: Create a new tool
       requestBody:
         content:
           application/json:
@@ -54,7 +51,7 @@ paths:
           description: Internal server error
     get:
       tags:
-      - tools
+      - Tools
       security:
       - bearerAuth: []
       summary: List all tools
@@ -74,7 +71,7 @@ paths:
   /tools/{id}:
     get:
       tags:
-      - tools
+      - Tools
       security:
       - bearerAuth: []
       summary: Get a tool by ID
@@ -102,7 +99,7 @@ paths:
           description: Internal server error
     put:
       tags:
-      - tools
+      - Tools
       security:
       - bearerAuth: []
       summary: Update a tool by ID
@@ -136,7 +133,7 @@ paths:
           description: Internal server error
     delete:
       tags:
-      - tools
+      - Tools
       security:
       - bearerAuth: []
       summary: Delete a tool by ID
@@ -181,17 +178,20 @@ components:
           description: Color associated with the tool
           example: '#FF5733'
         iconSrc:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Source URL for the tool's icon
           example: https://example.com/icons/date.png
         schema:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: JSON schema associated with the tool
         func:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Functionality description or code associated with the tool
         createdDate:
           type: string

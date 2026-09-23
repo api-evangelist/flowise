@@ -1,12 +1,10 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Flowise APIs assistants vector API
+  title: Flowise Vector API
   version: 1.0.0
   description: 'Flowise REST API for managing AI agent flows, chatflows, assistants, document stores, tools, variables, and predictions.
 
-    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.
-
-    '
+    Bearer token authentication uses an API key generated in the Flowise admin UI. The default server is your local or hosted Flowise instance at /api/v1.'
   license:
     name: Apache 2.0
     url: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md
@@ -22,12 +20,12 @@ servers:
     instance:
       default: app
 tags:
-- name: vector
+- name: Vector
 paths:
   /vector/upsert/{id}:
     post:
       tags:
-      - vector
+      - Vector
       security:
       - bearerAuth: []
       operationId: vectorUpsert
@@ -64,8 +62,9 @@ paths:
                     format: binary
                   description: Files to be uploaded
                 modelName:
-                  type: string
-                  nullable: true
+                  type:
+                  - string
+                  - 'null'
                   example: ''
                   description: Other override configurations
               required:
@@ -88,19 +87,6 @@ paths:
           description: Internal server error
 components:
   schemas:
-    Document:
-      type: object
-      properties:
-        pageContent:
-          type: string
-          example: This is the content of the page.
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-          example:
-            author: John Doe
-            date: '2024-08-24'
     VectorUpsertResponse:
       type: object
       properties:
@@ -124,6 +110,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Document'
+    Document:
+      type: object
+      properties:
+        pageContent:
+          type: string
+          example: This is the content of the page.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            author: John Doe
+            date: '2024-08-24'
   securitySchemes:
     bearerAuth:
       type: http
