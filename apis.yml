@@ -49,7 +49,7 @@ tags:
 - LangChain
 - RAG
 - Chatbots
-- Open-Source
+- Open Source
 - Node.js
 - TypeScript
 tags_raw:
@@ -66,13 +66,14 @@ tags_raw:
 - Open Source
 - Node.js
 - TypeScript
+- Open-Source
 created: '2026-05-24'
 modified: '2026-05-24'
 url: https://raw.githubusercontent.com/api-evangelist/flowise/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
 - aid: flowise:flowise-assistants-api
-  name: Flowise assistants API
+  name: Flowise Assistants API
   description: The assistants API from Flowise — 2 operation(s) for assistants.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -92,7 +93,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-attachments-api
-  name: Flowise attachments API
+  name: Flowise Attachments API
   description: The attachments API from Flowise — 1 operation(s) for attachments.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -112,7 +113,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-chatflows-api
-  name: Flowise chatflows API
+  name: Flowise Chatflows API
   description: The chatflows API from Flowise — 3 operation(s) for chatflows.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -130,7 +131,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-chatmessage-api
-  name: Flowise chatmessage API
+  name: Flowise Chatmessage API
   description: The chatmessage API from Flowise — 1 operation(s) for chatmessage.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -148,7 +149,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-document-store-api
-  name: Flowise document-store API
+  name: Flowise Document Store API
   description: The document-store API from Flowise — 9 operation(s) for document-store.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -168,7 +169,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-feedback-api
-  name: Flowise feedback API
+  name: Flowise Feedback API
   description: The feedback API from Flowise — 2 operation(s) for feedback.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -188,7 +189,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-leads-api
-  name: Flowise leads API
+  name: Flowise Leads API
   description: The leads API from Flowise — 2 operation(s) for leads.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -208,7 +209,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-ping-api
-  name: Flowise ping API
+  name: Flowise Ping API
   description: The ping API from Flowise — 1 operation(s) for ping.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -228,7 +229,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-prediction-api
-  name: Flowise prediction API
+  name: Flowise Prediction API
   description: The prediction API from Flowise — 1 operation(s) for prediction.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -248,7 +249,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-tools-api
-  name: Flowise tools API
+  name: Flowise Tools API
   description: The tools API from Flowise — 2 operation(s) for tools.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -268,7 +269,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-upsert-history-api
-  name: Flowise upsert-history API
+  name: Flowise Upsert History API
   description: The upsert-history API from Flowise — 1 operation(s) for upsert-history.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -286,7 +287,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-variables-api
-  name: Flowise variables API
+  name: Flowise Variables API
   description: The variables API from Flowise — 2 operation(s) for variables.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1
@@ -306,7 +307,7 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 - aid: flowise:flowise-vector-api
-  name: Flowise vector API
+  name: Flowise Vector API
   description: The vector API from Flowise — 1 operation(s) for vector.
   humanURL: https://docs.flowiseai.com/api-reference
   baseURL: http://localhost:3000/api/v1

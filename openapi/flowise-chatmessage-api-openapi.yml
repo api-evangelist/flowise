@@ -183,21 +183,19 @@ paths:
           description: Internal error
 components:
   schemas:
-    FileUpload:
+    Document:
       type: object
       properties:
-        data:
+        pageContent:
           type: string
-          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABjElEQVRIS+2Vv0oDQRDG
-        type:
-          type: string
-          example: image
-        name:
-          type: string
-          example: image.png
-        mime:
-          type: string
-          example: image/png
+          example: This is the content of the page.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            author: John Doe
+            date: '2024-08-24'
     AgentReasoning:
       type: object
       properties:
@@ -228,6 +226,35 @@ components:
           type: object
           additionalProperties:
             type: string
+    UsedTool:
+      type: object
+      properties:
+        tool:
+          type: string
+          example: Name of the tool
+        toolInput:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            input: search query
+        toolOutput:
+          type: string
+    FileUpload:
+      type: object
+      properties:
+        data:
+          type: string
+          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABjElEQVRIS+2Vv0oDQRDG
+        type:
+          type: string
+          example: image
+        name:
+          type: string
+          example: image.png
+        mime:
+          type: string
+          example: image/png
     FileAnnotation:
       type: object
       properties:
@@ -237,19 +264,27 @@ components:
         fileName:
           type: string
           example: file.txt
-    Document:
+    Action:
       type: object
       properties:
-        pageContent:
+        id:
           type: string
-          example: This is the content of the page.
-        metadata:
+          format: uuid
+          example: 61beeb58-6ebe-4d51-aa0b-41d4c546ff08
+        mapping:
           type: object
-          additionalProperties:
-            type: string
-          example:
-            author: John Doe
-            date: '2024-08-24'
+          properties:
+            approve:
+              type: string
+              example: 'Yes'
+            reject:
+              type: string
+              example: 'No'
+            toolCalls:
+              type: array
+              example: []
+        elements:
+          type: array
     ChatMessage:
       type: object
       properties:
@@ -332,41 +367,6 @@ components:
           - string
           - 'null'
           example: user@example.com
-    UsedTool:
-      type: object
-      properties:
-        tool:
-          type: string
-          example: Name of the tool
-        toolInput:
-          type: object
-          additionalProperties:
-            type: string
-          example:
-            input: search query
-        toolOutput:
-          type: string
-    Action:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          example: 61beeb58-6ebe-4d51-aa0b-41d4c546ff08
-        mapping:
-          type: object
-          properties:
-            approve:
-              type: string
-              example: 'Yes'
-            reject:
-              type: string
-              example: 'No'
-            toolCalls:
-              type: array
-              example: []
-        elements:
-          type: array
   securitySchemes:
     bearerAuth:
       type: http
