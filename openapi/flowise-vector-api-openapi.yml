@@ -87,6 +87,19 @@ paths:
           description: Internal server error
 components:
   schemas:
+    Document:
+      type: object
+      properties:
+        pageContent:
+          type: string
+          example: This is the content of the page.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            author: John Doe
+            date: '2024-08-24'
     VectorUpsertResponse:
       type: object
       properties:
@@ -110,19 +123,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Document'
-    Document:
-      type: object
-      properties:
-        pageContent:
-          type: string
-          example: This is the content of the page.
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-          example:
-            author: John Doe
-            date: '2024-08-24'
   securitySchemes:
     bearerAuth:
       type: http

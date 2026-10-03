@@ -183,63 +183,6 @@ paths:
           description: Internal error
 components:
   schemas:
-    Document:
-      type: object
-      properties:
-        pageContent:
-          type: string
-          example: This is the content of the page.
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-          example:
-            author: John Doe
-            date: '2024-08-24'
-    AgentReasoning:
-      type: object
-      properties:
-        agentName:
-          type: string
-          example: agent
-        messages:
-          type: array
-          items:
-            type: string
-          example:
-          - hello
-        nodeName:
-          type: string
-          example: seqAgent
-        nodeId:
-          type: string
-          example: seqAgent_0
-        usedTools:
-          type: array
-          items:
-            $ref: '#/components/schemas/UsedTool'
-        sourceDocuments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Document'
-        state:
-          type: object
-          additionalProperties:
-            type: string
-    UsedTool:
-      type: object
-      properties:
-        tool:
-          type: string
-          example: Name of the tool
-        toolInput:
-          type: object
-          additionalProperties:
-            type: string
-          example:
-            input: search query
-        toolOutput:
-          type: string
     FileUpload:
       type: object
       properties:
@@ -255,36 +198,6 @@ components:
         mime:
           type: string
           example: image/png
-    FileAnnotation:
-      type: object
-      properties:
-        filePath:
-          type: string
-          example: path/to/file
-        fileName:
-          type: string
-          example: file.txt
-    Action:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          example: 61beeb58-6ebe-4d51-aa0b-41d4c546ff08
-        mapping:
-          type: object
-          properties:
-            approve:
-              type: string
-              example: 'Yes'
-            reject:
-              type: string
-              example: 'No'
-            toolCalls:
-              type: array
-              example: []
-        elements:
-          type: array
     ChatMessage:
       type: object
       properties:
@@ -367,6 +280,93 @@ components:
           - string
           - 'null'
           example: user@example.com
+    FileAnnotation:
+      type: object
+      properties:
+        filePath:
+          type: string
+          example: path/to/file
+        fileName:
+          type: string
+          example: file.txt
+    Document:
+      type: object
+      properties:
+        pageContent:
+          type: string
+          example: This is the content of the page.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            author: John Doe
+            date: '2024-08-24'
+    Action:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: 61beeb58-6ebe-4d51-aa0b-41d4c546ff08
+        mapping:
+          type: object
+          properties:
+            approve:
+              type: string
+              example: 'Yes'
+            reject:
+              type: string
+              example: 'No'
+            toolCalls:
+              type: array
+              example: []
+        elements:
+          type: array
+    UsedTool:
+      type: object
+      properties:
+        tool:
+          type: string
+          example: Name of the tool
+        toolInput:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            input: search query
+        toolOutput:
+          type: string
+    AgentReasoning:
+      type: object
+      properties:
+        agentName:
+          type: string
+          example: agent
+        messages:
+          type: array
+          items:
+            type: string
+          example:
+          - hello
+        nodeName:
+          type: string
+          example: seqAgent
+        nodeId:
+          type: string
+          example: seqAgent_0
+        usedTools:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsedTool'
+        sourceDocuments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document'
+        state:
+          type: object
+          additionalProperties:
+            type: string
   securitySchemes:
     bearerAuth:
       type: http
