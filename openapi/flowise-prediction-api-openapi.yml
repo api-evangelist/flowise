@@ -196,20 +196,6 @@ paths:
                     example: Internal server error. Check flow configuration and node settings.
 components:
   schemas:
-    UsedTool:
-      type: object
-      properties:
-        tool:
-          type: string
-          example: Name of the tool
-        toolInput:
-          type: object
-          additionalProperties:
-            type: string
-          example:
-            input: search query
-        toolOutput:
-          type: string
     Document:
       type: object
       properties:
@@ -337,6 +323,20 @@ components:
           example:
             type: reject
             feedback: Include more emoji
+    UsedTool:
+      type: object
+      properties:
+        tool:
+          type: string
+          example: Name of the tool
+        toolInput:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            input: search query
+        toolOutput:
+          type: string
   securitySchemes:
     bearerAuth:
       type: http

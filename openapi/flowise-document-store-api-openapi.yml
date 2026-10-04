@@ -524,84 +524,6 @@ paths:
           description: Internal server error
 components:
   schemas:
-    DocumentStoreFileChunk:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          description: Unique identifier for the file chunk
-        docId:
-          type: string
-          format: uuid
-          description: Document ID within the store
-        storeId:
-          type: string
-          format: uuid
-          description: Document Store ID
-        chunkNo:
-          type: integer
-          description: Chunk number within the document
-        pageContent:
-          type: string
-          description: Content of the chunk
-        metadata:
-          type: string
-          description: Metadata associated with the chunk
-    DocumentStore:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          description: Unique identifier for the document store
-        name:
-          type: string
-          description: Name of the document store
-        description:
-          type: string
-          description: Description of the document store
-        loaders:
-          type: string
-          description: Loaders associated with the document store, stored as JSON string
-        whereUsed:
-          type: string
-          description: Places where the document store is used, stored as JSON string
-        status:
-          type: string
-          enum:
-          - EMPTY
-          - SYNC
-          - SYNCING
-          - STALE
-          - NEW
-          - UPSERTING
-          - UPSERTED
-          description: Status of the document store
-        vectorStoreConfig:
-          type: string
-          description: Configuration for the vector store, stored as JSON string
-        embeddingConfig:
-          type: string
-          description: Configuration for the embedding, stored as JSON string
-        recordManagerConfig:
-          type: string
-          description: Configuration for the record manager, stored as JSON string
-        createdDate:
-          type: string
-          format: date-time
-          description: Date and time when the document store was created
-        updatedDate:
-          type: string
-          format: date-time
-          description: Date and time when the document store was last updated
-    DocumentStoreLoaderForRefresh:
-      type: object
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/DocumentStoreLoaderForUpsert'
     DocumentStoreLoaderForUpsert:
       type: object
       properties:
@@ -702,6 +624,13 @@ components:
             config:
               type: object
               description: Configuration for the record manager
+    DocumentStoreLoaderForRefresh:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentStoreLoaderForUpsert'
     VectorUpsertResponse:
       type: object
       properties:
@@ -725,19 +654,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Document'
-    Document:
-      type: object
-      properties:
-        pageContent:
-          type: string
-          example: This is the content of the page.
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-          example:
-            author: John Doe
-            date: '2024-08-24'
     DocumentStoreFileChunkPagedResponse:
       type: object
       properties:
@@ -756,6 +672,97 @@ components:
           type: string
         description:
           type: string
+    DocumentStore:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the document store
+        name:
+          type: string
+          description: Name of the document store
+        description:
+          type: string
+          description: Description of the document store
+        loaders:
+          type: string
+          description: Loaders associated with the document store, stored as JSON string
+        whereUsed:
+          type: string
+          description: Places where the document store is used, stored as JSON string
+        status:
+          type: string
+          enum:
+          - EMPTY
+          - SYNC
+          - SYNCING
+          - STALE
+          - NEW
+          - UPSERTING
+          - UPSERTED
+          description: Status of the document store
+        vectorStoreConfig:
+          type: string
+          description: Configuration for the vector store, stored as JSON string
+        embeddingConfig:
+          type: string
+          description: Configuration for the embedding, stored as JSON string
+        recordManagerConfig:
+          type: string
+          description: Configuration for the record manager, stored as JSON string
+        createdDate:
+          type: string
+          format: date-time
+          description: Date and time when the document store was created
+        updatedDate:
+          type: string
+          format: date-time
+          description: Date and time when the document store was last updated
+    DocumentStoreLoaderFile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the file
+        name:
+          type: string
+          description: Name of the file
+        mimePrefix:
+          type: string
+          description: MIME prefix of the file
+        size:
+          type: number
+          description: Size of the file
+        status:
+          type: string
+          enum:
+          - EMPTY
+          - SYNC
+          - SYNCING
+          - STALE
+          - NEW
+          - UPSERTING
+          - UPSERTED
+          description: Status of the file
+        uploaded:
+          type: string
+          format: date-time
+          description: Date and time when the file was uploaded
+    Document:
+      type: object
+      properties:
+        pageContent:
+          type: string
+          example: This is the content of the page.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            author: John Doe
+            date: '2024-08-24'
     DocumentStoreLoaderForPreview:
       type: object
       properties:
@@ -820,37 +827,30 @@ components:
         previewChunkCount:
           type: number
           description: Number of chunks in preview mode
-    DocumentStoreLoaderFile:
+    DocumentStoreFileChunk:
       type: object
       properties:
         id:
           type: string
           format: uuid
-          description: Unique identifier for the file
-        name:
+          description: Unique identifier for the file chunk
+        docId:
           type: string
-          description: Name of the file
-        mimePrefix:
+          format: uuid
+          description: Document ID within the store
+        storeId:
           type: string
-          description: MIME prefix of the file
-        size:
-          type: number
-          description: Size of the file
-        status:
+          format: uuid
+          description: Document Store ID
+        chunkNo:
+          type: integer
+          description: Chunk number within the document
+        pageContent:
           type: string
-          enum:
-          - EMPTY
-          - SYNC
-          - SYNCING
-          - STALE
-          - NEW
-          - UPSERTING
-          - UPSERTED
-          description: Status of the file
-        uploaded:
+          description: Content of the chunk
+        metadata:
           type: string
-          format: date-time
-          description: Date and time when the file was uploaded
+          description: Metadata associated with the chunk
   securitySchemes:
     bearerAuth:
       type: http

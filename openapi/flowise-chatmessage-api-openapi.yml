@@ -183,21 +183,6 @@ paths:
           description: Internal error
 components:
   schemas:
-    FileUpload:
-      type: object
-      properties:
-        data:
-          type: string
-          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABjElEQVRIS+2Vv0oDQRDG
-        type:
-          type: string
-          example: image
-        name:
-          type: string
-          example: image.png
-        mime:
-          type: string
-          example: image/png
     ChatMessage:
       type: object
       properties:
@@ -280,28 +265,6 @@ components:
           - string
           - 'null'
           example: user@example.com
-    FileAnnotation:
-      type: object
-      properties:
-        filePath:
-          type: string
-          example: path/to/file
-        fileName:
-          type: string
-          example: file.txt
-    Document:
-      type: object
-      properties:
-        pageContent:
-          type: string
-          example: This is the content of the page.
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-          example:
-            author: John Doe
-            date: '2024-08-24'
     Action:
       type: object
       properties:
@@ -337,6 +300,15 @@ components:
             input: search query
         toolOutput:
           type: string
+    FileAnnotation:
+      type: object
+      properties:
+        filePath:
+          type: string
+          example: path/to/file
+        fileName:
+          type: string
+          example: file.txt
     AgentReasoning:
       type: object
       properties:
@@ -367,6 +339,34 @@ components:
           type: object
           additionalProperties:
             type: string
+    Document:
+      type: object
+      properties:
+        pageContent:
+          type: string
+          example: This is the content of the page.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            author: John Doe
+            date: '2024-08-24'
+    FileUpload:
+      type: object
+      properties:
+        data:
+          type: string
+          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABjElEQVRIS+2Vv0oDQRDG
+        type:
+          type: string
+          example: image
+        name:
+          type: string
+          example: image.png
+        mime:
+          type: string
+          example: image/png
   securitySchemes:
     bearerAuth:
       type: http
