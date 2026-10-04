@@ -39,6 +39,9 @@ accessModel:
 position: Consuming
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/flowise.png
+x-docs-platform: gitbook
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-10-03
 tags:
 - Agents
 - Agent Workflows
@@ -327,6 +330,9 @@ apis:
   - type: Prediction
     url: https://docs.flowiseai.com/api-reference/prediction
 common:
+- type: CapabilityMap
+  url: capabilities/flowise-capability-edges.yml
+  name: Flowise Business Capability Map
 - type: ParentCompany
   url: https://apis.io/providers/workday/
   name: Workday
