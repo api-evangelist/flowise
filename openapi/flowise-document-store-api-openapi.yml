@@ -524,6 +524,53 @@ paths:
           description: Internal server error
 components:
   schemas:
+    DocumentStoreFileChunk:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the file chunk
+        docId:
+          type: string
+          format: uuid
+          description: Document ID within the store
+        storeId:
+          type: string
+          format: uuid
+          description: Document Store ID
+        chunkNo:
+          type: integer
+          description: Chunk number within the document
+        pageContent:
+          type: string
+          description: Content of the chunk
+        metadata:
+          type: string
+          description: Metadata associated with the chunk
+    VectorUpsertResponse:
+      type: object
+      properties:
+        numAdded:
+          type: number
+          description: Number of vectors added
+          example: 1
+        numDeleted:
+          type: number
+          description: Number of vectors deleted
+          example: 1
+        numUpdated:
+          type: number
+          description: Number of vectors updated
+          example: 1
+        numSkipped:
+          type: number
+          description: Number of vectors skipped (not added, deleted, or updated)
+          example: 1
+        addedDocs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document'
     DocumentStoreLoaderForUpsert:
       type: object
       properties:
@@ -631,47 +678,83 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DocumentStoreLoaderForUpsert'
-    VectorUpsertResponse:
+    DocumentStoreLoaderForPreview:
       type: object
       properties:
-        numAdded:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the document store loader
+        loaderId:
+          type: string
+          description: ID of the loader
+        loaderName:
+          type: string
+          description: Name of the loader
+        loaderConfig:
+          type: object
+          description: Configuration for the loader
+        splitterId:
+          type: string
+          description: ID of the text splitter
+        splitterName:
+          type: string
+          description: Name of the text splitter
+        splitterConfig:
+          type: object
+          description: Configuration for the text splitter
+        totalChunks:
           type: number
-          description: Number of vectors added
-          example: 1
-        numDeleted:
+          description: Total number of chunks
+        totalChars:
           type: number
-          description: Number of vectors deleted
-          example: 1
-        numUpdated:
-          type: number
-          description: Number of vectors updated
-          example: 1
-        numSkipped:
-          type: number
-          description: Number of vectors skipped (not added, deleted, or updated)
-          example: 1
-        addedDocs:
+          description: Total number of characters
+        status:
+          type: string
+          enum:
+          - EMPTY
+          - SYNC
+          - SYNCING
+          - STALE
+          - NEW
+          - UPSERTING
+          - UPSERTED
+          description: Status of the document store loader
+        storeId:
+          type: string
+          description: ID of the document store
+        files:
           type: array
           items:
-            $ref: '#/components/schemas/Document'
-    DocumentStoreFileChunkPagedResponse:
+            $ref: '#/components/schemas/DocumentStoreLoaderFile'
+        source:
+          type: string
+          description: Source of the document store loader
+        credential:
+          type: string
+          description: Credential associated with the document store loader
+        rehydrated:
+          type: boolean
+          description: Whether the loader has been rehydrated
+        preview:
+          type: boolean
+          description: Whether the loader is in preview mode
+        previewChunkCount:
+          type: number
+          description: Number of chunks in preview mode
+    Document:
       type: object
       properties:
-        chunks:
-          type: array
-          items:
-            $ref: '#/components/schemas/DocumentStoreFileChunk'
-        count:
-          type: number
-          example: 1
-        file:
-          $ref: '#/components/schemas/DocumentStoreLoaderForPreview'
-        currentPage:
-          type: number
-        storeName:
+        pageContent:
           type: string
-        description:
-          type: string
+          example: This is the content of the page.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            author: John Doe
+            date: '2024-08-24'
     DocumentStore:
       type: object
       properties:
@@ -750,107 +833,24 @@ components:
           type: string
           format: date-time
           description: Date and time when the file was uploaded
-    Document:
+    DocumentStoreFileChunkPagedResponse:
       type: object
       properties:
-        pageContent:
-          type: string
-          example: This is the content of the page.
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-          example:
-            author: John Doe
-            date: '2024-08-24'
-    DocumentStoreLoaderForPreview:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          description: Unique identifier for the document store loader
-        loaderId:
-          type: string
-          description: ID of the loader
-        loaderName:
-          type: string
-          description: Name of the loader
-        loaderConfig:
-          type: object
-          description: Configuration for the loader
-        splitterId:
-          type: string
-          description: ID of the text splitter
-        splitterName:
-          type: string
-          description: Name of the text splitter
-        splitterConfig:
-          type: object
-          description: Configuration for the text splitter
-        totalChunks:
-          type: number
-          description: Total number of chunks
-        totalChars:
-          type: number
-          description: Total number of characters
-        status:
-          type: string
-          enum:
-          - EMPTY
-          - SYNC
-          - SYNCING
-          - STALE
-          - NEW
-          - UPSERTING
-          - UPSERTED
-          description: Status of the document store loader
-        storeId:
-          type: string
-          description: ID of the document store
-        files:
+        chunks:
           type: array
           items:
-            $ref: '#/components/schemas/DocumentStoreLoaderFile'
-        source:
-          type: string
-          description: Source of the document store loader
-        credential:
-          type: string
-          description: Credential associated with the document store loader
-        rehydrated:
-          type: boolean
-          description: Whether the loader has been rehydrated
-        preview:
-          type: boolean
-          description: Whether the loader is in preview mode
-        previewChunkCount:
+            $ref: '#/components/schemas/DocumentStoreFileChunk'
+        count:
           type: number
-          description: Number of chunks in preview mode
-    DocumentStoreFileChunk:
-      type: object
-      properties:
-        id:
+          example: 1
+        file:
+          $ref: '#/components/schemas/DocumentStoreLoaderForPreview'
+        currentPage:
+          type: number
+        storeName:
           type: string
-          format: uuid
-          description: Unique identifier for the file chunk
-        docId:
+        description:
           type: string
-          format: uuid
-          description: Document ID within the store
-        storeId:
-          type: string
-          format: uuid
-          description: Document Store ID
-        chunkNo:
-          type: integer
-          description: Chunk number within the document
-        pageContent:
-          type: string
-          description: Content of the chunk
-        metadata:
-          type: string
-          description: Metadata associated with the chunk
   securitySchemes:
     bearerAuth:
       type: http

@@ -196,19 +196,6 @@ paths:
                     example: Internal server error. Check flow configuration and node settings.
 components:
   schemas:
-    Document:
-      type: object
-      properties:
-        pageContent:
-          type: string
-          example: This is the content of the page.
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-          example:
-            author: John Doe
-            date: '2024-08-24'
     Prediction:
       type: object
       properties:
@@ -323,6 +310,19 @@ components:
           example:
             type: reject
             feedback: Include more emoji
+    Document:
+      type: object
+      properties:
+        pageContent:
+          type: string
+          example: This is the content of the page.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            author: John Doe
+            date: '2024-08-24'
     UsedTool:
       type: object
       properties:
