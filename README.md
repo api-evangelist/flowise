@@ -1,4 +1,4 @@
-# Flowise (flowise)
+# Flowise
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,96 +66,187 @@
 
 Flowise is an open-source, low-code visual builder for LangChain-based LLM workflows and AI agents. Built on Node.js and TypeScript as a pnpm/Turbo monorepo, Flowise lets developers and non-developers compose chatflows, multi-agent agentflows, RAG pipelines, tools, and assistants on a drag-and-drop canvas, then expose them as REST APIs, embeddable chat widgets, or programmatic SDK calls. The project ships a self-hostable server, a React admin UI, a third-party node component library, an auto-generated Swagger UI, official TypeScript and Python SDKs, an embed widget, and a managed Flowise Cloud offering with metered prediction quotas. Flowise was acquired by Workday in 2025.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/flowise/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/flowise/refs/heads/main/apis.yml)
+**Areas:** Agents · Agent Workflows · Artificial Intelligence · LLM · Low-Code · Visual Builder · LangChain · RAG · Chatbots · Open Source · Node.js · TypeScript
 
-## Scope
+## Flowise on APIs.io
 
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Everything profiled for Flowise is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/flowise/](https://apis.io/providers/flowise/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (13)
 
-- Agents
-- Agent Workflows
-- Artificial Intelligence
-- Large Language Models
-- Low Code
-- Visual Builder
-- LangChain
-- RAG
-- Retrieval Augmented Generation
-- Chatbots
-- Open Source
-- Node.js
-- TypeScript
+- [Flowise Assistants API](https://apis.io/apis/flowise/flowise-assistants-api/) — The assistants API from Flowise — 2 operation(s) for assistants.
+- [Flowise Attachments API](https://apis.io/apis/flowise/flowise-attachments-api/) — The attachments API from Flowise — 1 operation(s) for attachments.
+- [Flowise Chatflows API](https://apis.io/apis/flowise/flowise-chatflows-api/) — The chatflows API from Flowise — 3 operation(s) for chatflows.
+- [Flowise Chatmessage API](https://apis.io/apis/flowise/flowise-chatmessage-api/) — The chatmessage API from Flowise — 1 operation(s) for chatmessage.
+- [Flowise Document Store API](https://apis.io/apis/flowise/flowise-document-store-api/) — The document-store API from Flowise — 9 operation(s) for document-store.
+- [Flowise Feedback API](https://apis.io/apis/flowise/flowise-feedback-api/) — The feedback API from Flowise — 2 operation(s) for feedback.
+- [Flowise Leads API](https://apis.io/apis/flowise/flowise-leads-api/) — The leads API from Flowise — 2 operation(s) for leads.
+- [Flowise Ping API](https://apis.io/apis/flowise/flowise-ping-api/) — The ping API from Flowise — 1 operation(s) for ping.
+- [Flowise Prediction API](https://apis.io/apis/flowise/flowise-prediction-api/) — The prediction API from Flowise — 1 operation(s) for prediction.
+- [Flowise Tools API](https://apis.io/apis/flowise/flowise-tools-api/) — The tools API from Flowise — 2 operation(s) for tools.
+- [Flowise Upsert History API](https://apis.io/apis/flowise/flowise-upsert-history-api/) — The upsert-history API from Flowise — 1 operation(s) for upsert-history.
+- [Flowise Variables API](https://apis.io/apis/flowise/flowise-variables-api/) — The variables API from Flowise — 2 operation(s) for variables.
+- [Flowise Vector API](https://apis.io/apis/flowise/flowise-vector-api/) — The vector API from Flowise — 1 operation(s) for vector.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-24
-- **Modified:** 2026-05-24
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Flowise API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Flowise REST API exposes the full surface of a Flowise server, covering chatflows, agentflows, assistants, tools, variables, document stores, vector upserts, attachments, feedback, leads, chat messages, upsert history, predictions, and a ping health probe. It is documented as OpenAPI 3.0.3 from a Swagger UI shipped in the `packages/api-documentation` workspace of the FlowiseAI/Flowise monorepo and served at `/api-docs` on the Flowise server. Authentication uses an HTTP Bearer token (an API key generated in the Flowise admin UI). The default base URL is `http://localhost:3000/api/v1` on a self-hosted instance, or the corresponding `/api/v1` path on a Flowise Cloud workspace.
+- [Flowise Agentic Access](https://apis.io/agentic-access/flowise/flowise-agentic-access/)
 
-- **Human URL:** [https://docs.flowiseai.com/api-reference](https://docs.flowiseai.com/api-reference)
-- **Base URL:** `http://localhost:3000/api/v1`
+#### JSON Schema (7)
 
-#### Tags
+The data models the API reads and writes.
 
-- Agents
-- Agent Workflows
-- Artificial Intelligence
-- Large Language Models
-- Chatflows
-- Agentflows
-- Assistants
-- Tools
-- Variables
-- Document Stores
-- Vector
-- Predictions
-- Feedback
-- Leads
-- Chat Messages
+- [Assistant](https://apis.io/schemas/flowise/flowise-assistant/)
+- [ChatMessage](https://apis.io/schemas/flowise/flowise-chat-message/)
+- [Chatflow](https://apis.io/schemas/flowise/flowise-chatflow/)
+- [DocumentStore](https://apis.io/schemas/flowise/flowise-document-store/)
+- [Prediction](https://apis.io/schemas/flowise/flowise-prediction/)
+- [Tool](https://apis.io/schemas/flowise/flowise-tool/)
+- [Variable](https://apis.io/schemas/flowise/flowise-variable/)
 
-#### Properties
+#### JSON Structure (2)
 
-- [Documentation](https://docs.flowiseai.com/api-reference)
-- [OpenAPI](openapi/flowise-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/flowise.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/flowise.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://docs.flowiseai.com/using-flowise/api-keys)
-- [Swagger U I](https://github.com/FlowiseAI/Flowise/tree/main/packages/api-documentation)
-- [Prediction](https://docs.flowiseai.com/api-reference/prediction)
+Data models expressed in JSON Structure.
 
-## Common Properties
+- [Flowise Chatflow Structure](https://apis.io/json-structure/flowise/flowise-chatflow-structure/)
+- [Flowise Prediction Structure](https://apis.io/json-structure/flowise/flowise-prediction-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Flowise Context](https://apis.io/jsonld/flowise/flowise-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Flowise Vocabulary](https://apis.io/vocabularies/flowise/flowise-vocabulary/)
+
+#### Examples (4)
+
+Example requests and responses.
+
+- [Flowise Create Chatflow Example](https://apis.io/examples/flowise/flowise-create-chatflow-example/)
+- [Flowise Create Prediction Example](https://apis.io/examples/flowise/flowise-create-prediction-example/)
+- [Flowise Upsert Document Example](https://apis.io/examples/flowise/flowise-upsert-document-example/)
+- [Flowise Vector Upsert Example](https://apis.io/examples/flowise/flowise-vector-upsert-example/)
+
+#### Collections (14)
+
+Postman and Open Collection request collections.
+
+- [Flowise APIs](https://apis.io/collections/flowise/open-flowise/)
+- [Flowise APIs assistants API](https://apis.io/collections/flowise/open-flowise-assistants-api/)
+- [Flowise APIs assistants attachments API](https://apis.io/collections/flowise/open-flowise-attachments-api/)
+- [Flowise APIs assistants chatflows API](https://apis.io/collections/flowise/open-flowise-chatflows-api/)
+- [Flowise APIs assistants chatmessage API](https://apis.io/collections/flowise/open-flowise-chatmessage-api/)
+- [Flowise APIs assistants document-store API](https://apis.io/collections/flowise/open-flowise-document-store-api/)
+- [Flowise APIs assistants feedback API](https://apis.io/collections/flowise/open-flowise-feedback-api/)
+- [Flowise APIs assistants leads API](https://apis.io/collections/flowise/open-flowise-leads-api/)
+- [Flowise APIs assistants ping API](https://apis.io/collections/flowise/open-flowise-ping-api/)
+- [Flowise APIs assistants prediction API](https://apis.io/collections/flowise/open-flowise-prediction-api/)
+- [Flowise APIs assistants tools API](https://apis.io/collections/flowise/open-flowise-tools-api/)
+- [Flowise APIs assistants upsert-history API](https://apis.io/collections/flowise/open-flowise-upsert-history-api/)
+- [Flowise APIs assistants variables API](https://apis.io/collections/flowise/open-flowise-variables-api/)
+- [Flowise APIs assistants vector API](https://apis.io/collections/flowise/open-flowise-vector-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Flowise — jsonschema rules](https://apis.io/rules/flowise/flowise-jsonschema-spectral-rules/)
+- [Flowise API Rules](https://apis.io/rules/flowise/flowise-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Flowise Authentication](https://apis.io/security/flowise/flowise-authentication/)
+- [Flowise Domain Security](https://apis.io/security/flowise/flowise-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Flowise Plans Pricing](https://apis.io/plans/flowise/flowise-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Flowise Rate Limits](https://apis.io/rate-limits/flowise/flowise-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Flowise Finops](https://apis.io/finops/flowise/flowise-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://flowiseai.com/)
 - [Documentation](https://docs.flowiseai.com/)
-- [Git Hub](https://github.com/FlowiseAI/Flowise)
-- [GitHub Organization](https://github.com/FlowiseAI)
 - [Pricing](https://flowiseai.com/pricing)
-- [Sign Up](https://flowiseai.com/)
-- [License](https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md)
-- [Discord](https://discord.gg/jbaHfsRVBW)
-- [Twitter](https://twitter.com/FlowiseAI)
-- [YouTube](https://www.youtube.com/@FlowiseAI)
-- [Marketplace](https://flowiseai.com/marketplace)
-- [SDK](https://github.com/FlowiseAI/FlowiseSDK)
-- [SDK](https://github.com/FlowiseAI/FlowisePy)
-- [SDK](https://github.com/FlowiseAI/FlowiseChatEmbed)
-- [SDK](https://github.com/FlowiseAI/FlowiseEmbedReact)
-- [Documentation](https://github.com/FlowiseAI/FlowiseDocs)
-- [Container Image](https://hub.docker.com/r/flowiseai/flowise)
-- [Package](https://www.npmjs.com/package/flowise)
-- [Plans](plans/flowise-plans-pricing.yml)
-- [Rate Limits](rate-limits/flowise-rate-limits.yml)
-- [Fin Ops](finops/flowise-finops.yml)
+- [GitHub](https://github.com/FlowiseAI)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 37.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 57.5 |
+| Contract governance | 13.6 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 31.0 |
+| Access clarity | 31.6 |
+
+**Agent readiness 20.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.5** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/flowise/](https://apis.io/providers/flowise/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Flowise: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/flowise/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
